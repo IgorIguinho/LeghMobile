@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9280fc9e5574934ea7732550b9c85ba, type: 3}
+  m_Name: Fase1
+  m_EditorClassIdentifier: 
+  colectedCoin: 0
+  totalCoin: 97
+  colectedMedal: 0
+  totalMedal: 3
+  colectedParti: 0
+  totalParti: 1
+  imageHolder: {fileID: 21300000, guid: e8aa7ded0aa29e746bf5e6ff64111a79, type: 3}
+  nameFase: PrototipoFase1
+  sceneFase: PrototipoFase1
