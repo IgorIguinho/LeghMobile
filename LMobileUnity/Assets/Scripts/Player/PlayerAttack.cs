@@ -9,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackSpeed;
 
 
-    public ParticleSystem swordAnimator;
+    public Animator swordAnimator;
 
     public Transform areaAttack;
     public Vector2 lengthAreaAttack;
@@ -39,13 +39,14 @@ public class PlayerAttack : MonoBehaviour
     {
         canAttack = false;
         rb.linearVelocity = Vector2.zero;
-        swordAnimator.Play();
+        swordAnimator.Play("Player_Attack");
 
         if (Physics2D.OverlapBox(areaAttack.position, lengthAreaAttack, 0, enemyLayer))
         {
             GameObject objTouched;
             objTouched = Physics2D.OverlapBox(areaAttack.position, lengthAreaAttack, 0, enemyLayer).gameObject;
             objTouched.GetComponent<EnemyStats>().Death();
+      
 
         }
 

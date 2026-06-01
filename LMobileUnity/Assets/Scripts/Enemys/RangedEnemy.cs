@@ -15,6 +15,8 @@ public class RangedEnemy : MonoBehaviour
     public Vector2 lenghtCheckPlayer;
     public Transform tranformCheckerPlayer;
     public LayerMask layerPlayer;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +41,15 @@ public class RangedEnemy : MonoBehaviour
     IEnumerator AttackPlayer()
     {
         canAttack = false;
+        //preparando ataque
+        yield return new WaitForSeconds(attackSpeed);
+
+        //atacando
         GameObject projectile = Instantiate(projectileObj,transform);
         projectile.GetComponent<ProjectileEnemy>().direction = direction;
         yield return new WaitForSeconds(attackSpeed);
+
+        //recarregando ataque
         canAttack = true;
     
         yield break;

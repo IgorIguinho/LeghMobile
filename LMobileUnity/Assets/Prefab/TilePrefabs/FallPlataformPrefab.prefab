@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4155378634680950554}
   - component: {fileID: 6366635608734270493}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,9 +104,10 @@ GameObject:
   - component: {fileID: 213998474650325058}
   - component: {fileID: 7599133903493085274}
   - component: {fileID: 3917704501558443509}
-  m_Layer: 0
+  - component: {fileID: -5701812653053526650}
+  m_Layer: 3
   m_Name: FallPlataformPrefab
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,6 +274,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &-5701812653053526650
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6586731507086710221}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e06d73ea217bc2342bf9e318420bc134, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8900902448316427100
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993581366075900339}
   - component: {fileID: 2426645879125239347}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

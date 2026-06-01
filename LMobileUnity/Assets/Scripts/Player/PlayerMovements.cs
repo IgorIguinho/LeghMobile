@@ -57,10 +57,19 @@ public class PlayerMovements : MonoBehaviour
     public float ropeFall;
     public LayerMask layerRope;
 
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
     private void Awake()
     {
         controls = new PlayerControl();
-        controls.Enable();
 
         controls.Land.Move.performed += ctx =>
         {
@@ -78,7 +87,7 @@ public class PlayerMovements : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        //animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
         rewindObj = gameObject.GetComponent<RewindObj>();
     }
 
@@ -102,7 +111,7 @@ public class PlayerMovements : MonoBehaviour
         if (isGrounded == true) 
         { rb.linearVelocity = new Vector2(speed * directionControls , rb.linearVelocity.y); }
         else { rb.linearVelocity = new Vector2(speedOnAir * directionControls , rb.linearVelocity.y); }
-        //animator.SetFloat("speed", Mathf.Abs(directionControls));
+        animator.SetFloat("speed", Mathf.Abs(directionControls));
        if (rb.linearVelocity.x * direction < 0f)
         {
             Flip();
@@ -167,7 +176,7 @@ public class PlayerMovements : MonoBehaviour
             Flip(); 
         }
         else { rb.linearVelocity = new Vector2(dashForce * direction , 0); }
-
+        animator.SetFloat("speed", Mathf.Abs(directionControls));
         trailObject.SetActive(true);
         buttonDash.gameObject.GetComponent<Image>().color = notCanDashColor;
 
@@ -179,6 +188,7 @@ public class PlayerMovements : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+        animator.SetFloat("speed", Mathf.Abs(directionControls));
         buttonDash.gameObject.GetComponent<Image>().color = canDashColor;
     }
 
