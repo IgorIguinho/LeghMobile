@@ -1,100 +1,66 @@
-
 using UnityEngine;
 
-
-public class ParallaxScrollingBG: MonoBehaviour
+public class ParallaxScrollingBG : MonoBehaviour
 {
-
-
-
     public BackGroundInfos[] listBG;
+    [HideInInspector] public bool lockX = false;
     private Camera cam;
-    private Transform player;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         cam = Camera.main;
-        for (int i = 0; i < listBG.Length; i++) 
+        foreach (var bg in listBG)
         {
-            if (listBG[i].backGroundObj == null) continue;
+            if (bg.backGroundObj == null) continue;
+            bg.startpos = bg.backGroundObj.position;
 
-            listBG[i].startpos = listBG[i].backGroundObj.position;
-
-            listBG[i].length = listBG[i].backGroundObj.GetComponent<SpriteRenderer>().bounds.size;
-
+            // Tenta pegar o renderer no objeto ou nos filhos para medir o tamanho
+            var renderer = bg.backGroundObj.GetComponent<SpriteRenderer>();
+            if (renderer == null) renderer = bg.backGroundObj.GetComponentInChildren<SpriteRenderer>();
+            if (renderer != null) bg.length = renderer.bounds.size;
         }
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
-        Parallax();
+        foreach (var bg in listBG)
+        {
+            float distX = (cam.transform.position.x * bg.speedParallaxEffect);
+            float distY = (cam.transform.position.y * bg.speedParallaxEffect);
+
+            // Calcula a nova posiï¿½ï¿½o baseada no lockX
+            float targetX = lockX ? bg.backGroundObj.position.x : bg.startpos.x + distX;
+            float targetY = bg.haveParallaxY ? bg.startpos.y + distY : bg.backGroundObj.position.y;
+
+            bg.backGroundObj.position = new Vector3(targetX, targetY, bg.backGroundObj.position.z);
+
+            // Looping Infinito
+            float tempX = (cam.transform.position.x * (1 - bg.speedParallaxEffect));
+            if (tempX > bg.startpos.x + bg.length.x) bg.startpos.x += bg.length.x;
+            else if (tempX < bg.startpos.x - bg.length.x) bg.startpos.x -= bg.length.x;
+        }
     }
 
-    public void Parallax()
-
+    public void UnlockAndSync()
     {
-        for (int i = 0; i < listBG.Length; i++)
+        lockX = false;
+        float camX = cam.transform.position.x;
+        foreach (var bg in listBG)
         {
-            float speedParallax = listBG[i].speedParallaxEffect;
-
-            float tempX = (cam.transform.position.x * (1 - speedParallax));
-            float distX = (cam.transform.position.x * speedParallax);
-
-            float tempY = (cam.transform.position.y * (1 - speedParallax));
-            float distY = (cam.transform.position.y * speedParallax);
-
-            Transform transformBG = listBG[i].backGroundObj;
-
-            
-            ParallaxMov(listBG[i], new Vector2(distX, distY), transformBG, listBG[i].haveParallaxY);
-            LoopingParallax(new Vector2(tempX, tempY), listBG[i]);
-
+            // Ajusta o startpos para que a conta (startpos + camX * speed) resulte na posiï¿½ï¿½o atual
+            bg.startpos.x = bg.backGroundObj.position.x - (camX * bg.speedParallaxEffect);
         }
     }
-    
 
-    void ParallaxMov(BackGroundInfos bgInfo, Vector2 dist, Transform bg, bool parallaxY)
+    // Desloca todas as camadas no eixo X de forma coesa (usado para liberar a borda da linha de transiÃ§Ã£o)
+    public void NudgeX(float deltaX)
     {
-        if (parallaxY)
+        foreach (var bg in listBG)
         {
-            bg.position = new Vector3(bgInfo.startpos.x + dist.x, bgInfo.startpos.y + dist.y, bg.position.z);
-        }
-        else
-        {
-            bg.position = new Vector3(bgInfo.startpos.x + dist.x, bg.position.y, bg.position.z);
+            Vector3 p = bg.backGroundObj.position;
+            bg.backGroundObj.position = new Vector3(p.x + deltaX, p.y, p.z);
         }
     }
-
-    void LoopingParallax(Vector2 temp, BackGroundInfos bgInfo)
-    {
-        // Ajuste no eixo X: se a posição "temp.x" sair do bloco atual, reposiciona startpos.x
-        if (temp.x > bgInfo.startpos.x + bgInfo.length.x)
-        {
-            bgInfo.startpos.x += bgInfo.length.x;
-        }
-        else if (temp.x < bgInfo.startpos.x - bgInfo.length.x)
-        {
-            bgInfo.startpos.x -= bgInfo.length.x;
-        }
-
-        // Se o background possui parallax em Y, não faz looping em Y
-        if (bgInfo.haveParallaxY == true) return;
-
-        // Ajuste no eixo Y: comporta-se igual ao X quando não há parallax Y
-        if (temp.y > bgInfo.startpos.y + bgInfo.length.y)
-        {
-            bgInfo.startpos.y += bgInfo.length.y;
-        }
-        else if (temp.y < bgInfo.startpos.y - bgInfo.length.y)
-        {
-            bgInfo.startpos.y -= bgInfo.length.y;
-        }
-    }
-
-
 }
 
 [System.Serializable]
@@ -103,8 +69,9 @@ public class BackGroundInfos
     public Transform backGroundObj;
 
     public bool haveParallaxY;
+  
 
-    [Tooltip("Valores entre 0 e 1. 0 = move com a câmera, 1 = fica parado (fundo distante).")]
+    [Tooltip("Valores entre 0 e 1. 0 = move com a cï¿½mera, 1 = fica parado (fundo distante).")]
     [Range(0f, 1f)]
     public float speedParallaxEffect;
 

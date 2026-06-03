@@ -3265,37 +3265,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7302987788050806636, guid: 6426da02748ded244b50d63758cc814b, type: 3}
   m_PrefabInstance: {fileID: 901101347}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &205622915
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 205622916}
-  m_Layer: 0
-  m_Name: LimitNegativo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &205622916
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205622915}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.55, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &206181048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3964,7 +3933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284789243}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: TransitionBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3980,7 +3949,7 @@ Transform:
   m_GameObject: {fileID: 284789242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 111.5, y: 2.38, z: 0}
+  m_LocalPosition: {x: 111.33, y: 2.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -174789,8 +174758,7 @@ MonoBehaviour:
   transitionBG: {fileID: 284789243}
   player: {fileID: 1505778440}
   bg1FrontImage: {fileID: 1187207220}
-  bg2BackImage: {fileID: 149640261}
-  clearMargin: 0.05
+  bg2MiddleImage: {fileID: 149640261}
 --- !u!4 &507562581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7302987788050806636, guid: 6426da02748ded244b50d63758cc814b, type: 3}
@@ -187498,14 +187466,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxScrollingBGManager
   listBG:
-  - backGroundObj: {fileID: 317961163}
-    haveParallaxY: 0
-    speedParallaxEffect: 0.9
-    startpos: {x: 0, y: 0}
-    length: {x: 0, y: 0}
   - backGroundObj: {fileID: 1228075664}
     haveParallaxY: 0
-    speedParallaxEffect: 0.8
+    speedParallaxEffect: 0.9
     startpos: {x: 0, y: 0}
     length: {x: 0, y: 0}
   - backGroundObj: {fileID: 151260661}
@@ -187518,9 +187481,14 @@ MonoBehaviour:
     speedParallaxEffect: 0.6
     startpos: {x: 0, y: 0}
     length: {x: 0, y: 0}
+  - backGroundObj: {fileID: 317961163}
+    haveParallaxY: 0
+    speedParallaxEffect: 0.8
+    startpos: {x: 0, y: 0}
+    length: {x: 0, y: 0}
   - backGroundObj: {fileID: 405112190}
     haveParallaxY: 0
-    speedParallaxEffect: 1
+    speedParallaxEffect: 0.999
     startpos: {x: 0, y: 0}
     length: {x: 0, y: 0}
   - backGroundObj: {fileID: 814505929}
@@ -187543,7 +187511,7 @@ Transform:
   m_GameObject: {fileID: 1487799785}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 154.68, y: 3, z: 0}
+  m_LocalPosition: {x: 154.62, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -187830,7 +187798,7 @@ Transform:
   m_GameObject: {fileID: 1505778436}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.16, y: -1.43, z: 0}
+  m_LocalPosition: {x: -6.41, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -199256,4 +199224,3 @@ SceneRoots:
   - {fileID: 1984050390}
   - {fileID: 1487799787}
   - {fileID: 284789243}
-  - {fileID: 205622916}
