@@ -1,0 +1,38 @@
+{
+    "asset": "4fc8e9956387753499dad9862040ae45",
+    "fileName": "019e8f7e-cc7e-7ae0-8bd9-0cc5db99dc77.png",
+    "prompt": "A 2x2 grid sprite sheet (4 animation frames) of a stationary ranged gunner enemy character, 16-bit pixel art style matching the provided reference image. IDLE animation: the character stands still in place holding a gun, subtle breathing/idle bob across the 4 frames. Each of the 4 cells contains the same character centered, same size, side view facing right, evenly spaced grid cells, clean transparent background, crisp pixel art, no text, no UI, no background scenery.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "80e2c6a499ff48241852e99ee278da2c",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

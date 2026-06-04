@@ -1,0 +1,38 @@
+{
+    "asset": "53a803b3c4c0a63479b3b5a067163b55",
+    "fileName": "019e8f7e-7801-79b9-9814-447589306014.png",
+    "prompt": "A 2x2 grid sprite sheet (4 animation frames) of a stationary ranged gunner enemy character, 16-bit pixel art style matching the provided reference image. SHOOTING animation: the character fires its gun, muzzle flash and recoil pose, a projectile leaving the muzzle, progressing across the 4 frames from fire to recover. Each of the 4 cells contains the same character centered, same size, side view facing right, evenly spaced grid cells, clean transparent background, crisp pixel art, no text, no UI, no background scenery.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "80e2c6a499ff48241852e99ee278da2c",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

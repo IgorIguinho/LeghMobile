@@ -1,69 +1,146 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class RangedEnemy : MonoBehaviour
 {
+    enum EnemyState { Idle, Charging, Shooting, Flipping }
+
+    [Header("Estado (debug)")]
+    [SerializeField] private EnemyState state = EnemyState.Idle;
+
     [Header("Ataque")]
-    public float attackSpeed;
     public GameObject projectileObj;
-    int direction;
-    bool canAttack;
+    [Tooltip("Origem do projétil. Pode reaproveitar o filho CheckTransform.")]
+    public Transform firePoint;
+    [Tooltip("Tempo carregando a munição antes de disparar.")]
+    public float chargeTime = 0.6f;
+    [Tooltip("Tempo de recuperação logo após o disparo.")]
+    public float shootRecover = 0.3f;
+    [Tooltip("Espera entre disparos antes de recarregar novamente.")]
+    public float attackCooldown = 1f;
+    [Tooltip("Duração da animação de virar.")]
+    public float flipTime = 0.3f;
+    private int direction = -1;
 
-    [Header("Verificar se ve o player")]
-    public Vector2 lenghtCheckPlayer;
-    public Transform tranformCheckerPlayer;
+    [Header("Detecção (alcance único)")]
+    public float detectRadius = 6f;
     public LayerMask layerPlayer;
+    private Transform player;
 
-    
-    // Start is called before the first frame update
+    // --- Detecção sem alocação (zero GC) ---
+    private ContactFilter2D playerFilter;
+    private readonly Collider2D[] detectResults = new Collider2D[1];
+
+    private Animator animator;
+    private bool busy; // ocupado em charge/shoot/flip
+
+    // Cache de WaitForSeconds para não alocar a cada uso
+    private WaitForSeconds waitCharge, waitRecover, waitCooldown, waitFlip;
+
+    // Hash dos parâmetros do Animator
+    private static readonly int HashPlayerDetected = Animator.StringToHash("PlayerDetected");
+    private static readonly int HashCharge = Animator.StringToHash("Charge");
+    private static readonly int HashShoot = Animator.StringToHash("Shoot");
+    private static readonly int HashFlip = Animator.StringToHash("Flip");
+
     void Start()
     {
-        canAttack = true;
+        animator = GetComponent<Animator>();
+
+        // Configura o filtro uma única vez (reutilizado a cada frame)
+        playerFilter = new ContactFilter2D();
+        playerFilter.useLayerMask = true;
+        playerFilter.SetLayerMask(layerPlayer);
+        playerFilter.useTriggers = true;
+
+        waitCharge = new WaitForSeconds(chargeTime);
+        waitRecover = new WaitForSeconds(shootRecover);
+        waitCooldown = new WaitForSeconds(attackCooldown);
+        waitFlip = new WaitForSeconds(flipTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        CheckSeePlayer();
+        DetectPlayer();
+        if (busy) { return; }
+        if (player == null) { state = EnemyState.Idle; return; }
+        if (NeedFlip()) { StartCoroutine(FlipRoutine()); return; }
+        StartCoroutine(AttackRoutine());
     }
 
-    void CheckSeePlayer()
+    // Sem GC: OverlapCircle non-alloc reutilizando filtro e buffer pré-alocados
+    void DetectPlayer()
     {
-        if (Physics2D.OverlapBox(tranformCheckerPlayer.position, lenghtCheckPlayer, 0, layerPlayer) && canAttack)
+        int count = Physics2D.OverlapCircle(transform.position, detectRadius, playerFilter, detectResults);
+        player = count > 0 ? detectResults[0].transform : null;
+        animator.SetBool(HashPlayerDetected, player != null);
+    }
+
+    bool NeedFlip()
+    {
+        if (player == null) { return false; }
+        float dx = player.position.x - transform.position.x;
+        return (dx > 0f && direction < 0) || (dx < 0f && direction > 0);
+    }
+
+    // Loop de combate contínuo: enquanto o player for visto e estiver alinhado,
+    // recarrega e atira de novo. Só volta para Idle quando o player sai do raio.
+    IEnumerator AttackRoutine()
+    {
+        busy = true;
+        while (player != null && !NeedFlip())
         {
-           
-                StartCoroutine(AttackPlayer());
+            state = EnemyState.Charging;
+            animator.SetTrigger(HashCharge);
+            yield return waitCharge;
+
+            // Reavalia após carregar; se o player saiu/cruzou, encerra o loop.
+            if (player == null || NeedFlip()) { break; }
+
+            state = EnemyState.Shooting;
+            animator.SetTrigger(HashShoot);
+            // O projétil é instanciado pelo Animation Event "ShootEvent" no frame de tiro do clip.
+            yield return waitRecover;
+
+            yield return waitCooldown;
         }
+        state = EnemyState.Idle;
+        busy = false;
     }
 
-    IEnumerator AttackPlayer()
+    void Shoot()
     {
-        canAttack = false;
-        //preparando ataque
-        yield return new WaitForSeconds(attackSpeed);
-
-        //atacando
-        GameObject projectile = Instantiate(projectileObj,transform);
+        Vector3 spawn = firePoint != null ? firePoint.position : transform.position;
+        GameObject projectile = Instantiate(projectileObj, spawn, Quaternion.identity);
         projectile.GetComponent<ProjectileEnemy>().direction = direction;
-        yield return new WaitForSeconds(attackSpeed);
+    }
 
-        //recarregando ataque
-        canAttack = true;
-    
-        yield break;
+    // Pode ser chamado por um Animation Event no frame de tiro do clip Shoot.
+    public void ShootEvent()
+    {
+        Shoot();
+    }
+
+    IEnumerator FlipRoutine()
+    {
+        busy = true;
+        state = EnemyState.Flipping;
+        animator.SetTrigger(HashFlip);
+        yield return waitFlip;
+        Flip();
+        busy = false;
     }
 
     void Flip()
     {
         direction *= -1;
-        transform.Rotate(0, 180f, 0);
+        transform.Rotate(0f, 180f, 0f);
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(tranformCheckerPlayer.position, lenghtCheckPlayer);
+        Gizmos.DrawWireSphere(transform.position, detectRadius);
     }
 }

@@ -24,7 +24,7 @@ public class ProjectileEnemy : MonoBehaviour
 
     void Moviment()
     {
-        rb.linearVelocity = new Vector2(projectileSpeed , 0);
+        rb.linearVelocity = new Vector2(projectileSpeed * direction, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
