@@ -187740,6 +187740,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  boxLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &1505778451
 MonoBehaviour:
   m_ObjectHideFlags: 0

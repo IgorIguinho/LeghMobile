@@ -14,10 +14,15 @@ public class PlayerAttack : MonoBehaviour
     public Transform areaAttack;
     public Vector2 lengthAreaAttack;
     public LayerMask enemyLayer;
+    [SerializeField] LayerMask boxLayer;
 
     Rigidbody2D rb;
     InputReader input;
     Animator animator;
+
+    // Buffer reutilizado para a detecção de caixas sem alocação (mobile).
+    readonly Collider2D[] boxHitsBuffer = new Collider2D[8];
+    ContactFilter2D boxFilter;
 
     private void OnEnable()
     {
@@ -32,6 +37,12 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         input = GetComponent<InputReader>();
+
+        // Filtro sem alocação para detectar apenas colliders na layer das caixas.
+        boxFilter = new ContactFilter2D();
+        boxFilter.useTriggers = true;
+        boxFilter.SetLayerMask(boxLayer);
+        boxFilter.useLayerMask = true;
     }
 
     void OnAttackInput()
@@ -58,6 +69,20 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             if (enemy.GetComponent<EnemyStats>() != null) { enemy.GetComponent<EnemyStats>().Death(); }
+        }
+
+        // Detecção de caixas quebráveis (sem alocação) na mesma área de ataque.
+        if (boxLayer.value != 0)
+        {
+            int boxCount = Physics2D.OverlapBox(areaAttack.position, lengthAreaAttack, 0f, boxFilter, boxHitsBuffer);
+            for (int i = 0; i < boxCount; i++)
+            {
+                BreakableBoxTilemap breakable = boxHitsBuffer[i].GetComponent<BreakableBoxTilemap>();
+                if (breakable != null)
+                {
+                    breakable.TryBreakInArea(areaAttack.position, lengthAreaAttack);
+                }
+            }
         }
 
 
