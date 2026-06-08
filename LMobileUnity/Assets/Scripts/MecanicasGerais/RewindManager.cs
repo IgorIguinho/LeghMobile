@@ -7,18 +7,31 @@ public class RewindManager : MonoBehaviour
 {
     [SerializeField] static List<RewindObj> rewindObjs = new List<RewindObj>();
     public bool isRewindAll;
-    PlayerControl controls;
+    InputReader input;
 
     private void Awake()
     {
-        controls = new PlayerControl();
-        controls.Enable();
-
-        
-        controls.Land.Rewind.started += ctx =>  StartAllRewind();
-        controls.Land.Rewind.canceled += ctx => StopAllRewind();
+        input = Object.FindAnyObjectByType<InputReader>();
     }
-    public static void Register(RewindObj rewindObj)
+
+    private void OnEnable()
+    {
+        if (input != null)
+        {
+            input.RewindStarted += StartAllRewind;
+            input.RewindCanceled += StopAllRewind;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (input != null)
+        {
+            input.RewindStarted -= StartAllRewind;
+            input.RewindCanceled -= StopAllRewind;
+        }
+    }
+public static void Register(RewindObj rewindObj)
     {
         if (!rewindObjs.Contains(rewindObj))
         { rewindObjs.Add(rewindObj); }

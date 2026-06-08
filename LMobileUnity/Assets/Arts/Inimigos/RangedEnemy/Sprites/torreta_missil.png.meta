@@ -1,24 +1,13 @@
 fileFormatVersion: 2
-guid: 4fc8e9956387753499dad9862040ae45
-labels:
-- UnityAI
+guid: 8c6453c5e5e0d8c44bac68b294ba78cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4539008117295931556
-    second: RangedEnemy_Idle_Sheet_0
+      213: 7060555727950174928
+    second: torreta_missil_0
   - first:
-      213: 1278820223960467640
-    second: RangedEnemy_Idle_0
-  - first:
-      213: -9040921298705771810
-    second: RangedEnemy_Idle_1
-  - first:
-      213: -8733933746743733291
-    second: RangedEnemy_Idle_2
-  - first:
-      213: -8892973912562552695
-    second: RangedEnemy_Idle_3
+      213: -9131819462406575336
+    second: torreta_missil_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -65,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,57 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RangedEnemy_Idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b8cfbcd7384fb110800000000000000
-      internalID: 1278820223960467640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedEnemy_Idle_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ed2116ccaf1388280800000000000000
-      internalID: -9040921298705771810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedEnemy_Idle_2
+      name: torreta_missil_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d31b8d1885dac680800000000000000
-      internalID: -8733933746743733291
+      spriteID: 0dad151b6022cf160800000000000000
+      internalID: 7060555727950174928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RangedEnemy_Idle_3
+      name: torreta_missil_1
       rect:
         serializedVersion: 2
-        x: 512
+        x: 32
         y: 0
-        width: 512
-        height: 512
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 980b4e0f75fc59480800000000000000
-      internalID: -8892973912562552695
+      spriteID: 81be146d492454180800000000000000
+      internalID: -9131819462406575336
       vertices: []
       indices: 
       edges: []
@@ -231,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4c91c0bb15dc913458a092e2bbc4ea6c
     internalID: 0
     vertices: []
     indices: 
@@ -239,13 +184,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RangedEnemy_Idle_0: 1278820223960467640
-      RangedEnemy_Idle_1: -9040921298705771810
-      RangedEnemy_Idle_2: -8733933746743733291
-      RangedEnemy_Idle_3: -8892973912562552695
-      RangedEnemy_Idle_Sheet_0: 4539008117295931556
+      torreta_missil_0: 7060555727950174928
+      torreta_missil_1: -9131819462406575336
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

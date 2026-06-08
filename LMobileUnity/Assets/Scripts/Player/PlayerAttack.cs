@@ -16,17 +16,29 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
 
     Rigidbody2D rb;
-    PlayerControl control;
+    InputReader input;
     Animator animator;
+
+    private void OnEnable()
+    {
+        if (input != null) input.AttackTriggered += OnAttackInput;
+    }
+
+    private void OnDisable()
+    {
+        if (input != null) input.AttackTriggered -= OnAttackInput;
+    }
 
     private void Awake()
     {
-        control = new PlayerControl();
-        control.Enable();
-
-        control.Land.Attack.performed += ctx =>
-        { if (canAttack) { StartCoroutine(Attack()); } };
+        input = GetComponent<InputReader>();
     }
+
+    void OnAttackInput()
+    {
+        if (canAttack) { StartCoroutine(Attack()); }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,14 +53,13 @@ public class PlayerAttack : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         swordAnimator.Play("Player_Attack");
 
-        if (Physics2D.OverlapBox(areaAttack.position, lengthAreaAttack, 0, enemyLayer))
-        {
-            GameObject objTouched;
-            objTouched = Physics2D.OverlapBox(areaAttack.position, lengthAreaAttack, 0, enemyLayer).gameObject;
-            objTouched.GetComponent<EnemyStats>().Death();
-      
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(areaAttack.position, lengthAreaAttack, 0, enemyLayer);
 
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.GetComponent<EnemyStats>() != null) { enemy.GetComponent<EnemyStats>().Death(); }
         }
+
 
         yield return new WaitForSeconds(attackSpeed);
 

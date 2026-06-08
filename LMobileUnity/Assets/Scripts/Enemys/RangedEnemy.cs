@@ -24,7 +24,7 @@ public class RangedEnemy : MonoBehaviour
     private int direction = -1;
 
     [Header("Detecção (alcance único)")]
-    public float detectRadius = 6f;
+    public Vector2 detectRadius ;
     public LayerMask layerPlayer;
     private Transform player;
 
@@ -72,7 +72,7 @@ public class RangedEnemy : MonoBehaviour
     // Sem GC: OverlapCircle non-alloc reutilizando filtro e buffer pré-alocados
     void DetectPlayer()
     {
-        int count = Physics2D.OverlapCircle(transform.position, detectRadius, playerFilter, detectResults);
+        int count = Physics2D.OverlapBox(transform.position, detectRadius,0f, playerFilter, detectResults);
         player = count > 0 ? detectResults[0].transform : null;
         animator.SetBool(HashPlayerDetected, player != null);
     }
@@ -111,9 +111,10 @@ public class RangedEnemy : MonoBehaviour
 
     void Shoot()
     {
-        Vector3 spawn = firePoint != null ? firePoint.position : transform.position;
+        Vector2 spawn = firePoint != null ? firePoint.position : transform.position;
         GameObject projectile = Instantiate(projectileObj, spawn, Quaternion.identity);
-        projectile.GetComponent<ProjectileEnemy>().direction = direction;
+        projectile.GetComponent<ProjectileEnemy>().direction = -direction;
+        projectile.GetComponent<SpriteRenderer>().flipX = direction > 0; // Vira o sprite se estiver mirando para a direita 
     }
 
     // Pode ser chamado por um Animation Event no frame de tiro do clip Shoot.
@@ -141,6 +142,6 @@ public class RangedEnemy : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, detectRadius);
+        Gizmos.DrawWireCube(transform.position, detectRadius);
     }
 }

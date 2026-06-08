@@ -1,24 +1,58 @@
 fileFormatVersion: 2
-guid: 53a803b3c4c0a63479b3b5a067163b55
-labels:
-- UnityAI
+guid: ae310f30273c3434b92caa95355867d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6652321271432237978
-    second: RangedEnemy_Shoot_Sheet_0
+      213: 8796880082633400635
+    second: torreta_searching_0
   - first:
-      213: 832149630536039329
-    second: RangedEnemy_Shoot_0
+      213: -2453535162005803713
+    second: torreta_searching_1
   - first:
-      213: 8805326221521538245
-    second: RangedEnemy_Shoot_1
+      213: 5394227417336387963
+    second: torreta_searching_2
   - first:
-      213: -5870346174242258825
-    second: RangedEnemy_Shoot_2
+      213: -7924795762012155380
+    second: torreta_searching_3
   - first:
-      213: 6749340716915199284
-    second: RangedEnemy_Shoot_3
+      213: -7502811046255019609
+    second: torreta_searching_4
+  - first:
+      213: -5850736316643520651
+    second: torreta_searching_5
+  - first:
+      213: 3263500144704558314
+    second: torreta_searching_6
+  - first:
+      213: 4634194270951499375
+    second: torreta_searching_7
+  - first:
+      213: -1175226221259072207
+    second: torreta_searching_8
+  - first:
+      213: -1125823797009557237
+    second: torreta_searching_9
+  - first:
+      213: 2018564612483019699
+    second: torreta_searching_10
+  - first:
+      213: -8035096968525856754
+    second: torreta_searching_11
+  - first:
+      213: -6021683353200637114
+    second: torreta_searching_12
+  - first:
+      213: 1697384767347536717
+    second: torreta_searching_13
+  - first:
+      213: 8206717366947414513
+    second: torreta_searching_14
+  - first:
+      213: -5597613450922054315
+    second: torreta_searching_15
+  - first:
+      213: -5649675143036443395
+    second: torreta_searching_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -65,7 +99,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,57 +174,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RangedEnemy_Shoot_0
+      name: torreta_searching_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1abb2181ea36c8b00800000000000000
-      internalID: 832149630536039329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedEnemy_Shoot_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5cc493dbb8dc23a70800000000000000
-      internalID: 8805326221521538245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedEnemy_Shoot_2
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 256
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 77087b7c147588ea0800000000000000
-      internalID: -5870346174242258825
+      spriteID: 7a9b713ea19a0e790800000000000000
+      internalID: -7502811046255019609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RangedEnemy_Shoot_3
+      name: torreta_searching_5
       rect:
         serializedVersion: 2
-        x: 512
+        x: 320
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +211,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43d8fcb5f997aad50800000000000000
-      internalID: 6749340716915199284
+      spriteID: 57f4cfb81520ecea0800000000000000
+      internalID: -5850736316643520651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torreta_searching_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae41d8147184a4d20800000000000000
+      internalID: 3263500144704558314
       vertices: []
       indices: 
       edges: []
@@ -231,7 +243,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a8d40b64a5c29774ebf2d7982389d667
     internalID: 0
     vertices: []
     indices: 
@@ -239,13 +251,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RangedEnemy_Shoot_0: 832149630536039329
-      RangedEnemy_Shoot_1: 8805326221521538245
-      RangedEnemy_Shoot_2: -5870346174242258825
-      RangedEnemy_Shoot_3: 6749340716915199284
-      RangedEnemy_Shoot_Sheet_0: -6652321271432237978
+      torreta_searching_0: 8796880082633400635
+      torreta_searching_1: -2453535162005803713
+      torreta_searching_10: 2018564612483019699
+      torreta_searching_11: -8035096968525856754
+      torreta_searching_12: -6021683353200637114
+      torreta_searching_13: 1697384767347536717
+      torreta_searching_14: 8206717366947414513
+      torreta_searching_15: -5597613450922054315
+      torreta_searching_16: -5649675143036443395
+      torreta_searching_2: 5394227417336387963
+      torreta_searching_3: -7924795762012155380
+      torreta_searching_4: -7502811046255019609
+      torreta_searching_5: -5850736316643520651
+      torreta_searching_6: 3263500144704558314
+      torreta_searching_7: 4634194270951499375
+      torreta_searching_8: -1175226221259072207
+      torreta_searching_9: -1125823797009557237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

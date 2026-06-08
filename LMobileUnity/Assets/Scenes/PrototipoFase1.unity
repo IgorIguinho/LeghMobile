@@ -187523,6 +187523,7 @@ GameObject:
   - component: {fileID: 1505778443}
   - component: {fileID: 1505778448}
   - component: {fileID: 1505778452}
+  - component: {fileID: 1505778453}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -187686,7 +187687,7 @@ MonoBehaviour:
   wallFallForce: 2
   timeWallJump: 0.25
   isWall: 0
-  lengthWallCheck: {x: 0.97, y: -1.43}
+  lengthWallCheck: {x: 0.97, y: 1.43}
   wallChecker: {fileID: 1073711034}
   wallMask:
     serializedVersion: 2
@@ -187800,6 +187801,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8, y: 1.3}
   m_EdgeRadius: 0
+--- !u!114 &1505778453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505778436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d798936d5047545802b89560db3d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputReader
 --- !u!4 &1511309281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7302987788050806636, guid: 6426da02748ded244b50d63758cc814b, type: 3}

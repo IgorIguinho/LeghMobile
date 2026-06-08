@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3943388260771010344}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.44, y: -0.42, z: 0}
+  m_LocalPosition: {x: -0.428, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00363487, y: -0.44361848}
+  m_Offset: {x: -0.00363487, y: -0.12830955}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -107,7 +107,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.179967, y: 1.1549686}
+  m_Size: {x: 1.179967, y: 1.28979}
   m_EdgeRadius: 0
 --- !u!1 &8109619326870121221
 GameObject:
@@ -198,7 +198,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1278820223960467640, guid: 4fc8e9956387753499dad9862040ae45, type: 3}
+  m_Sprite: {fileID: -8572826956442666405, guid: 111be1d64c3020340bff70ff87a4bc84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,10 +224,10 @@ MonoBehaviour:
   projectileObj: {fileID: 300133886756084829, guid: 4335b017c3617d4468aa2aed5ea8b7e3, type: 3}
   firePoint: {fileID: 4773402255836793960}
   chargeTime: 0.6
-  shootRecover: 0.3
-  attackCooldown: 1
+  shootRecover: 0.5
+  attackCooldown: 1.3
   flipTime: 0.3
-  detectRadius: 6
+  detectRadius: {x: 10, y: 1.4}
   layerPlayer:
     serializedVersion: 2
     m_Bits: 64
@@ -293,17 +293,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.4302536}
+  m_Offset: {x: 0, y: -0.10609448}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 2, y: 1.5}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.1458268}
+  m_Size: {x: 1, y: 1.3197904}
   m_EdgeRadius: 0
 --- !u!50 &2822457922575895117
 Rigidbody2D:

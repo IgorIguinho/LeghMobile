@@ -1,24 +1,31 @@
 fileFormatVersion: 2
-guid: d423e025fa36e4b47b6787a87fb7331b
-labels:
-- UnityAI
+guid: 4902e6e57f35ebd459d3c5ab7e316833
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8009991504907713213
-    second: RangedEnemy_Flip_Sheet_0
+      213: -3467686949664066240
+    second: torreta_attack_0
   - first:
-      213: 2875067090559150605
-    second: RangedEnemy_Flip_0
+      213: -3685472308736460752
+    second: torreta_attack_1
   - first:
-      213: -8444370789632200046
-    second: RangedEnemy_Flip_1
+      213: 1062096772415529713
+    second: torreta_attack_2
   - first:
-      213: 4251055658375006520
-    second: RangedEnemy_Flip_2
+      213: 1387954038558287779
+    second: torreta_attack_3
   - first:
-      213: -1764335096519662747
-    second: RangedEnemy_Flip_3
+      213: 7465616432759919908
+    second: torreta_attack_4
+  - first:
+      213: -6433981426893619136
+    second: torreta_attack_5
+  - first:
+      213: -1154828189082499334
+    second: torreta_attack_6
+  - first:
+      213: -6907786145557831604
+    second: torreta_attack_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -65,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,57 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RangedEnemy_Flip_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d0aa13e394a46e720800000000000000
-      internalID: 2875067090559150605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedEnemy_Flip_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 292b94cc1819fca80800000000000000
-      internalID: -8444370789632200046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedEnemy_Flip_2
+      name: torreta_attack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8394bd52998cefa30800000000000000
-      internalID: 4251055658375006520
+      spriteID: 045f305871d40efc0800000000000000
+      internalID: -3467686949664066240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RangedEnemy_Flip_3
+      name: torreta_attack_1
       rect:
         serializedVersion: 2
-        x: 512
+        x: 64
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +184,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 563e03bd392d387e0800000000000000
-      internalID: -1764335096519662747
+      spriteID: 038793036729adcc0800000000000000
+      internalID: -3685472308736460752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torreta_attack_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2aae423635dbe00800000000000000
+      internalID: 1062096772415529713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torreta_attack_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a7e5d828d0034310800000000000000
+      internalID: 1387954038558287779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torreta_attack_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42559ff47923b9760800000000000000
+      internalID: 7465616432759919908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torreta_attack_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0408b8e1bf7e5b6a0800000000000000
+      internalID: -6433981426893619136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torreta_attack_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6412d61e939ffe0800000000000000
+      internalID: -1154828189082499334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torreta_attack_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4029a1891d9220a0800000000000000
+      internalID: -6907786145557831604
       vertices: []
       indices: 
       edges: []
@@ -231,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 5baec5a889f666549a655a4db9f7fb35
     internalID: 0
     vertices: []
     indices: 
@@ -239,13 +334,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RangedEnemy_Flip_0: 2875067090559150605
-      RangedEnemy_Flip_1: -8444370789632200046
-      RangedEnemy_Flip_2: 4251055658375006520
-      RangedEnemy_Flip_3: -1764335096519662747
-      RangedEnemy_Flip_Sheet_0: 8009991504907713213
+      torreta_attack_0: -3467686949664066240
+      torreta_attack_1: -3685472308736460752
+      torreta_attack_2: 1062096772415529713
+      torreta_attack_3: 1387954038558287779
+      torreta_attack_4: 7465616432759919908
+      torreta_attack_5: -6433981426893619136
+      torreta_attack_6: -1154828189082499334
+      torreta_attack_7: -6907786145557831604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
