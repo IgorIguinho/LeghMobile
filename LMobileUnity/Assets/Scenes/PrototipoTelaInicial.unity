@@ -1117,6 +1117,7 @@ MonoBehaviour:
   faseList:
   - {fileID: 11400000, guid: 893af0590fb8ea445a12772fc5d429c5, type: 2}
   - {fileID: 11400000, guid: 371aa2b6cd073de46bbfa23235fb86b0, type: 2}
+  - {fileID: 11400000, guid: c0634552abb14bc4e872358b87791937, type: 2}
   faseAtual: 0
   imageFaseHolder: {fileID: 838938751}
   coinTextUI: {fileID: 1917396230}

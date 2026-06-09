@@ -91,7 +91,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +105,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,7 +129,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -183,12 +183,12 @@ TextureImporter:
       name: ProtagonistaNew_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 15
-        width: 36
-        height: 49
+        x: 0
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -205,12 +205,12 @@ TextureImporter:
       name: ProtagonistaNew_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 15
-        width: 38
-        height: 40
+        x: 64
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -227,12 +227,12 @@ TextureImporter:
       name: ProtagonistaNew_2
       rect:
         serializedVersion: 2
-        x: 142
-        y: 15
-        width: 38
-        height: 39
+        x: 128
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -249,12 +249,12 @@ TextureImporter:
       name: ProtagonistaNew_3
       rect:
         serializedVersion: 2
-        x: 206
-        y: 15
-        width: 38
-        height: 39
+        x: 192
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -271,12 +271,12 @@ TextureImporter:
       name: ProtagonistaNew_4
       rect:
         serializedVersion: 2
-        x: 270
-        y: 15
-        width: 39
-        height: 39
+        x: 256
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,12 +293,12 @@ TextureImporter:
       name: ProtagonistaNew_5
       rect:
         serializedVersion: 2
-        x: 334
-        y: 15
-        width: 40
-        height: 39
+        x: 320
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: ProtagonistaNew_6
       rect:
         serializedVersion: 2
-        x: 398
-        y: 15
-        width: 40
-        height: 40
+        x: 384
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -337,12 +337,12 @@ TextureImporter:
       name: ProtagonistaNew_7
       rect:
         serializedVersion: 2
-        x: 463
-        y: 15
-        width: 40
-        height: 40
+        x: 448
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -359,12 +359,12 @@ TextureImporter:
       name: ProtagonistaNew_8
       rect:
         serializedVersion: 2
-        x: 527
-        y: 15
-        width: 38
-        height: 40
+        x: 512
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -381,12 +381,12 @@ TextureImporter:
       name: ProtagonistaNew_9
       rect:
         serializedVersion: 2
-        x: 591
-        y: 15
-        width: 38
-        height: 40
+        x: 576
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -403,12 +403,12 @@ TextureImporter:
       name: ProtagonistaNew_10
       rect:
         serializedVersion: 2
-        x: 655
-        y: 15
-        width: 37
-        height: 40
+        x: 640
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -425,12 +425,12 @@ TextureImporter:
       name: ProtagonistaNew_11
       rect:
         serializedVersion: 2
-        x: 705
+        x: 704
         y: 16
-        width: 51
+        width: 64
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -447,12 +447,12 @@ TextureImporter:
       name: ProtagonistaNew_12
       rect:
         serializedVersion: 2
-        x: 770
-        y: 19
-        width: 50
-        height: 38
+        x: 768
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -469,12 +469,12 @@ TextureImporter:
       name: ProtagonistaNew_13
       rect:
         serializedVersion: 2
-        x: 834
-        y: 19
-        width: 50
-        height: 38
+        x: 832
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -491,12 +491,12 @@ TextureImporter:
       name: ProtagonistaNew_14
       rect:
         serializedVersion: 2
-        x: 898
-        y: 15
-        width: 47
-        height: 42
+        x: 896
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -513,12 +513,12 @@ TextureImporter:
       name: ProtagonistaNew_15
       rect:
         serializedVersion: 2
-        x: 963
-        y: 15
-        width: 46
-        height: 41
+        x: 960
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -535,12 +535,12 @@ TextureImporter:
       name: ProtagonistaNew_16
       rect:
         serializedVersion: 2
-        x: 1027
-        y: 21
-        width: 46
-        height: 36
+        x: 1024
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -557,12 +557,12 @@ TextureImporter:
       name: ProtagonistaNew_17
       rect:
         serializedVersion: 2
-        x: 1091
-        y: 21
-        width: 46
-        height: 37
+        x: 1088
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -579,12 +579,12 @@ TextureImporter:
       name: ProtagonistaNew_18
       rect:
         serializedVersion: 2
-        x: 1154
-        y: 15
-        width: 45
-        height: 42
+        x: 1152
+        y: 16
+        width: 64
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -601,7 +601,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d779dea3740dbe24e82ed013c3db65b1
     internalID: 0
     vertices: []
     indices: 
@@ -609,7 +609,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       ProtagonistaNew_0: -3853319771634372520
       ProtagonistaNew_1: 6627203541925759038
