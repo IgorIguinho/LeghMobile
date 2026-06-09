@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrototipoFase1.unity
     guid: 4502c8fd5498cd243bcbbe0099488cc7
+  - enabled: 1
+    path: Assets/Scenes/Fase2.unity
+    guid: 02bd61e5ea4b2794f9875960d0fe5866
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}

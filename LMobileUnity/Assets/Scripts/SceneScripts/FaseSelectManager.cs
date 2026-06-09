@@ -9,6 +9,8 @@ public class FaseSelectManager : MonoBehaviour
 {
     public List<FaseScriptable> faseList;
 
+    public int faseAtual = 0;
+
     [Header("Variaveis UI")]
     public Image imageFaseHolder;
     public TextMeshProUGUI coinTextUI;
@@ -18,7 +20,7 @@ public class FaseSelectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateFaseUi(0);   
+        UpdateFaseUi(faseAtual);   
     }
 
     // Update is called once per frame
@@ -35,8 +37,26 @@ public class FaseSelectManager : MonoBehaviour
         partiTextUI.text = "Partitura " + faseList[i].colectedParti.ToString() + "/" + faseList[i].totalCoin;
     }
 
-    public void StartFase(int i)
+    public void StartFase()
     {
-        SceneManager.LoadScene(faseList[i].nameFase);
+        SceneManager.LoadScene(faseList[faseAtual].nameFase);
+    }
+
+    public void NextFase()
+    {
+        if (faseAtual < faseList.Count - 1)
+        {
+            faseAtual++;
+            UpdateFaseUi(faseAtual);
+        }
+    }
+
+    public void PreviousFase()
+    {
+        if (faseAtual > 0)
+        {
+            faseAtual--;
+            UpdateFaseUi(faseAtual);
+        }
     }
 }
