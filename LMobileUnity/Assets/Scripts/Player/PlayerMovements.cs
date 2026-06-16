@@ -6,6 +6,8 @@ using System.Data;
 
 public class PlayerMovements : MonoBehaviour
 {
+
+
     InputReader input;
 
     Rigidbody2D rb;
@@ -18,6 +20,13 @@ public class PlayerMovements : MonoBehaviour
     public int direction;
     public bool isFaceRight;
     bool canMove = true;
+    
+
+    [Header("Swtich speed")]
+    public bool switchSpeedSlow;
+    bool isSwtichSpeed = false;
+    public float speedSwitch;
+    public LayerMask swtichSpeedMask;
 
     [Header("Jump")]
     public float jumpForce;
@@ -104,11 +113,17 @@ public class PlayerMovements : MonoBehaviour
 
     void Moviment()
     {
-        if (isDash) { return; }
+        if (isDash) return; 
         float currentDirection = (input != null) ? input.Direction : 0f;
-        if (isGrounded == true) 
+        float switchSpeed = switchSpeedSlow ? (speed / speedSwitch) : (speed * speedSwitch);
+
+        if (isGrounded  && !isSwtichSpeed) // movimento normal no chão
         { rb.linearVelocity = new Vector2(speed * currentDirection , rb.linearVelocity.y); }
-        else { rb.linearVelocity = new Vector2(speedOnAir * currentDirection , rb.linearVelocity.y); }
+
+        else if (isSwtichSpeed) //movimento modificado pelo terreno de switch speed
+        { rb.linearVelocity = new Vector2(switchSpeed * currentDirection, rb.linearVelocity.y);  }
+
+        else { rb.linearVelocity = new Vector2(speedOnAir * currentDirection , rb.linearVelocity.y); } //Movimento norma no ar
         animator.SetFloat("speed", Mathf.Abs(currentDirection));
         
         if (rb.linearVelocity.x * direction < 0f)
@@ -173,6 +188,8 @@ public class PlayerMovements : MonoBehaviour
     void CheckGround()
     {
         isGrounded = Physics2D.OverlapBox(groundChecker.position, lengthGroundedCheck, 0, groundMask);
+        isSwtichSpeed = Physics2D.OverlapBox(groundChecker.position, lengthGroundedCheck, 0, swtichSpeedMask); 
+        
         isWall = Physics2D.OverlapBox(wallChecker.position, lengthWallCheck, 0, wallMask);
         isRope = Physics2D.OverlapBox(wallChecker.position, lengthWallCheck, 0, layerRope);
     }

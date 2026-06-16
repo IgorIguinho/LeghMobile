@@ -16,6 +16,7 @@ public class FaseSelectManager : MonoBehaviour
     public TextMeshProUGUI coinTextUI;
     public TextMeshProUGUI medalTextUI;
     public TextMeshProUGUI partiTextUI;
+    public TextMeshProUGUI nameTextUI;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class FaseSelectManager : MonoBehaviour
         coinTextUI.text = "Moeda " + faseList[i].colectedCoin.ToString() + "/" + faseList[i].totalCoin;
         medalTextUI.text ="Medalhas " + faseList[i].colectedMedal.ToString() + "/" + faseList[i].totalMedal;
         partiTextUI.text = "Partitura " + faseList[i].colectedParti.ToString() + "/" + faseList[i].totalCoin;
+        nameTextUI.text = faseList[i].nameFase;
     }
 
     public void StartFase()
