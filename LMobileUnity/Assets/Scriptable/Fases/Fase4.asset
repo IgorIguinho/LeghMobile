@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9280fc9e5574934ea7732550b9c85ba, type: 3}
-  m_Name: Fase1New
+  m_Name: Fase4
   m_EditorClassIdentifier: 
   colectedCoin: 0
-  totalCoin: 97
+  totalCoin: 100
   colectedMedal: 0
   totalMedal: 3
   colectedParti: 0
   totalParti: 1
-  imageHolder: {fileID: -3147488318094962631, guid: 8453fbd12c795da41bdf3a37e7d85c2c, type: 3}
-  nameFase: PrototipoFase1New
-  sceneFase: PrototipoFase1New
+  imageHolder: {fileID: 7097288029462468758, guid: b536d77b5407a7846b5c977e02e909d1, type: 3}
+  nameFase: Fase4
+  sceneFase: Fase4

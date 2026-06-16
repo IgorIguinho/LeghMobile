@@ -148,7 +148,7 @@ public class MovePlataform : MonoBehaviour
         return (Vector2)transform.position + topBoxOffset;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         // Tamanho da plataforma (a partir do collider, com fallback)
         Vector3 size = Vector3.one;

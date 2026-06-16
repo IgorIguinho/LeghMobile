@@ -216,7 +216,7 @@ public class PendularPlataform : MonoBehaviour
         return pivot + new Vector2(Mathf.Cos(ang), Mathf.Sin(ang)) * rad;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         // Recalcula angulos/raios no editor para o gizmo refletir as posicoes atuais.
         ComputeArcEnds();
