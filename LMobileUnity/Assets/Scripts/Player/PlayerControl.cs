@@ -96,9 +96,9 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""cdea920e-d888-4676-a787-650b1c0c4888"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)"",
+                    ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
@@ -135,6 +135,15 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EnterDoor"",
+                    ""type"": ""Button"",
+                    ""id"": ""e01b3391-1a69-426e-b7f2-446e1e135fd0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
@@ -206,9 +215,53 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""1D Axis GamePad"",
+                    ""id"": ""d0032871-d004-47ff-a56d-2bb20c52c501"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""0f5a4955-5f4f-4293-a53a-66a3bd332402"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""11565df5-a474-4925-8c13-e9bce11f0def"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""9f6af015-3a1d-4ea9-9dd8-bb92960f7458"",
                     ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b89b5ed0-3edf-4da8-a3db-b0a8f9799e70"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -229,12 +282,56 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""28433c4f-52c9-4411-b1c2-0e8546f37925"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ef97b751-94ca-40ba-bd84-ddab65bdec27"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3acee5ac-a6cb-49ec-b999-95b3e658642f"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48503464-13f1-47da-a767-3657892e8e44"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EnterDoor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f94d2171-e125-4634-976b-a53e8528c012"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EnterDoor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -250,6 +347,7 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         m_Land_Dash = m_Land.FindAction("Dash", throwIfNotFound: true);
         m_Land_Rewind = m_Land.FindAction("Rewind", throwIfNotFound: true);
         m_Land_Attack = m_Land.FindAction("Attack", throwIfNotFound: true);
+        m_Land_EnterDoor = m_Land.FindAction("EnterDoor", throwIfNotFound: true);
     }
 
     ~@PlayerControl()
@@ -335,6 +433,7 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Land_Dash;
     private readonly InputAction m_Land_Rewind;
     private readonly InputAction m_Land_Attack;
+    private readonly InputAction m_Land_EnterDoor;
     /// <summary>
     /// Provides access to input actions defined in input action map "Land".
     /// </summary>
@@ -366,6 +465,10 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Land/Attack".
         /// </summary>
         public InputAction @Attack => m_Wrapper.m_Land_Attack;
+        /// <summary>
+        /// Provides access to the underlying input action "Land/EnterDoor".
+        /// </summary>
+        public InputAction @EnterDoor => m_Wrapper.m_Land_EnterDoor;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -407,6 +510,9 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @EnterDoor.started += instance.OnEnterDoor;
+            @EnterDoor.performed += instance.OnEnterDoor;
+            @EnterDoor.canceled += instance.OnEnterDoor;
         }
 
         /// <summary>
@@ -433,6 +539,9 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @EnterDoor.started -= instance.OnEnterDoor;
+            @EnterDoor.performed -= instance.OnEnterDoor;
+            @EnterDoor.canceled -= instance.OnEnterDoor;
         }
 
         /// <summary>
@@ -508,5 +617,12 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "EnterDoor" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEnterDoor(InputAction.CallbackContext context);
     }
 }

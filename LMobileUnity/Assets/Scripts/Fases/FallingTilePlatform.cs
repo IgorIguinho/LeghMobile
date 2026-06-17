@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -38,7 +39,13 @@ public class FallingTilePlatform : MonoBehaviour
     public int crushDamage = 100;
     public Vector2 crushBoxOffsetExtra = Vector2.zero; // ajuste fino da caixa de esmagamento no fundo
 
+    [Header("Esmagamento sem destruição (isDestroy = false)")]
+    public float pushForceX = 10f;                     // força de empurrão horizontal
+    public float pushForceY = 5f;                      // força de empurrão vertical (para descolar o chão)
+    public float disableMovementDuration = 0.5f;       // tempo de movimentação desabilitada para o player
+
     [Header("Pós-queda")]
+    public bool isDestroy = true;                      // se verdadeiro, destrói a plataforma; se falso, desabilita o componente
     public float destroyDelayAfterLand = 0.1f;
 
     // Buffer non-alloc compartilhado (evita GC a cada sondagem).
@@ -52,11 +59,11 @@ public class FallingTilePlatform : MonoBehaviour
     // Refs cacheadas.
     private Rigidbody2D _rb;
     private Collider2D _ownCollider;
-    private Transform _tf;
+    private Transform _transform;
 
     private void Awake()
     {
-        _tf = transform;
+        _transform = transform;
         _rb = GetComponent<Rigidbody2D>();
         _ownCollider = GetComponent<Collider2D>();
 
@@ -167,23 +174,50 @@ public class FallingTilePlatform : MonoBehaviour
         if (_hasCrushed) return;
 
         // Caixa fina no fundo da plataforma.
-        Bounds b = _ownCollider != null ? _ownCollider.bounds : new Bounds(_tf.position, Vector3.one);
+        Bounds b = _ownCollider != null ? _ownCollider.bounds : new Bounds(_transform.position, Vector3.one);
         Vector2 worldCenter = new Vector2(b.center.x, b.min.y) + crushBoxOffsetExtra;
-        Vector2 localOffset = worldCenter - (Vector2)_tf.position;
+        Vector2 localOffset = worldCenter - (Vector2)_transform.position;
         Vector2 size = new Vector2(b.size.x * 0.95f, 0.3f);
 
         Collider2D hit = OverlapBox(localOffset, size, playerMask);
         if (hit == null) return;
 
-        PlayerMovements pm = hit.GetComponentInParent<PlayerMovements>();
-        if (pm == null || !pm.isGrounded) return; // player precisa estar prensado contra o Ground
+        PlayerMovements playerMovScript = hit.GetComponentInParent<PlayerMovements>();
+        if (playerMovScript == null || !playerMovScript.isGrounded) return; // player precisa estar prensado contra o Ground
 
         PlayerStats stats = hit.GetComponentInParent<PlayerStats>();
         if (stats == null) return;
 
         stats.TakeDmg(crushDamage);
-        Destroy(gameObject);
         _hasCrushed = true;
+
+        if (isDestroy)
+        {
+            Destroy(gameObject);
+        }
+  
+    }
+
+    private IEnumerator DisablePlayerMovementRoutine(PlayerMovements pm)
+    {
+        float elapsed = 0f;
+        while (elapsed < disableMovementDuration)
+        {
+            if (pm != null)
+            {
+                pm.canMove = false;
+                pm.canDash = false;
+                pm.isGrounded = false;
+            }
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (pm != null)
+        {
+            pm.canMove = true;
+            pm.canDash = true;
+        }
     }
 
     private void CheckLanding()
@@ -213,7 +247,14 @@ public class FallingTilePlatform : MonoBehaviour
             _rb.bodyType = RigidbodyType2D.Kinematic;
         }
 
-        Destroy(gameObject, destroyDelayAfterLand);
+        if (isDestroy)
+        {
+            Destroy(gameObject, destroyDelayAfterLand);
+        }
+        else
+        {
+            enabled = false;
+        }
     }
 
     // ---- Helpers ------------------------------------------------------------
@@ -223,7 +264,7 @@ public class FallingTilePlatform : MonoBehaviour
     /// </summary>
     private Collider2D OverlapBox(Vector2 localOffset, Vector2 size, LayerMask mask)
     {
-        Vector2 center = (Vector2)_tf.position + localOffset;
+        Vector2 center = (Vector2)_transform.position + localOffset;
         int count = Physics2D.OverlapBoxNonAlloc(center, size, 0f, _overlapResults, mask);
         for (int i = 0; i < count; i++)
             if (_overlapResults[i] != null) return _overlapResults[i];

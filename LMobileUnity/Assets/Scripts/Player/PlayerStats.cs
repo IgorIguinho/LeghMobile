@@ -10,12 +10,15 @@ public class PlayerStats : MonoBehaviour
     public int actualHp;
 
     public float timeAnimationDmg;
+
+    string actualScene;
     SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
         actualHp = maxHp;
         sr = GetComponent<SpriteRenderer>();
+        actualScene = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -30,7 +33,7 @@ public class PlayerStats : MonoBehaviour
         HudManagerOnFase.Instance.hpCount.text = "HP " + actualHp.ToString();
         StartCoroutine(AnimationTakeDmg());
 
-        if (actualHp <= 0) { SceneManager.LoadScene("PrototipoTelaInicial"); }
+        if (actualHp <= 0) { SceneManager.LoadScene(actualScene); }
     }
 
     IEnumerator AnimationTakeDmg()

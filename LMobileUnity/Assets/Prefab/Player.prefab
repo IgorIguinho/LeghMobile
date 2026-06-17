@@ -270,11 +270,12 @@ MonoBehaviour:
   speedOnAir: 7
   direction: 1
   isFaceRight: 0
+  canMove: 1
   switchSpeedSlow: 0
   speedSwitch: 0
   swtichSpeedMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   jumpForce: 15
   numberJump: 0
   isGrounded: 0
@@ -288,7 +289,7 @@ MonoBehaviour:
   wallFallForce: 2
   timeWallJump: 0.25
   isWall: 0
-  lengthWallCheck: {x: 0.94, y: 1.15}
+  lengthWallCheck: {x: 0.94, y: 0.99}
   wallChecker: {fileID: 4301947678400166918}
   wallMask:
     serializedVersion: 2
@@ -297,6 +298,7 @@ MonoBehaviour:
   timeDash: 0.25
   dashCooldown: 1
   trailObject: {fileID: 7273899716837458550}
+  canDash: 1
   buttonDash: {fileID: 0}
   canDashColor: {r: 1, g: 0.9284955, b: 0, a: 1}
   notCanDashColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}

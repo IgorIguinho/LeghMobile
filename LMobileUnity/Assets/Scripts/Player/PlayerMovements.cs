@@ -19,7 +19,7 @@ public class PlayerMovements : MonoBehaviour
     public float speedOnAir;
     public int direction;
     public bool isFaceRight;
-    bool canMove = true;
+    public bool canMove = true;
     
 
     [Header("Swtich speed")]
@@ -51,7 +51,7 @@ public class PlayerMovements : MonoBehaviour
     public float timeDash;
     public float dashCooldown;
     public GameObject trailObject;
-    private bool canDash = true;
+    public bool canDash = true;
     private bool isDash;
     public GameObject buttonDash;
     public Color canDashColor;

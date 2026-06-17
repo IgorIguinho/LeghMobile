@@ -22,8 +22,6 @@ public class FollowCam : MonoBehaviour
 
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinX, MaxX),Mathf.Clamp(transform.position.y, MinY, MaxY), transform.position.z);
         }
-        
-      
     }
 
 

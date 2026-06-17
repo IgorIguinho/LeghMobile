@@ -13,6 +13,7 @@ public class InputReader : MonoBehaviour
     public event Action AttackTriggered;
     public event Action RewindStarted;
     public event Action RewindCanceled;
+    public event Action EnterDoorTriggered;
 
     private void Awake()
     {
@@ -30,6 +31,9 @@ public class InputReader : MonoBehaviour
         // Rewind (Hold behavior)
         controls.Land.Rewind.started += _ => RewindStarted?.Invoke();
         controls.Land.Rewind.canceled += _ => RewindCanceled?.Invoke();
+
+        // Interação com portas
+        controls.Land.EnterDoor.performed += _ => EnterDoorTriggered?.Invoke();
     }
 
     private void OnEnable()
