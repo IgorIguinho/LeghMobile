@@ -283,7 +283,7 @@ MonoBehaviour:
   groundChecker: {fileID: 7547467288985861117}
   groundMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 2056
   wallJumpForce: 15
   wallHorizontalJumpForce: 20
   wallFallForce: 2

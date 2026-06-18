@@ -182,11 +182,20 @@ public class FallingTilePlatform : MonoBehaviour
         Collider2D hit = OverlapBox(localOffset, size, playerMask);
         if (hit == null) return;
 
+        EnemyStats enemyStats = hit.GetComponentInParent<EnemyStats>();
+        if (enemyStats != null)
+        {
+            enemyStats.Death();
+            return;
+        }
+
         PlayerMovements playerMovScript = hit.GetComponentInParent<PlayerMovements>();
         if (playerMovScript == null || !playerMovScript.isGrounded) return; // player precisa estar prensado contra o Ground
 
         PlayerStats stats = hit.GetComponentInParent<PlayerStats>();
         if (stats == null) return;
+
+       
 
         stats.TakeDmg(crushDamage);
         _hasCrushed = true;
