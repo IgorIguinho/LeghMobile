@@ -12,4 +12,6 @@ public class SwitchSpeed : MonoBehaviour
             collision.GetComponent<PlayerMovements>().switchSpeedSlow = switchSpeedSlow;
         }
     }
+
+   
 }

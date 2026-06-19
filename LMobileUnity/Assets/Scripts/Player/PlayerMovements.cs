@@ -18,7 +18,7 @@ public class PlayerMovements : MonoBehaviour
     public float speed;
     public float speedOnAir;
     public int direction;
-    public bool isFaceRight;
+    public bool isFaceRight = true;
     public bool canMove = true;
     
 
@@ -27,6 +27,15 @@ public class PlayerMovements : MonoBehaviour
     bool isSwtichSpeed = false;
     public float speedSwitch;
     public LayerMask swtichSpeedMask;
+
+    [Header("PlusSpeed Boost")]
+    public bool isPlusSpeedBoost = false;
+
+    [Header("DontJump")]
+    public bool canJump = true;
+
+    [Header("Invert Gravity")]
+    public bool isGravityInverted = false;
 
     [Header("Jump")]
     public float jumpForce;
@@ -114,6 +123,22 @@ public class PlayerMovements : MonoBehaviour
     void Moviment()
     {
         if (isDash) return; 
+
+        // --- PlusSpeed boost ---
+        if (isPlusSpeedBoost)
+        {
+            if (Mathf.Abs(rb.linearVelocity.x) <= speed)
+            {
+                isPlusSpeedBoost = false; // boost decaiu -> controle normal volta
+            }
+            else
+            {
+                animator.SetFloat("speed", Mathf.Abs((input != null) ? input.Direction : 0f));
+                return; // ignora a reescrita normal de X enquanto boostando
+            }
+        }
+        // --- fim PlusSpeed ---
+
         float currentDirection = (input != null) ? input.Direction : 0f;
         float switchSpeed = switchSpeedSlow ? (speed / speedSwitch) : (speed * speedSwitch);
 
@@ -132,21 +157,37 @@ public class PlayerMovements : MonoBehaviour
         }
     }
 
+    public void ToggleGravity()
+    {
+        isGravityInverted = !isGravityInverted;
+
+        // Troca o SINAL da gravidade preservando a magnitude (3 -> -3 -> 3)
+        rb.gravityScale = Mathf.Abs(rb.gravityScale) * (isGravityInverted ? -1f : 1f);
+
+        // Zera o Y para o flip ficar limpo
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+
+        // Rotaciona 180 no eixo X (de cabeca para baixo / volta ao normal)
+        transform.Rotate(180f, 0f, 0f);
+    }
+
     void Jump()
     {
+        if (!canJump) return;   // DontJump: bloqueia o pulo
         if (isDash) { return; }
+        float g = isGravityInverted ? -1f : 1f;
         if (isGrounded) 
         {
             numberJump = 0;
             rb.linearVelocity = Vector2.zero;
-            rb.AddForce(new Vector2(0f, jumpForce ), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0f, jumpForce * g), ForceMode2D.Impulse);
             numberJump++;
         }
         else if (isWall)
         {
             numberJump = 0;
             rb.linearVelocity = Vector2.zero;
-            rb.AddForce(new Vector2(wallHorizontalJumpForce * -direction , wallJumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(wallHorizontalJumpForce * -direction , wallJumpForce * g), ForceMode2D.Impulse);
             Flip();
             numberJump++;
             StartCoroutine(StopMove());
@@ -155,7 +196,7 @@ public class PlayerMovements : MonoBehaviour
         {
             numberJump = 0;
             rb.linearVelocity = Vector2.zero;
-            rb.AddForce(new Vector2(ropeHorizontalJumpForce * direction, ropeJumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(ropeHorizontalJumpForce * direction, ropeJumpForce * g), ForceMode2D.Impulse);
         }
     }
 
@@ -196,17 +237,19 @@ public class PlayerMovements : MonoBehaviour
 
     void WallFall()
     {
-        if (isWall && rb.linearVelocity.y < wallFallForce)
+        float g = isGravityInverted ? -1f : 1f;
+        if (isWall && rb.linearVelocity.y * g < wallFallForce)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -wallFallForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -wallFallForce * g);
         }
     }
 
     void InRope()
     {
-        if (isRope && rb.linearVelocity.y < ropeFall)
+        float g = isGravityInverted ? -1f : 1f;
+        if (isRope && rb.linearVelocity.y * g < ropeFall)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -ropeFall);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -ropeFall * g);
         }
     }
 
