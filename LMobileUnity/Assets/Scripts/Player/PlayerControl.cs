@@ -145,6 +145,15 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4e96529-4726-476d-99a9-868a25c983eb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -294,7 +303,7 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ef97b751-94ca-40ba-bd84-ddab65bdec27"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -332,6 +341,17 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""EnterDoor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f04d63c8-c6ef-4693-bf57-bd7a7bad9185"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -376,6 +396,7 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         m_Land_Rewind = m_Land.FindAction("Rewind", throwIfNotFound: true);
         m_Land_Attack = m_Land.FindAction("Attack", throwIfNotFound: true);
         m_Land_EnterDoor = m_Land.FindAction("EnterDoor", throwIfNotFound: true);
+        m_Land_Interact = m_Land.FindAction("Interact", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_NextDialgue = m_Dialogue.FindAction("NextDialgue", throwIfNotFound: true);
@@ -466,6 +487,7 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Land_Rewind;
     private readonly InputAction m_Land_Attack;
     private readonly InputAction m_Land_EnterDoor;
+    private readonly InputAction m_Land_Interact;
     /// <summary>
     /// Provides access to input actions defined in input action map "Land".
     /// </summary>
@@ -501,6 +523,10 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Land/EnterDoor".
         /// </summary>
         public InputAction @EnterDoor => m_Wrapper.m_Land_EnterDoor;
+        /// <summary>
+        /// Provides access to the underlying input action "Land/Interact".
+        /// </summary>
+        public InputAction @Interact => m_Wrapper.m_Land_Interact;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -545,6 +571,9 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
             @EnterDoor.started += instance.OnEnterDoor;
             @EnterDoor.performed += instance.OnEnterDoor;
             @EnterDoor.canceled += instance.OnEnterDoor;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         /// <summary>
@@ -574,6 +603,9 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
             @EnterDoor.started -= instance.OnEnterDoor;
             @EnterDoor.performed -= instance.OnEnterDoor;
             @EnterDoor.canceled -= instance.OnEnterDoor;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         /// <summary>
@@ -752,6 +784,13 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnEnterDoor(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Dialogue" which allows adding and removing callbacks.

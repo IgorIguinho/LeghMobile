@@ -94,6 +94,7 @@ public class PlayerMovements : MonoBehaviour
     private void Awake()
     {
         input = GetComponent<InputReader>();
+        input.TradeActionMap(input.controls.Land, input.controls.Dialogue);
     }
 
     void OnJumpInput() => Jump();
@@ -107,6 +108,7 @@ public class PlayerMovements : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         rewindObj = gameObject.GetComponent<RewindObj>();
+        
     }
 
     void FixedUpdate()

@@ -4,7 +4,7 @@ using System;
 
 public class InputReader : MonoBehaviour
 {
-    private PlayerControl controls;
+    public PlayerControl controls;
 
     public float Direction { get; private set; }
     
@@ -14,6 +14,7 @@ public class InputReader : MonoBehaviour
     public event Action RewindStarted;
     public event Action RewindCanceled;
     public event Action EnterDoorTriggered;
+    public event Action OpenDialogueTriggered;
 
     private void Awake()
     {
@@ -34,6 +35,9 @@ public class InputReader : MonoBehaviour
 
         // Interação com portas
         controls.Land.EnterDoor.performed += _ => EnterDoorTriggered?.Invoke();
+
+        //Dialogos
+        controls.Land.Interact.performed += _ => OpenDialogueTriggered?.Invoke();
     }
 
     private void OnEnable()
@@ -44,5 +48,11 @@ public class InputReader : MonoBehaviour
     private void OnDisable()
     {
         if (controls != null) controls.Disable();
+    }
+
+    public void TradeActionMap(InputActionMap enableMap, InputActionMap disableMap)
+    {
+        enableMap.Enable();
+        disableMap.Disable();
     }
 }
