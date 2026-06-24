@@ -1,9 +1,11 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
 
 public class InputReader : MonoBehaviour
 {
+    public static InputReader Instance { get; private set; }
     public PlayerControl controls;
 
     public float Direction { get; private set; }
@@ -11,13 +13,29 @@ public class InputReader : MonoBehaviour
     public event Action JumpTriggered;
     public event Action DashTriggered;
     public event Action AttackTriggered;
+
     public event Action RewindStarted;
     public event Action RewindCanceled;
+
     public event Action EnterDoorTriggered;
+
     public event Action OpenDialogueTriggered;
+    public event Action InteractDialogueTriggered;
+
+
 
     private void Awake()
     {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
         controls = new PlayerControl();
 
         // Movimento (Leitura contínua com reset no cancelamento)
@@ -38,6 +56,7 @@ public class InputReader : MonoBehaviour
 
         //Dialogos
         controls.Land.Interact.performed += _ => OpenDialogueTriggered?.Invoke();
+        controls.Dialogue.Interact.performed += _ => InteractDialogueTriggered?.Invoke();
     }
 
     private void OnEnable()

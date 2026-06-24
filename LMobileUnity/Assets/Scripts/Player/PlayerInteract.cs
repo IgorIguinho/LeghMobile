@@ -1,9 +1,12 @@
+using NUnit.Framework.Interfaces;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
 
     InputReader input;
+    GameObject managerUI;
+    DialogueData dialogue;
 
     private void OnDisable()
     {
@@ -16,14 +19,22 @@ public class PlayerInteract : MonoBehaviour
     private void Awake()
     {
         input = GetComponent<InputReader>();
-      
+        managerUI = GameObject.FindGameObjectWithTag("HudManager");
+
     }
 
-    public void ReloadActionMap(bool boolOpen)
+    public void CanOpenDialogue(bool boolOpen, DialogueData _dialogue)
     {
+        if (_dialogue == null)
+        {
+            input.OpenDialogueTriggered -= OpenDialogue;
+            return; 
+        }
+        dialogue = _dialogue;
         if (boolOpen)
         {
-          input.OpenDialogueTriggered += OpenDialogue;
+            input.OpenDialogueTriggered -= OpenDialogue;
+            input.OpenDialogueTriggered += OpenDialogue;
         }
         else
         {
@@ -35,5 +46,9 @@ public class PlayerInteract : MonoBehaviour
     public void OpenDialogue()
     {
         input.TradeActionMap(input.controls.Dialogue, input.controls.Land);
+        managerUI.GetComponent<DialogueSystem>().dialogueData = dialogue;
+        managerUI.GetComponent<HudManagerOnFase>().OpenDialogueHud(1);
+        managerUI.GetComponent<DialogueSystem>().NextDialogue();
+
     }
 }

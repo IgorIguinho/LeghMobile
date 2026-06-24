@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.XR;
@@ -16,11 +17,22 @@ public class DialogueSystem : MonoBehaviour
     TypeTextAnimation typeText;
 
     public DialogueData dialogueData;
-    public int currendIndex;
+    public int currentIndex;
     public bool isFinished = false;
 
     [Header("UI")]
     public TextMeshProUGUI nameText;
+
+    private void OnEnable()
+    {
+        InputReader.Instance.InteractDialogueTriggered += OnInteractDialogue;
+    }
+
+    private void OnDisable()
+    {
+        InputReader.Instance.InteractDialogueTriggered -= OnInteractDialogue;
+    }
+
 
     private void Awake()
     {
@@ -32,31 +44,35 @@ public class DialogueSystem : MonoBehaviour
     void Start()
     {
         currentState = DialogueState.Disable;
-        NextDialogue();
+  
     }
 
     // Update is called once per frame
-    void Update()
+
+
+    public void OnInteractDialogue()
     {
         if (currentState == DialogueState.Disable) return;
 
         switch (currentState)
         {
             case DialogueState.Waiting:
-                //Waiting();
+                Waiting();
                 break;
             case DialogueState.Typing:
-                //Typing();
+              Typing();
                 break;
         }
     }
-    void NextDialogue()
+
+    public void NextDialogue()
     {
+        Debug.Log("NextDialogue" + isFinished);
         if (isFinished) return;
-        nameText.text = dialogueData.dialogues[currendIndex].speakerName;
-        typeText.fullText = dialogueData.dialogues[currendIndex++].dialogueText;
+        nameText.text = dialogueData.dialogues[currentIndex].speakerName;
+        typeText.fullText = dialogueData.dialogues[currentIndex++].dialogueText;
        
-        if (currendIndex == dialogueData.dialogues.Count) isFinished = true;
+        if (currentIndex == dialogueData.dialogues.Count) isFinished = true;
 
         typeText.StartTyping();
         currentState = DialogueState.Typing;
@@ -76,8 +92,10 @@ public class DialogueSystem : MonoBehaviour
     void FinishDialogue()
     {
         isFinished = false;
-        currendIndex = 0;
+        currentIndex = 0;
         currentState = DialogueState.Disable; 
+        InputReader.Instance.TradeActionMap(InputReader.Instance.controls.Land, InputReader.Instance.controls.Dialogue);
+        HudManagerOnFase.Instance.OpenDialogueHud(0f);
     }
 
    public void Typing()

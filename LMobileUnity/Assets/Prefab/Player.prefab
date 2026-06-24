@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 7172386396450238777}
   - component: {fileID: 5428022399195268271}
   - component: {fileID: 5818420755231774350}
+  - component: {fileID: 8480669905836061689}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -276,6 +277,9 @@ MonoBehaviour:
   swtichSpeedMask:
     serializedVersion: 2
     m_Bits: 4096
+  isPlusSpeedBoost: 0
+  canJump: 1
+  isGravityInverted: 0
   jumpForce: 15
   numberJump: 0
   isGrounded: 0
@@ -431,6 +435,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d798936d5047545802b89560db3d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputReader
+--- !u!114 &8480669905836061689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155751612047981478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dfbcc7215f2f64792be1b7cd301f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
 --- !u!1 &1328070945938561972
 GameObject:
   m_ObjectHideFlags: 0

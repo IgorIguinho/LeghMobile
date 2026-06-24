@@ -276,12 +276,12 @@
             "id": "72f7ca4f-ffb3-4b92-84bc-322635befd84",
             "actions": [
                 {
-                    "name": "NextDialgue",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "099c0f94-abf6-4b05-aafb-e6886f56f0cb",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -293,7 +293,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "NextDialgue",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

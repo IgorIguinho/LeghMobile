@@ -362,12 +362,12 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
             ""id"": ""72f7ca4f-ffb3-4b92-84bc-322635befd84"",
             ""actions"": [
                 {
-                    ""name"": ""NextDialgue"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""099c0f94-abf6-4b05-aafb-e6886f56f0cb"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -379,7 +379,7 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""NextDialgue"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -399,7 +399,7 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         m_Land_Interact = m_Land.FindAction("Interact", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
-        m_Dialogue_NextDialgue = m_Dialogue.FindAction("NextDialgue", throwIfNotFound: true);
+        m_Dialogue_Interact = m_Dialogue.FindAction("Interact", throwIfNotFound: true);
     }
 
     ~@PlayerControl()
@@ -643,7 +643,7 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
     // Dialogue
     private readonly InputActionMap m_Dialogue;
     private List<IDialogueActions> m_DialogueActionsCallbackInterfaces = new List<IDialogueActions>();
-    private readonly InputAction m_Dialogue_NextDialgue;
+    private readonly InputAction m_Dialogue_Interact;
     /// <summary>
     /// Provides access to input actions defined in input action map "Dialogue".
     /// </summary>
@@ -656,9 +656,9 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         /// </summary>
         public DialogueActions(@PlayerControl wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Dialogue/NextDialgue".
+        /// Provides access to the underlying input action "Dialogue/Interact".
         /// </summary>
-        public InputAction @NextDialgue => m_Wrapper.m_Dialogue_NextDialgue;
+        public InputAction @Interact => m_Wrapper.m_Dialogue_Interact;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -685,9 +685,9 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_DialogueActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_DialogueActionsCallbackInterfaces.Add(instance);
-            @NextDialgue.started += instance.OnNextDialgue;
-            @NextDialgue.performed += instance.OnNextDialgue;
-            @NextDialgue.canceled += instance.OnNextDialgue;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         /// <summary>
@@ -699,9 +699,9 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
         /// <seealso cref="DialogueActions" />
         private void UnregisterCallbacks(IDialogueActions instance)
         {
-            @NextDialgue.started -= instance.OnNextDialgue;
-            @NextDialgue.performed -= instance.OnNextDialgue;
-            @NextDialgue.canceled -= instance.OnNextDialgue;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         /// <summary>
@@ -800,11 +800,11 @@ public partial class @PlayerControl: IInputActionCollection2, IDisposable
     public interface IDialogueActions
     {
         /// <summary>
-        /// Method invoked when associated input action "NextDialgue" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNextDialgue(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Composites;
+using UnityEngine.UI;
+
 
 public class HudManagerOnFase : MonoBehaviour
 {
@@ -9,6 +12,14 @@ public class HudManagerOnFase : MonoBehaviour
 
     public TextMeshProUGUI coinCount;
     public TextMeshProUGUI hpCount;
+
+    public GameObject buttonControlGroup;
+
+    [Header("Dialogue")]
+    public Image dialogueBG;
+    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI dialogueName;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -22,15 +33,17 @@ public class HudManagerOnFase : MonoBehaviour
             Instance = this;
         }
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        
+        dialogueBG.canvasRenderer.SetAlpha(0f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenDialogueHud(float open)
     {
-        
+        dialogueBG.CrossFadeAlpha(open,0.2f,true) ;
+        buttonControlGroup.SetActive(open == 0 ? true : false);
+      dialogueText.text = "";
+        dialogueName.text = "";
     }
 }
