@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D5 - Encontro Bruno
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Sinais vitais de inimigos \xE0 frente, Agente! \xC9 a fonte da
+      perturba\xE7\xE3o temporal que destruiu o laborat\xF3rio."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Breno Faria
+    dialogueText: "Ora, ora, vejam quem conseguiu passar pelos meus capangas... O/A
+      fiel escudeiro da 'doutorzinha'. Deixa-me explicar uma coisa, viajante: ci\xEAncia
+      exige mentes l\xF3gicas e robustas. Senhoritas deveriam dedicar-se apenas ao
+      cuidado e ao lar.."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rita Lobato
+    dialogueText: "Minha tese de doutorado prova exatamente o contr\xE1rio, arrogante!
+      Seu ceticismo n\xE3o passa de medo de perder privil\xE9gios"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Breno Faria
+    dialogueText: "Sil\xEAncio, intrusa! O acad\xEAmico aqui sou eu e acabei de decidir
+      que a sua pesquisa termina hoje. Quanto a ti, viajante temporal... acha mesmo
+      que teus truques conseguem rivalizar com a superioridade dos Rubros?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Breno Faria
+    dialogueText: "Vou precisar te dar uma li\xE7\xE3o de anatomia pr\xE1tica. Se
+      prepare para deixar de existir na hist\xF3ria!"
+    speakerPortrait: {fileID: 0}

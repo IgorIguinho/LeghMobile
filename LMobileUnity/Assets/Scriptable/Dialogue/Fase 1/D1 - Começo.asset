@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D1 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: Viagem bem-sucedida, Agente! A Bahia de 1822 te deseja boas-vindas
+      !
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "O Brasil acabou de declarar independ\xEAncia, mas as tropas portuguesas
+      se recusam a ir embora. Isso est\xE1 gerando uma guerra civ\xEDl"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: Nossos sensores detectaram fendas dos Rubros por perto. O plano
+      do General Calvil pode envolver o Soldado Medeiros.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Na verdade o Soldado Medeiros, \xE9 o disfarce de Maria Quit\xE9ria!
+      Ela fugiu de casa e se vestiu de homem para poder lutar no ex\xE9rcito pela
+      liberdade do pa\xEDs."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Se os Rubros a impedirem de lutar, a hist\xF3ria apaga o legado
+      da primeira mulher soldado do Brasil! N\xE3o podemos deixar o machismo deles
+      vencer."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Encontre a Quit\xE9ria, ajude-a no combate e proteja a linha do
+      tempo!"
+    speakerPortrait: {fileID: 0}

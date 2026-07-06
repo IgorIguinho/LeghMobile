@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D9 - Econtro Marco
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: General Calvil
+    dialogueText: "Olha para voc\xEA, Marco... Um homem intelectual, professor, submetido
+      ao caos de uma casa que devia estar sob o seu controle. Por qu\xEA est\xE1
+      hesitando? \xC9s o l\xEDder desta casa e \xE9 seu dever tomar uma atitude!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Marco Ant\xF4nio"
+    dialogueText: "Eu j\xE1 tentei de tudo, General, mas ela n\xE3o aceita meu controle,
+      quer question\xE1-lo! Sinto que estou perdendo o respeito dentro da minha pr\xF3pria
+      casa..."
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Isso porque o sistema moderno tenta enfraquecer o poder do homem,
+      meu caro. Querem inverter a ordem natural das coisas, mas um verdadeiro alfa
+      n\xE3o pede respeito... ele IMP\xD5E! Toma, uma ferramenta de pura ordem."
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Com isto a sua palavra voltar\xE1 a ser a \xFAnica lei nesta casa.
+      Acabe com essa insubordina\xE7\xE3o de uma vez por todas!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: Alvo avistado!
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Parados a\xED. Seus planos acabam hoje, Calvil."
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Ora, ora... O Agente defensor do mimimi chegou! Mas veio tarde,
+      pois a semente da verdade j\xE1 foi plantada. Marco, limpe o quintal! Mostra
+      para esse imbec\xEDl o que acontece com quem desafia um homem de verdade!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Marco Ant\xF4nio"
+    dialogueText: "Ningu\xE9m vai me dizer o que fazer na minha propriedade! Eu sou
+      o homem desta casa!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Vamos acabar logo com isso.
+    speakerPortrait: {fileID: 0}

@@ -9,10 +9,17 @@ public struct Dialogue
     [TextArea(5, 10)]
     public string dialogueText;
     public Sprite speakerPortrait;
+   
 }
 
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "NewDialogue")]
 public class DialogueData : ScriptableObject
 {
+    [Header("Variaveis de text")]
    public List<Dialogue> dialogues;
+    [Header("Variaveis unicas")]
+    public bool lastDialogue;
+    [Space(5f)]
+    public bool learnSkill;
+    public SkillType skillToLearn;
 }

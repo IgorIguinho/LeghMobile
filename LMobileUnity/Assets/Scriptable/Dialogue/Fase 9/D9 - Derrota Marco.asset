@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D9 - Derrota Marco
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: Agente
+    dialogueText: Acabou, Marco. Teu joguinho sujo termina aqui.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Marco Ant\xF4nio"
+    dialogueText: "[Tossindo, com raiva] Tu... tu n\xE3o entende nada! O Calvil abriu
+      meus olhos! Uma casa precisa de ordem e de um homem no comando. Ela estava
+      desafiando a minha autoridade, destruindo minha honra. Voc\xEA n\xE3o percebe?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Acha que acabar com a sua pr\xF3pria esposa, por n\xE3o suportar
+      sua independ\xEAncia, \xE9 quest\xE3o de honra?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Di\xE1logo derrota Marco"
+    dialogueText: "REL\xD3GIO TEMPORAL"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Marco Ant\xF4nio"
+    dialogueText: "Ouviu isso? \xC9 ela! Ela est\xE1 chegando. Calvil tem raz\xE3o,
+      se eu n\xE3o controlar tudo agora, o futuro vai tirar tudo de n\xF3s!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Marco Ant\xF4nio"
+    dialogueText: "Vou manter o poder nas m\xE3os dos homens, que \xE9 de onde ele
+      jamais deveria ter saido!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "N\xC3O!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Maria! Fica comigo, por favor... Aguenta!
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Rel\xF3gio! Ative os nano-reparadores m\xE9dicos agora! Cura o
+      trauma da coluna, salve ela da paraplegia! R\xE1pido!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Negativo. Interven\xE7\xE3o biol\xF3gica bloqueada. A altera\xE7\xE3o
+      deste evento resultaria no colapso da Linha Temporal 2006. O evento can\xF4nico
+      deve ser preservado."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "\xD3 n\xE3o! Rel\xF3gio, ativar chamada da rede local. Ligue imediatamente
+      para os servi\xE7os de emerg\xEAncia e pe\xE7a uma ambul\xE2ncia, AGORA!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Servi\xE7o de emerg\xEAncia acionado!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Calvil...
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Localiza\xE7\xE3o dele Rel\xF3gio"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Sensores detectaram assinaturas de energia dos Rubros no quintal
+      atr\xE1s da casa."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Aguenta firme, Maria, o socorro est\xE1 chegando. Eu vou acabar
+      com isso de uma vez por todas."
+    speakerPortrait: {fileID: 0}

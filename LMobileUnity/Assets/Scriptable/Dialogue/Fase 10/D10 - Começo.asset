@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D10 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Salto conclu\xEDdo. Coordenadas est\xE1veis: Aeroporto Internacional,
+      Brasil. Ano: 2000."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Status do Calvil?
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Alvo detectado no setor de embarque. O General Calvil instaurou
+      uma anomalia civil massiva para bloquear o per\xEDmetro."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Se ele travar o voo, a lei deixa de existir.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Afirmativo. N\xEDvel de urg\xEAncia: Cr\xEDtico."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "\xC9 agora ou nunca. Vamos l\xE1!."
+    speakerPortrait: {fileID: 0}

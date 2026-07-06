@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D10 - Batalha Calvil
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: General Calvil
+    dialogueText: "Olha s\xF3 quem conseguiu passar pelos meus homens. Devo dar os
+      parab\xE9ns por chegar a tempo de ver o avi\xE3o decolar sem os documentos?
+      Que l\xE1stima hist\xF3rica!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Acabou, Calvil. Renda-se e feche as fendas imediatamente.
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Voc\xEAs, agentes temporais s\xE3o muito sonhadores e ing\xEAnuos.
+      Acham mesmo que resgatar meia d\xFAzia de relatos vai apagar s\xE9culos de
+      controle? Eu sou o General deste imp\xE9rio, seu inseto. Voc\xEA e todos aqueles
+      que pensam desse jeito s\xE3o apenas um erro no MEU sistema."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Eu j\xE1 ouvi esse discurso em 1822, em 1830 e em todas as \xE9pocas
+      que voc\xEA tentou mudar. Mas o mundo mudou e n\xF3s n\xE3o vamos parar!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Pois ent\xE3o deixe eu te mostrar o que acontece com quem tenta
+      desafiar a ordem natural das coisas!"
+    speakerPortrait: {fileID: 0}

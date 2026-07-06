@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D6 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "A calibra\xE7\xE3o foi um sucesso total, Agente! A instabilidade
+      temporal sumiu e a hist\xF3ria segue seu curso. A mem\xF3ria de Clara Camar\xE3o
+      e o seu ex\xE9rcito est\xE1 s\u0103 e salva!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Energia estabilizada.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: Perfeito! Agora podemos respirar um pouc-
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Esque\xE7a o descanso! Meus sensores acabaram de detectar um novo
+      pico de energia dos Rubros! O sinal da fenda acabou de se abrir!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Coordenadas, r\xE1pido!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "O sinal est\xE1 vindo direto do ano de 1918! O General Calvil
+      saltou para o s\xE9culo XX e parece que o alvo dele \xE9 o avan-"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Abrindo fenda!
+    speakerPortrait: {fileID: 0}
+  LastDialogue: 1

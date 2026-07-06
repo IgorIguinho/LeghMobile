@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D1 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Miss\xE3o conclu\xEDda com sucesso absoluto, Agente!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Maria Quit\xE9ria continua firme como Soldado Medeiros. O legado
+      dela de primeira mulher na nossa for\xE7a militar est\xE1 salvo da linha de
+      montagem de mentiras do Calvil!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "O radar do QG acabou de detectar outro pico de energia temporal!
+      O General Calvil acabou de saltar para outro importante momento hist\xF3rico!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "\xC9 1830, tamb\xE9m na Bahia. Dessa vez os Rubros pretendem atacar
+      Maria Felipa, marisqueira e guerreira implac\xE1vel que lidera o povo para
+      incendiar navios de guerra portugueses na costa."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Se os Rubros a impedirem, a resist\xEAncia vira cinzas!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Abrindo fenda.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Pr\xF3xima parada: queima dos gale\xF5es!"
+    speakerPortrait: {fileID: 0}
+  lastDialogue: 1
+  learnSkill: 0
+  skillToLearn: 0

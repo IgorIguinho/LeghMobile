@@ -91,11 +91,21 @@ public class DialogueSystem : MonoBehaviour
 
     void FinishDialogue()
     {
+     
         isFinished = false;
         currentIndex = 0;
         currentState = DialogueState.Disable; 
         InputReader.Instance.TradeActionMap(InputReader.Instance.controls.Land, InputReader.Instance.controls.Dialogue);
         HudManagerOnFase.Instance.OpenDialogueHud(0f);
+        if (dialogueData.learnSkill)
+        {
+            PlayerSkillsManager.Instance.UnlockSkill(dialogueData.skillToLearn);
+        }
+        if (dialogueData.lastDialogue)
+        {
+            HudManagerOnFase.Instance.groupDialogue.SetActive(false);
+            HudManagerOnFase.Instance.OpenWinScreen();
+        }
     }
 
    public void Typing()

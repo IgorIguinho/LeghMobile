@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D9 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: General Calvil
+    dialogueText: "In\xFAtil, completamente in\xFAtil! Aparentemente, o plano de
+      fazer Marco acabar com Maria da Penha, de uma vez por todas, n\xE3o funcionou
+      como eu previ!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Acabou, Calvil. Voc\xEA perdeu."
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Perdi? Olhe para os lados, Agente mediocre! O tiro foi disparado
+      e a trag\xE9dia se concretizou! E eu n\xE3o vou desistir t\xE3o facilmente..."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Voc\xEA n\xE3o vai a lugar nenhum."
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Vou direto para onde toda essa luta por direitos besta' ganhou
+      propor\xE7\xE3o global! Vou impedir aquela mulher de levar suas queixas \xE0
+      Organiza\xE7\xE3o das Na\xE7\xF5es Unidas! Se ela n\xE3o pegar o avi\xE3o"
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Tente me parar se conseguir, esc\xF3ria do tempo! EU MESMO IREI
+      ACABAR COM ISSO DE VEZ!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Nem pensar. Eu vou atr\xE1s de voc\xEA at\xE9 o fim dos tempos."
+    speakerPortrait: {fileID: 0}
+  LastDialogue: 1

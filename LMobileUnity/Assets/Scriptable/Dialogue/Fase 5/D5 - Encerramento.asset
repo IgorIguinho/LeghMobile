@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D5 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: Breno Faria
+    dialogueText: "Uma mente brilhante como a minha ser derrotada dessa forma \xE9
+      imposs\xEDvel! Voc\xEAs n\xE3o podem conter o meu inteleeeeeeeto..."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rita Lobato
+    dialogueText: "Excelente trabalho, patrulheir/a/e/o. Gra\xE7as \xE0 sua interven\xE7\xE3o,
+      os meus relat\xF3rios est\xE3o intactos."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Continue firme, Doutora. O Brasil precisa da sua ci\xEAncia. At\xE9
+      logo."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Miss\xE3o conclu\xEDda com sucesso, Agente! A linha do tempo da
+      Doutora Rita Lobato est\xE1 perfeitamente estabilizada! Mas temos um grande
+      problema!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: O que houve?
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Meus sensores est\xE3o oscilando! Os Rubros mudaram a estrat\xE9gia.
+      N\xE3o estamos mais avan\xE7ando cronologicamente. Precisamos voltar no tempo!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "O General Calvil conseguiu abrir caminho e voltar at\xE9 o ano
+      de 1645! Segure-se firme, o salto vai ser longo!"
+    speakerPortrait: {fileID: 0}
+  LastDialogue: 1

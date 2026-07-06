@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D2 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: Maria Felipa
+    dialogueText: "Itaparica sempre ser\xE1 terra de povo livre e estes Rubros n\xE3o
+      tem vez!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Maria Felipa
+    dialogueText: "Os navios devem ser queimados at\xE9 o \xFAltimo peda\xE7o"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Maria Felipa
+    dialogueText: "Segure a tocha para arremessar fogo e acender rastro de p\xF3lvora
+      desses canalhas! [BOT\xC3O DE HABILIDADE]"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Maria Felipa
+    dialogueText: "Agora use o fogo para abrir caminho e incendiar o restante da
+      frota. Enquanto isso, eu e minhas companheiras vamos dar uma li\xE7\xE3o aos
+      portugueses."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Deixa comigo.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Miss\xE3o cumprida! Os gale\xF5es viraram cinzas e a resist\xEAncia
+      de Maria Felipa est\xE1 salva na hist\xF3ria!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Espere! Meus sensores detectaram uma nova assinatura de energia...
+      \xC9 o General Calvil! Ele acabou de saltar para outra \xE9poca!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Coordenadas.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Ele est\xE1 indo direto para o ano de 1835! Temos que intercept\xE1-lo
+      antes que cause um colapso temporal. Se prepare para o salto!"
+    speakerPortrait: {fileID: 0}

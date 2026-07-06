@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D2 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "O ano \xE9 1830. A guerra pela independ\xEAncia continua e os
+      portugueses bloquearam a costa com seus navios!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Agora o alvo do General Calvil \xE9 Maria Felipa que enquanto
+      joga capoeira"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Sua estrat\xE9gia \xE9 incendiar os gale\xF5es porgueses antes
+      que a frota esmague seu povo."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Veja os capangas Rubos avan\xE7ando para impedi-la! S\xF3 voc\xEA
+      pode ajudar o legando dessa importante l\xEDder negra n\xE3o ser apagado agente."
+    speakerPortrait: {fileID: 0}
+  LastDialogue: 0

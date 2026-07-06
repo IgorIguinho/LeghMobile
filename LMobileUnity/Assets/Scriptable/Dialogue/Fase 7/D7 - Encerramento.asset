@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D7 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Conseguimos! Com o composto da Ermelinda e os seus golpes, a contamina\xE7\xE3o
+      dos Rubros foi completamente contida!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rubro Negacionista
+    dialogueText: "[Grogue]Isso \xE9... uma conspira\xE7\xE3o... As vacinas e os
+      t\xF3nicos... s\xE3o alucina\xE7\xF5es... Urgh..."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Quieto! falou mentiras suficientes por hoje.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Destino tra\xE7ado com sucesso! Ele foi enviado diretamente para
+      o complexo de seguran\xE7a m\xE1xima da Patrulha."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: 'Ufa, um problema a menos na linha do tempo. [Efeito Sonoro: Clank!
+      - Ermelinda aproxima-se'
+    speakerPortrait: {fileID: 0}
+  - speakerName: Ermelinda Lopes de Barros
+    dialogueText: "N\xE3o sei de qual laborat\xF3rio do futuro voc\xEAs vieram, mas
+      a vossa ajuda foi cir\xFArgica! Gra\xE7as a voc\xEAs, nosso estoque de quinino
+      est\xE1 intacto e os postos m\xE9dicos podem continuar a operar."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "O m\xE9rito \xE9 seu, enfermeira. O seu trabalho vai salvar esta
+      cidade."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Ermelinda Lopes de Barros
+    dialogueText: "A ci\xEAncia e o cuidado humano n\xE3o podem parar diante de mentiras,
+      tampouco do v\xEDrus. Se me d\xE3o licen\xE7a, a ala norte acabou de receber
+      novos pacientes e eu preciso de voltar ao trabalho."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Ela \xE9 uma verdadeira hero\xEDna da sa\xFAde! O legado dela
+      est\xE1 seguro, mas n\xE3o baixe a guarda, Agente! Nossos radares detectaram
+      uma nova anomalia causada pelo Calvil!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: De novo? Temos que acabar logo com isso!
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Pr\xF3xima paragem: meados da d\xE9cada de 1930! Prepare-se para
+      o salto!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: ...
+    speakerPortrait: {fileID: 0}
+  LastDialogue: 1

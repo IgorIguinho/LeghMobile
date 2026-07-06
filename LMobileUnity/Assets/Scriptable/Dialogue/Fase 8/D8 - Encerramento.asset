@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D8 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Miss\xE3o conclu\xEDda novamente! As crian\xE7as est\xE3o seguras
+      e as falas do Raiam Santos foram desmentidas!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Devemos estar perto do fim. Rel\xF3gio, pode desativar modo de
+      miss\xE3o."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "[Efeito Sonoro: Risada digital leve] Ai, ai... Miss\xE3o cumprida
+      com sucesso em Florian\xF3polis! J\xE1 consigo at\xE9 cheirar as f\xE9rias
+      no Quartel-General! Que tal uma paragem na nossa era para um caf\xE9 e-"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "\xA1ALERTA CR\xCDTICO, AGENTE! Esque\xE7a o caf\xE9!! Meus servidores
+      centrais acabaram de receber uma mensagem urgente do Quartel-General!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Os radares cronol\xF3gicos detectaram uma ruptura massiva no tecido
+      do tempo. N\xE3o se trata de um oficial menor dos Rubros, mas do pr\xF3prio
+      General Calvil. Ele saltou pessoalmente para a linha temporal!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Coordenadas confirmadas: Fortaleza, ano de 1983. Calvil est\xE1
+      querendo interferir diretamente no caso de Maria da Penha!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Espera, Agente! Voc\xEA est\xE1 a abrindo a fenda sozinho de forma
+      manual?! O fluxo est\xE1 inst\xE1vel, os riscos de desintegra\xE7\xE3o s\xE3o
+      de-"
+    speakerPortrait: {fileID: 0}
+  LastDialogue: 1

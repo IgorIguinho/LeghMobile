@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D8 - Encontro Antonieta
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: Raiam Santos
+    dialogueText: "Voc\xEAs deviam voltar para casa jogar bola, trabalhar no campo,
+      qualquer coisa! O que \xE9 que acham que v\xE3o aprender aqui dentro?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Crian\xE7a"
+    dialogueText: Mas a professora Antonieta disse que os livros abrem portas para
+      o nosso futuro...
+    speakerPortrait: {fileID: 0}
+  - speakerName: Raiam Santos
+    dialogueText: "Professora? Aquela mulher n\xE3o entende nada sobre dar aulas!
+      Nenhuma delas foi feita para atividades intelectuais, e isso vai contra as
+      regras da sociedade! Esque\xE7am a escola, v\xE3o embora!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Antonieta de Barros
+    dialogueText: "Quem o senhor pensa que \xE9 para afastar os meus alunos do direito
+      mais sagrado que eles possuem?!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Raiam Santos
+    dialogueText: Olha, a dona da escola. O General Calvil avisou que o seu tempo
+      estava acabando, Antonieta. Sem alunos, suas ideias morrem aqui!
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Ele est\xE1 fugindo, COVARDE!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Agente, meus sensores confirmam: aquela \xE9 Antonieta de Barros,
+      sem o disfarce de Maria da Ilha! E aquele sujeito ali era Raiam Santos, um
+      dos oficiais mais retr\xF3grados do ex\xE9rcito do Calvil!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Antonieta de Barros
+    dialogueText: "Eu lhe conhe\xE7o... Voc\xEA tentou proteger-me ontem \xE0 noite
+      nas sombras da imprensa."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "O que ele disse est\xE1 completamente errado, Antonieta, e n\xF3s
+      viemos ajudar."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Antonieta de Barros
+    dialogueText: "Obrigada, jovem. A ignor\xE2ncia \xE9 o pior inimigo da nossa
+      hist\xF3ria! Raiam usou mentiras para encher a cabe\xE7a daqueles meninos de
+      medo, e eles fugiram assustados pelas ruas de Florian\xF3polis."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Antonieta de Barros
+    dialogueText: "Se me ajudar a enfrentar os capangas de Raiam Santos, quebrando
+      suas mentiras e trazendo meus alunos de volta para a sala de aula, eu e as
+      gera\xE7\xF5es futuras seremos eternamente grata!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Considere feito. Vou limpar o caminho.
+    speakerPortrait: {fileID: 0}

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D10 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: GENERAL CALVIL (BLACK PILL)
+    dialogueText: "Olha para ti. jogado no ch\xE3o como o lixo que \xE9! Acha mesmo
+      que uma criatura como voc\xEA conseguiria parar o inevit\xE1vel?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Ugh... Ainda... n\xE3o acabou..."
+    speakerPortrait: {fileID: 0}
+  - speakerName: GENERAL CALVIL (BLACK PILL)
+    dialogueText: "Acabou no momento em que decidiu defender essa gente ingrata que
+      n\xE3o percebe que sempre teve o previl\xE9gio de ficar nos seus lares enquanto
+      n\xF3s, sozinhos, organizamos o mundo inteiro. Sem a sua tropa para fazer balb\xFArdia,
+      voc\xEA n\xE3o passa de um erro cr\xF4nico na minha linha temporal. Desapare\xE7a!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: GENERAL CALVIL (BLACK PILL)
+    dialogueText: "Mas o que \xE9 isto?! Quit\xE9ria?!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Maria Quit\xE9ria"
+    dialogueText: "O Agente nunca esteve sozinho, General! O ex\xE9rcito que tu tentaste
+      apagar est\xE1 de p\xE9!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Maria da Penha
+    dialogueText: "O tempo do discurso retr\xF3grado acabou, Calvil, e a 'ordem natural'
+      \xE9 apenas a covardia de quem tem medo de igualdade. Minha voz e a hist\xF3ria
+      destas mulheres n\xE3o pertencem a ti!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: GENERAL CALVIL (BLACK PILL)
+    dialogueText: "N\xE3o, me solta! Meu imp\xE9rio, minha narrativa, meus soldados
+      e meu mundo viril...!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "TODAS AS HERO\xCDNAS"
+    dialogueText: Pela liberdade de todas as eras!
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "N\xE3o! Voc\xEAs estragaram tudo! O meu plano era perfeito e os
+      meus Rubros eram os melhores! Eu escolhi cada um desses corajosos homens de
+      bem para governar o meu mundo!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Isso acabou de vez, voc\xEA vai pagar por tudo que fez e tentou
+      fazer com a hist\xF3ria do NOSSO territ\xF3rio"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "General Calvil neutralizado com sucesso. Inicializando transfer\xEAncia
+      para a Pris\xE3o de Seguran\xE7a M\xE1xima da Patrulha Temporal."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Agrade\xE7o todas voc\xEAs por terem me ajudado a salvar nossa
+      hist\xF3ria pela ajuda. Mas... Maria, o voo para a ONU? Se voc\xEA ficou aqui
+      para lutar, pode perder o momento para fazer sua importante den\xFAncia."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Maria da Penha
+    dialogueText: "N\xE3o se preocupe, Agente. O tempo agora corre a nosso favor.
+      Se usarmos a mesma fenda que nos uniu, eu chegarei \xE0quela sala exatamente
+      no minuto em que o mundo precisa de me ouvir."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Perfeito. Rel\xF3gio, preparar o curso final para ONU."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Curso tra\xE7ado, abrindo fenda!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Maria da Penha
+    dialogueText: "Agente, gra\xE7as a voc\xEA podemos seguir na luta por uma sociedade
+      mais justa para todo mundo! Muito obrigada!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Eu que agrade\xE7o pela sua coragem inspiradora!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Agora, Rel\xF3gio, tra\xE7ar rota para o ano de cada hero\xEDna
+      que aqui me ajudou at\xE9 aqui. Pode desativar o modo Rob\xF3tico."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Obrigado, n\xE3o aguentava mais esse tom s\xE9rio. Ajustando v\xE1rias
+      fendas para v\xE1rios tempos!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Vamos para nosso tempo. E que tal aquele caf\xE9zinho agora?"
+    speakerPortrait: {fileID: 0}
+  LastDialogue: 1

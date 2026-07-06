@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D10 - Segunda Vida Calvil
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: General Calvil
+    dialogueText: "N-N\xE3o... Isto n\xE3o pode acontecer! Humilhado por ti? Por
+      esta patrulha barulhenta, rebelde e inconformada?!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Fique no ch\xE3o, Calvil. J\xE1 chega."
+    speakerPortrait: {fileID: 0}
+  - speakerName: GENERAL CALVIL (BLACK PILL)
+    dialogueText: "CALE SE! Voc\xEAs acham que s\xE3o her\xF3is por ampliarem voz
+      a quem deveria obedecer?! Se a hist\xF3ria n\xE3o me pertencer por bem, eu
+      vou esmagar essa linha temporal inteira at\xE9 n\xE3o sobrar um \xFAnico registo
+      de voc\xEAs!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Grite o quanto quiser, mas o desfecho de mais essa hist\xF3ria
+      final vai ser o mesmo que lemos em livros e no notici\xE1rio."
+    speakerPortrait: {fileID: 0}

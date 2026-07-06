@@ -16,9 +16,12 @@ public class HudManagerOnFase : MonoBehaviour
     public GameObject buttonControlGroup;
 
     [Header("Dialogue")]
+    public GameObject groupDialogue;
     public Image dialogueBG;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI dialogueName;
+    [Space(10)]
+    public GameObject winScreen;
 
     private void Awake()
     {
@@ -36,7 +39,9 @@ public class HudManagerOnFase : MonoBehaviour
 
     private void Start()
     {
+        if (dialogueBG == null) return;
         dialogueBG.canvasRenderer.SetAlpha(0f);
+        winScreen.SetActive(false);
     }
 
     public void OpenDialogueHud(float open)
@@ -45,5 +50,9 @@ public class HudManagerOnFase : MonoBehaviour
         buttonControlGroup.SetActive(open == 0 ? true : false);
       dialogueText.text = "";
         dialogueName.text = "";
+    }
+    public void OpenWinScreen()
+    {
+        winScreen.SetActive(true);
     }
 }

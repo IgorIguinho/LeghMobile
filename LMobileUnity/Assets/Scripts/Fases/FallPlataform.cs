@@ -37,7 +37,7 @@ public class FallPlataform : MonoBehaviour
         {            
                 StartCoroutine(StartFall()); 
                 colliderCheckPlayer.enabled = false;
-            GetComponent<Animator>().Play("FallPlataformPlainFase1Stop");  
+            //GetComponent<Animator>().Play("FallPlataformPlainFase1Stop");  
         }
     }
 }

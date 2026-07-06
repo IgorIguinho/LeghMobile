@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
 using TMPro;
-using Unity.Android.Gradle;
 using UnityEngine;
 
 public class TypeTextAnimation : MonoBehaviour
 {
     public Action TypeFinished; // Event to notify when typing animation is finished
 
-    public float delay = 0.1f; // Delay between each character
+    public float delay = 0.05f; // Delay between each character
     private WaitForSeconds waitDelay;
     public TextMeshProUGUI textMeshPro; // Reference to the TextMeshProUGUI component
 

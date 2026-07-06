@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D7 - Encontro Ermelinda
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: Ermelinda Lopes de Barros
+    dialogueText: "Mais um volunt\xE1rio? Gra\xE7as aos c\xE9us! N\xE3o h\xE1 tempo
+      a perder, a epidemia est\xE1 a espalhar-se mais r\xE1pido do que conseguimos
+      registar os doentes."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Enfermeira Ermelinda. Vim dar apoio.
+    speakerPortrait: {fileID: 0}
+  - speakerName: Ermelinda Lopes de Barros
+    dialogueText: Excelente. Preciso que organize estas ampolas de quinino e ajude
+      na triagem da ala sul.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Ela \xE9 incr\xEDvel! Mesmo sem os nossos equipamentos do futuro,
+      a determina\xE7\xE3o dela \xE9 manter este hospital de p\xE9!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Qual \xE9 a prioridade neste momento?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Ermelinda Lopes de Barros
+    dialogueText: Garantir que estes medicamentos cheguem aos necessitados e...
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rubro Negacionista
+    dialogueText: "Hahaha! Que palha\xE7ada m\xE9dica \xE9 essa?!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rubro Negacionista
+    dialogueText: "Parem com o teatro, n\xE3o existe gripe nenhuma! \xC9 tudo inven\xE7\xE3o
+      para estragar o com\xE9rcio e as festas da capital!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Ermelinda Lopes de Barros
+    dialogueText: "Como ousa?! H\xE1 pessoas a sofrer nos leitos mesmo atr\xE1s de
+      ti! Afaste-se dos medicamentos agora!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rubro Negacionista
+    dialogueText: "Bobagens cient\xEDficas! O General Calvil mandou avisar que vossa
+      'ci\xEAncia' termina hoje! Rapazes, deitem as tendas abaixo e infectem tudo!
+      Vamos sabotar o estoque!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Ermelinda Lopes de Barros
+    dialogueText: "Eu n\xE3o vou recuar! Rapaz! mascarado, ganhe-me tempo! Vou preparar
+      um composto purificador concentrado para neutralizar as toxinas destes capangas,
+      mas preciso que me proteja a todo custo enquanto finalizo a f\xF3rmula"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Aten\xE7\xE3o, Agente! O Rubro Negacionista est\xE1 enviando hordas
+      de capangas contaminados para destruir os suprimentos e atacar Ermelinda. Defenda-a
+      at\xE9 que o t\xF4nico esteja pronto!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Per\xEDmetro de defesa estabelecido."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rubro Negacionista
+    dialogueText: "Atacar! E destruam aquela mesa de laborat\xF3rio! Hahaha!"
+    speakerPortrait: {fileID: 0}

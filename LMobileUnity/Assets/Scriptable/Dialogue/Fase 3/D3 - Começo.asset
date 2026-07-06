@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D3 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Salto completado com precis\xE3o, Agente! Continuamos na bel\xEDssima
+      Bahia, mas agora em 1835!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Situa\xE7\xE3o atual?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "A popula\xE7\xE3o escravizada de origem isl\xE2mica est\xE1 organizando
+      a hist\xF3rica Revolta dos Mal\xEAs, contra a opress\xE3o colonial"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "A fenda apronta para Lu\xEDsa Mahin, que usa seu tabuleiro de
+      quitutes como disfarce para entregar mensagens em \xE1rabe aos rebeldes."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Dessa vez, os Rubros pretendem interceptar sua estrat\xE9gia,
+      entregando-a para as autoridades locais. Isso pode acabar com a revolta, acabando
+      com sua valiosa contribui\xE7\xE3o \xE0 hist\xF3ria."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Onde ela est\xE1?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio"
+    dialogueText: "Na esquina, com seu tabuleiro! Mas espere, pois vejo uma movimenta\xE7\xE3o
+      suspeita, vamos nos aproximar antes com cautela"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Interceptando agora.
+    speakerPortrait: {fileID: 0}

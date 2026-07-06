@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D7 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: Aterrissagem perfeita, Agente! Meus sensores indicam que estamos
+      no Rio de Janeiro, em pleno ano de 1918!
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Mas apesar do clima calmo, com m\xFAsica e festas, o General Calvil
+      enviou um de seus tenentes mais perigosos para c\xE1: o Rubro Negacionista."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Ele quer apagar o legado da enfermeira Ermelinda Lopes de Barros,
+      uma das mentes mais brilhantes da Cruz Vermelha! O objetivo dele \xE9 sabotar
+      os postos m\xE9dicos e espalhar mentiras para a popula\xE7\xE3o."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Sabotar postos m\xE9dicos no meio de uma festa?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "\xC9 que a festa est\xE1 prestes a acabar e uma terr\xEDvel epidemia,
+      a Gripe Espanhola, acaba de chegar ao Brasil. As pessoas ainda n\xE3o sabem
+      da gravidade, mas o v\xEDrus j\xE1 est\xE1 a se espalhar pelo ar!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Antes de avan\xE7ar, pegue esta m\xE1scara com filtro purificador
+      de alta tecnologia da Patrulha. Ajuste-a bem ao rosto!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "M\xE1scara ajustada. Filtros biol\xF3gicos online. Onde encontro
+      a Ermelinda?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Deve estar mais \xE0 frente, tentando organizar os primeiros aux\xEDlios.
+      Corra, antes que os capangas do Calvil bloqueiem as ruas e piorem a contamina\xE7\xE3o!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Entendido. Movendo-se.
+    speakerPortrait: {fileID: 0}

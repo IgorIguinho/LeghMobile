@@ -20,9 +20,6 @@ TextureImporter:
   - first:
       213: -566740981459018762
     second: backgroundcolinanuvem_5
-  - first:
-      213: 2315197876124604801
-    second: backgroundcolinanuvem_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -147,10 +144,10 @@ TextureImporter:
       name: backgroundcolinanuvem_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 6
-        width: 64
-        height: 40
+        x: 87
+        y: 223
+        width: 34
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +166,10 @@ TextureImporter:
       name: backgroundcolinanuvem_1
       rect:
         serializedVersion: 2
-        x: 58
-        y: 11
-        width: 16
-        height: 11
+        x: 103
+        y: 207
+        width: 34
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +188,10 @@ TextureImporter:
       name: backgroundcolinanuvem_2
       rect:
         serializedVersion: 2
-        x: 132
-        y: 0
-        width: 111
-        height: 44
+        x: 215
+        y: 223
+        width: 34
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +210,10 @@ TextureImporter:
       name: backgroundcolinanuvem_3
       rect:
         serializedVersion: 2
-        x: 246
-        y: 10
-        width: 15
-        height: 9
+        x: 231
+        y: 207
+        width: 34
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +232,10 @@ TextureImporter:
       name: backgroundcolinanuvem_4
       rect:
         serializedVersion: 2
-        x: 336
-        y: 3
-        width: 92
-        height: 42
+        x: 343
+        y: 223
+        width: 34
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +254,10 @@ TextureImporter:
       name: backgroundcolinanuvem_5
       rect:
         serializedVersion: 2
-        x: 427
-        y: 2
-        width: 13
-        height: 10
+        x: 359
+        y: 207
+        width: 34
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,28 +268,6 @@ TextureImporter:
       bones: []
       spriteID: 6fb9a7084188228f0800000000000000
       internalID: -566740981459018762
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backgroundcolinanuvem_6
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 1
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 189552fa33c312020800000000000000
-      internalID: 2315197876124604801
       vertices: []
       indices: 
       edges: []
@@ -317,7 +292,6 @@ TextureImporter:
       backgroundcolinanuvem_3: 6258093958864786550
       backgroundcolinanuvem_4: -8226132533689225686
       backgroundcolinanuvem_5: -566740981459018762
-      backgroundcolinanuvem_6: 2315197876124604801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

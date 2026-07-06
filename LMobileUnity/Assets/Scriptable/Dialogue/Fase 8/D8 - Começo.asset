@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D8 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Aterrissagem conclu\xEDda! Meus sensores indicam que estamos em
+      Florian\xF3polis, em meados da d\xE9cada de 1930."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Est\xE1 tudo muito escuro e deserto. Qual \xE9 a situa\xE7\xE3o
+      aqui?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Esta \xE9 uma \xE9poca crucial para a educa\xE7\xE3o e os direitos
+      civis, e uma mulher incr\xEDvel, chamada Antonieta de Barros, est\xE1 prestes
+      a fazer hist\xF3ria com suas cr\xF4nicas."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Mas, para conseguir publicar suas ideias sem sofrer censura imediata
+      dos setores mais conservadores, ela escreve sob o pseud\xF4nimo Maria da Ilha,
+      que \xE9 tipo sua identidade secreta. Uma mente brilhante escondida sob as
+      sombras da imprensa local."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Ali! Acabo de ver uma figura encapuzada dobrando a esquina.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Condiz com a descri\xE7\xE3o dos meus arquivos! Deve ser a pr\xF3pria
+      Maria da Ilha a carregar os seus manuscritos! Mas espere..."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Os capangas do Calvil j\xE1 est\xE3o na \xE1rea?"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Meus radares ainda n\xE3o conseguiram decifrar o objetivo exato
+      dos Rubros desta vez, m a presen\xE7a deles perto da Maria da Ilha n\xE3o \xE9
+      bom sinal!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Vou atr\xE1s dela."
+    speakerPortrait: {fileID: 0}

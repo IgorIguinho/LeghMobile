@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D5 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Salto conclu\xEDdo, Agente! Estamos em 1887. Meus dados indicam
+      que nesta faculdade-"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rita Lobato
+    dialogueText: "N\xE3o h\xE1 tempo para conversas com engenhocas! Segure a proveta
+      e me ajude a calibrar a densidade da solu\xE7\xE3o, r\xE1pido"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rita Lobato
+    dialogueText: "Depois coloque no bico de Bunsen. Ali\xE1s, prazer, sou Rita Lobato,
+      uma quase doutora em medicina que n\xE3o pode deixar que o ceticismo estrague
+      anos de estudo pr\xE1tico!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Breno Faria
+    dialogueText: "Ora, ora... Mas o que temos aqui? Uma mulher brincando de Ci\xEAncia
+      M\xE9dica? Que desperd\xEDcio de reagentes! Deixem-me reajustar este ambiente
+      para algo mais adequado \xE0 realidade!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Cuidado com os Rubros, Rita. Eles querem apagar seu legado antes
+      mesmo de voc\xEA concluir seus importantes estudos!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rita Lobato
+    dialogueText: "Apagar meu legado? Eles apagaram as luzes! R\xE1pido, venha comigo
+      antes que quebrem as amostras principais!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Rita Lobato
+    dialogueText: "Veja o que a ignor\xE2ncia faz! Posso contar contigo, Agente?
+      V\xE1 l\xE1 fora e me ajude a defender o laborat\xF3rio. Mostre o verdadeiro
+      peso do m\xE9todo cient\xEDfico!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Deixa comigo. Vou limpar a \xE1rea."
+    speakerPortrait: {fileID: 0}

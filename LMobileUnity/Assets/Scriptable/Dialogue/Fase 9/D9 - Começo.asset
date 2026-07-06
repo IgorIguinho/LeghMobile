@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D9 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Ai, a minha cabe\xE7a!... Onde n\xF3s estamos, Agente? Espere...
+      As luzes do bairro inteiro se apagaram?! Olhe meus indicadores, est\xE1 dando
+      erro generalizado!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Isto \xE9 um desastre cronol\xF3gico! Voc\xEA abriu a fenda manualmente,
+      sem calibragem, o que \xE9 muita irresponsabilidade! Agora o tecido do tempo
+      nesta regi\xE3o est\xE1 completamente inst\xE1vel!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Foi uma medida extrema, pois o Calvil est\xE1 aqui."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Eu sei! Estamos em Fortaleza, em 1983, e a assinatura t\xE9rmica
+      do General Calvil est\xE1 mesmo \xE0 nossa frente, na dire\xE7\xE3o da casa
+      da Maria da Penha!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Se o Calvil intervir pessoalmente antes do atentado can\xF4nico
+      acontecer, meus servidores ir\xE3o se derreter de tanta ansiedade! O que podemos
+      fazer nesta escurid\xE3o?!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Rel\xF3gio, ativar Modo Rob\xF3tico."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Protocolo de Emerg\xEAncia ativo. Interface de voz minimizada.
+      Eliminando vari\xE1veis emocionais org\xE2nicas."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Alvo principal detectado a 200 metros de dist\xE2ncia, em rota
+      de interse\xE7\xE3o com a resid\xEAncia de Maria da Penha."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Relat\xF3rio visual."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Setores sem ilumina\xE7\xE3o p\xFAblica devido \xE0 sobrecarga
+      de energia cronol\xF3gica. Ativando vis\xE3o noturna integrada. Mapeando caminho."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: 'Aviso: Unidades de patrulha dos Rubros detectadas nos becos adjacentes.'
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Avan\xE7ando."
+    speakerPortrait: {fileID: 0}

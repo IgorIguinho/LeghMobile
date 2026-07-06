@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: D3 - Encerramento
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: Agente
+    dialogueText: "Recuperado. Seus bilhetes est\xE3o seguros."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Lu\xEDsa Mahin"
+    dialogueText: "Ax\xE9, meu jovem! O destino do nosso povo estava embrulhado nesses
+      pap\xE9is. Se os opressores descobrissem nossa comunica\xE7\xE3o secreta, a
+      revolta seria impedida."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Os Rubros falharam. A hist\xF3ria continua no lugar."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Lu\xEDsa Mahin"
+    dialogueText: "Quem luta nas sombras aprende a enxergar al\xE9m do que os olhos
+      dos tiranos conseguem ver. Em agradecimento, leve consigo meu olhar. Que minha
+      vis\xE3o guie seus passos e antecipar os perigos do tempo!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Sensores de interface ativados. Consigo ver tudo.
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Instabilidade na linha, Agente! A energia do poder da Lu\xEDsa
+      causou uma resson\xE2ncia em meus circuitos cronol\xF3gicos! Temos uma proje\xE7\xE3o
+      direta da pr\xF3xima fenda temporal!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Vis\xE3o recebida. Rio de Janeiro, 1880."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Exato! O General Calvil enviou suas tropas para sabotar a lend\xE1ria
+      maestrina Chiquinha Gonzaga. Os Rubros est\xE3o prestes a roubar e espalhar
+      as partituras dela atrav\xE9s do tempo para calar a primeira Marchinha de Carnaval
+      do Brasil!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Isso n\xE3o pode acontecer. Iniciando salto."
+    speakerPortrait: {fileID: 0}
+  LastDialogue: 1

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
+  m_Name: "D6 - Come\xE7o"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogues:
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Aterrissagem bem-sucedida, Agente! Estamos em Pernambuco, pleno
+      s\xE9culo XVII. Olhe adiante, o General Calvil se infiltrou como comandante
+      das for\xE7as holandesas!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Escutem bem! Estreitem o cerco pelas margens do rio e n\xE3o deixem
+      nenhuma rebelde escapar. Vamos apagar a resist\xEAncia desta prov\xEDncia de
+      uma vez por todas!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Ele est\xE1 comandando os holandeses diretamente. Vou intervir!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Espere! Meus sensores indicam que n\xE3o ser\xE1 necess\xE1rio.
+      Algu\xE9m j\xE1 preparou uma recep\xE7\xE3o para eles... Olhe para o topo das
+      \xE1rvores!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Soldado Holand\xEAs"
+    dialogueText: "Achhh! Meus olhos! Que fuma\xE7a ardente \xE9 esta?! N\xE3o consigo
+      enxergar!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: Que armadilha covarde!
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Clara Camar\xE3o"
+    dialogueText: "Agora, guerreiras! O p\xF3 de pimenta cegou os invasores! Atacar
+      com tudo! Vamos expuls\xE1-los das nossas terras!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Uma mulher comandando um ex\xE9rcito?! Soldados, contenham-na!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Clara Camar\xE3o"
+    dialogueText: "N\xE3o recuem! Avancem com as armas e limpem a nossa mata!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: General Calvil
+    dialogueText: "Essa selvagem quebrou nossa forma\xE7\xE3o! Batalha perdida! Vou
+      fazer uma retirada estrat\xE9gica."
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: "Aquela t\xE9cnica... O avan\xE7o com a lan\xE7a foi implac\xE1vel.
+      Consigo replicar o movimento."
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Incr\xEDvel, Agente! A determina\xE7\xE3o e a t\xE9cnica de Clara
+      Camar\xE3o geraram uma onda de inspira\xE7\xE3o temporal! Voc\xEA absorveu
+      a ess\xEAncia do combate dela!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: "Rel\xF3gio Temporal"
+    dialogueText: "Cuidado! A fuga desordenada do Calvil deixou o espa\xE7o-tempo
+      inst\xE1vel, fazendo detritos e caixas cairem do c\xE9u! \xC9 a oportunidade
+      perfeita para testar seu novo poder!"
+    speakerPortrait: {fileID: 0}
+  - speakerName: Agente
+    dialogueText: Entendido. Iniciando teste de impacto.
+    speakerPortrait: {fileID: 0}
+  lastDialogue: 0
+  learnSkill: 1
+  skillToLearn: 4

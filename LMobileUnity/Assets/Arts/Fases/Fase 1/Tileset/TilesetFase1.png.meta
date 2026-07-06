@@ -135,7 +135,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 5325e7ddc9f97674ab19cdec3021c7c1
@@ -157,7 +161,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 4fd123cbfa2d5d845927c5dd12e8c701
@@ -179,7 +187,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 77e0f6c9fe9562b45a8d5c9c7359513f
@@ -192,7 +204,7 @@ TextureImporter:
       name: TilesetFase1_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 96
         y: 352
         width: 32
         height: 32
@@ -202,11 +214,12 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 15, y: -9}
-        - {x: 15, y: 16}
-        - {x: -9, y: 16}
+      - - {x: 3, y: 4}
+        - {x: 0, y: 7}
+        - {x: -6, y: 7}
+        - {x: -9, y: 4}
         - {x: -9, y: -16}
-        - {x: 11, y: -16}
+        - {x: 3, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: f66f8df902c31794281439fd238097b0
@@ -219,7 +232,7 @@ TextureImporter:
       name: TilesetFase1_4
       rect:
         serializedVersion: 2
-        x: 224
+        x: 128
         y: 352
         width: 32
         height: 32
@@ -229,11 +242,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -15}
-        - {x: -15, y: -16}
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 810ba52993713c948b6f66a49090d497
@@ -246,7 +258,7 @@ TextureImporter:
       name: TilesetFase1_5
       rect:
         serializedVersion: 2
-        x: 256
+        x: 160
         y: 352
         width: 32
         height: 32
@@ -256,10 +268,14 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
+      - - {x: 7, y: -8}
+        - {x: 11, y: 4}
+        - {x: 11, y: 15}
+        - {x: 10, y: 16}
+        - {x: -12, y: 16}
+        - {x: -12, y: -1}
+        - {x: -7, y: -16}
+        - {x: 4, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 1bc2e4e0cbe51b94badf256c0ea8eaa4
@@ -272,7 +288,7 @@ TextureImporter:
       name: TilesetFase1_6
       rect:
         serializedVersion: 2
-        x: 288
+        x: 192
         y: 352
         width: 32
         height: 32
@@ -282,12 +298,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
-        - {x: 14, y: -16}
-        - {x: 16, y: -12}
-        - {x: 16, y: 15}
-        - {x: 14, y: 16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 799f49f7bd4a8964eb6e1fe4954946a6
@@ -300,7 +314,7 @@ TextureImporter:
       name: TilesetFase1_7
       rect:
         serializedVersion: 2
-        x: 320
+        x: 224
         y: 352
         width: 32
         height: 32
@@ -310,10 +324,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 591404336961f0d45828bfae19c4da64
@@ -326,7 +340,7 @@ TextureImporter:
       name: TilesetFase1_8
       rect:
         serializedVersion: 2
-        x: 352
+        x: 256
         y: 352
         width: 32
         height: 32
@@ -336,10 +350,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 4e67f834e69b0374e8df2e55d69f6fa8
@@ -352,7 +366,7 @@ TextureImporter:
       name: TilesetFase1_9
       rect:
         serializedVersion: 2
-        x: 384
+        x: 288
         y: 352
         width: 32
         height: 32
@@ -362,11 +376,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 16, y: -16}
-        - {x: 16, y: 16}
+      - - {x: 16, y: 16}
         - {x: -16, y: 16}
         - {x: -16, y: -16}
-        - {x: 12, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 89bb92933836d984ab65570a3c9f4fd7
@@ -379,7 +392,7 @@ TextureImporter:
       name: TilesetFase1_10
       rect:
         serializedVersion: 2
-        x: 416
+        x: 320
         y: 352
         width: 32
         height: 32
@@ -388,7 +401,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 3a9e5abd0f2cbd742bc437067d782fd8
@@ -401,7 +418,7 @@ TextureImporter:
       name: TilesetFase1_11
       rect:
         serializedVersion: 2
-        x: 448
+        x: 352
         y: 352
         width: 32
         height: 32
@@ -410,7 +427,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 0ea5e28f84f4cf741957cf190c9003f4
@@ -423,7 +444,7 @@ TextureImporter:
       name: TilesetFase1_12
       rect:
         serializedVersion: 2
-        x: 480
+        x: 384
         y: 352
         width: 32
         height: 32
@@ -432,7 +453,15 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 7, y: -8}
+        - {x: 11, y: 4}
+        - {x: 11, y: 15}
+        - {x: 10, y: 16}
+        - {x: -12, y: 16}
+        - {x: -12, y: -1}
+        - {x: -7, y: -16}
+        - {x: 4, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: e26c8b3ceb22aab429e303c12668df12
@@ -445,7 +474,7 @@ TextureImporter:
       name: TilesetFase1_13
       rect:
         serializedVersion: 2
-        x: 512
+        x: 416
         y: 352
         width: 32
         height: 32
@@ -454,7 +483,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 72cf10dbeed407d45b14f584136fbddb
@@ -467,7 +500,7 @@ TextureImporter:
       name: TilesetFase1_14
       rect:
         serializedVersion: 2
-        x: 544
+        x: 448
         y: 352
         width: 32
         height: 32
@@ -476,7 +509,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 6bd3985c4a7e9c24cbd8d12da2b96971
@@ -489,7 +526,7 @@ TextureImporter:
       name: TilesetFase1_15
       rect:
         serializedVersion: 2
-        x: 576
+        x: 480
         y: 352
         width: 32
         height: 32
@@ -498,7 +535,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: d1dc0c56c2f2d744690b986de87021f0
@@ -511,7 +552,7 @@ TextureImporter:
       name: TilesetFase1_16
       rect:
         serializedVersion: 2
-        x: 608
+        x: 512
         y: 352
         width: 32
         height: 32
@@ -520,7 +561,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 8f69b46a3b2d6b940a58565f7d2070d7
@@ -531,106 +576,6 @@ TextureImporter:
       weights: []
     - serializedVersion: 2
       name: TilesetFase1_17
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape:
-      - - {x: 15, y: -9}
-        - {x: 15, y: 16}
-        - {x: -9, y: 16}
-        - {x: -9, y: -16}
-        - {x: 11, y: -16}
-      tessellationDetail: 0
-      bones: []
-      spriteID: a509a4e1122df0e46b3dd445e4813943
-      internalID: 357277795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_18
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04b2560a39b13e7449d9f21a5a65f957
-      internalID: -1880817822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_19
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1eae69b5a2553044aa331f2e4af9a06d
-      internalID: 1814594649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_20
-      rect:
-        serializedVersion: 2
-        x: 736
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape:
-      - - {x: 16, y: 3}
-        - {x: 14, y: 7}
-        - {x: 9, y: 12}
-        - {x: -7, y: 12}
-        - {x: -16, y: 4}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38f69e4df37738048beedc530b16264f
-      internalID: -1326638288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_21
       rect:
         serializedVersion: 2
         x: 0
@@ -649,6 +594,112 @@ TextureImporter:
         - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
+      spriteID: a509a4e1122df0e46b3dd445e4813943
+      internalID: 357277795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b2560a39b13e7449d9f21a5a65f957
+      internalID: -1880817822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eae69b5a2553044aa331f2e4af9a06d
+      internalID: 1814594649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f69e4df37738048beedc530b16264f
+      internalID: -1326638288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 5, y: -13}
+        - {x: 5, y: 16}
+        - {x: -3, y: 16}
+        - {x: -6, y: 11}
+        - {x: -6, y: -16}
+        - {x: 4, y: -16}
+      tessellationDetail: 0
+      bones: []
       spriteID: ac8b96c9208639d4f8ed965777371686
       internalID: -1158353804
       vertices: []
@@ -659,7 +710,7 @@ TextureImporter:
       name: TilesetFase1_22
       rect:
         serializedVersion: 2
-        x: 32
+        x: 192
         y: 320
         width: 32
         height: 32
@@ -685,7 +736,7 @@ TextureImporter:
       name: TilesetFase1_23
       rect:
         serializedVersion: 2
-        x: 64
+        x: 224
         y: 320
         width: 32
         height: 32
@@ -711,7 +762,7 @@ TextureImporter:
       name: TilesetFase1_24
       rect:
         serializedVersion: 2
-        x: 96
+        x: 256
         y: 320
         width: 32
         height: 32
@@ -721,14 +772,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 16, y: -15}
-        - {x: 16, y: 2}
-        - {x: 12, y: 13}
-        - {x: -6, y: 13}
-        - {x: -13, y: 9}
-        - {x: -16, y: -4}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
-        - {x: 15, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 90bdcfa830ace0c4ca0d90849159df17
@@ -741,7 +788,7 @@ TextureImporter:
       name: TilesetFase1_25
       rect:
         serializedVersion: 2
-        x: 128
+        x: 288
         y: 320
         width: 32
         height: 32
@@ -751,11 +798,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 16, y: -15}
-        - {x: 16, y: 10}
-        - {x: -16, y: 10}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
-        - {x: 15, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 518bb7cc06c5c1c45bedcbc8253e2795
@@ -768,130 +814,6 @@ TextureImporter:
       name: TilesetFase1_26
       rect:
         serializedVersion: 2
-        x: 160
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape:
-      - - {x: 15, y: -11}
-        - {x: 13, y: 7}
-        - {x: 11, y: 10}
-        - {x: -15, y: 10}
-        - {x: -15, y: -16}
-        - {x: 15, y: -16}
-      tessellationDetail: 0
-      bones: []
-      spriteID: f71d2f2816981bb4d917ac35219a9222
-      internalID: -1190643943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_27
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape:
-      - - {x: 8, y: -6}
-        - {x: 8, y: 15}
-        - {x: 6, y: 16}
-        - {x: -2, y: 16}
-        - {x: -6, y: 8}
-        - {x: -6, y: -9}
-        - {x: -4, y: -16}
-        - {x: 7, y: -16}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f2d220d009dffb488b2b001eab55750
-      internalID: -1761652552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_28
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bce998f4d304e448be757073071a3d6
-      internalID: 897112977
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_29
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cba78cf17f1511446a56d40281473f5d
-      internalID: -1570429475
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_30
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13a6cef3e858dce4586ff3a4dad721fa
-      internalID: 664624135
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_31
-      rect:
-        serializedVersion: 2
         x: 320
         y: 320
         width: 32
@@ -902,20 +824,20 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
-      spriteID: 8ab67db450319dc4195db03ed2e6d799
-      internalID: 860395509
+      spriteID: f71d2f2816981bb4d917ac35219a9222
+      internalID: -1190643943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetFase1_32
+      name: TilesetFase1_27
       rect:
         serializedVersion: 2
         x: 352
@@ -934,14 +856,14 @@ TextureImporter:
         - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
-      spriteID: 2d679775aa1a763459daf10559b6effc
-      internalID: 1630484868
+      spriteID: 6f2d220d009dffb488b2b001eab55750
+      internalID: -1761652552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetFase1_33
+      name: TilesetFase1_28
       rect:
         serializedVersion: 2
         x: 384
@@ -954,10 +876,143 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 5, y: -13}
+        - {x: 5, y: 16}
+        - {x: -3, y: 16}
+        - {x: -6, y: 11}
+        - {x: -6, y: -16}
+        - {x: 4, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bce998f4d304e448be757073071a3d6
+      internalID: 897112977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_29
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba78cf17f1511446a56d40281473f5d
+      internalID: -1570429475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a6cef3e858dce4586ff3a4dad721fa
+      internalID: 664624135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_31
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab67db450319dc4195db03ed2e6d799
+      internalID: 860395509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: 0}
+        - {x: -9, y: -6}
+        - {x: 16, y: -6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d679775aa1a763459daf10559b6effc
+      internalID: 1630484868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetFase1_33
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: c305fecd1138f524da5295894779fa1b
@@ -970,8 +1025,8 @@ TextureImporter:
       name: TilesetFase1_34
       rect:
         serializedVersion: 2
-        x: 416
-        y: 320
+        x: 0
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -980,10 +1035,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 7e56465e3576ed74ab91cbb8e10d97ce
@@ -996,8 +1051,8 @@ TextureImporter:
       name: TilesetFase1_35
       rect:
         serializedVersion: 2
-        x: 448
-        y: 320
+        x: 32
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1006,10 +1061,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: f0d55d1b76c6a48418c9ec5bc9073cbc
@@ -1022,8 +1077,8 @@ TextureImporter:
       name: TilesetFase1_36
       rect:
         serializedVersion: 2
-        x: 480
-        y: 320
+        x: 64
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1032,10 +1087,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: a53f9720cb2d8df46b38e9ffc679cb0a
@@ -1048,8 +1103,8 @@ TextureImporter:
       name: TilesetFase1_37
       rect:
         serializedVersion: 2
-        x: 512
-        y: 320
+        x: 96
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1057,7 +1112,12 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 8}
+        - {x: -13, y: 8}
+        - {x: -16, y: 6}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 6588298211a63084fb76724559aa2c2b
@@ -1070,8 +1130,8 @@ TextureImporter:
       name: TilesetFase1_38
       rect:
         serializedVersion: 2
-        x: 544
-        y: 320
+        x: 128
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1079,7 +1139,13 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 15, y: -11}
+        - {x: 14, y: -10}
+        - {x: -15, y: -10}
+        - {x: -15, y: -15}
+        - {x: -14, y: -16}
+        - {x: 15, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: d3fef412435b4114eaf849c6636ba5b5
@@ -1092,8 +1158,8 @@ TextureImporter:
       name: TilesetFase1_39
       rect:
         serializedVersion: 2
-        x: 576
-        y: 320
+        x: 160
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1101,7 +1167,14 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 7, y: 15}
+        - {x: 5, y: 16}
+        - {x: -4, y: 16}
+        - {x: -9, y: 1}
+        - {x: -9, y: -2}
+        - {x: -6, y: -3}
+        - {x: 7, y: -3}
       tessellationDetail: 0
       bones: []
       spriteID: 05814d5299816cf47a0ce0f55a4ef16d
@@ -1114,8 +1187,8 @@ TextureImporter:
       name: TilesetFase1_40
       rect:
         serializedVersion: 2
-        x: 608
-        y: 320
+        x: 288
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1123,7 +1196,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 894fe20cde99bd8419553630dcd99371
@@ -1136,8 +1213,8 @@ TextureImporter:
       name: TilesetFase1_41
       rect:
         serializedVersion: 2
-        x: 640
-        y: 320
+        x: 320
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1146,14 +1223,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 8, y: -6}
-        - {x: 8, y: 15}
-        - {x: 6, y: 16}
-        - {x: -2, y: 16}
-        - {x: -6, y: 8}
-        - {x: -6, y: -9}
-        - {x: -4, y: -16}
-        - {x: 7, y: -16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: b2fe5cb224d785e43a949b8b1ed0f44c
@@ -1166,8 +1239,8 @@ TextureImporter:
       name: TilesetFase1_42
       rect:
         serializedVersion: 2
-        x: 704
-        y: 320
+        x: 352
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1175,7 +1248,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 279f314f3034e574e9c20fb8a264c035
@@ -1188,7 +1265,7 @@ TextureImporter:
       name: TilesetFase1_43
       rect:
         serializedVersion: 2
-        x: 0
+        x: 384
         y: 288
         width: 32
         height: 32
@@ -1198,10 +1275,13 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
+      - - {x: 7, y: 15}
+        - {x: 5, y: 16}
+        - {x: -4, y: 16}
+        - {x: -9, y: 1}
+        - {x: -9, y: -2}
+        - {x: -6, y: -3}
+        - {x: 7, y: -3}
       tessellationDetail: 0
       bones: []
       spriteID: 9edcf35f0c1e4d7409eec145f59b7dbb
@@ -1214,7 +1294,7 @@ TextureImporter:
       name: TilesetFase1_44
       rect:
         serializedVersion: 2
-        x: 32
+        x: 416
         y: 288
         width: 32
         height: 32
@@ -1223,7 +1303,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: f0a03584df4ec1b4abbee9e810fc38e2
@@ -1236,7 +1320,7 @@ TextureImporter:
       name: TilesetFase1_45
       rect:
         serializedVersion: 2
-        x: 64
+        x: 448
         y: 288
         width: 32
         height: 32
@@ -1246,10 +1330,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 8c59ff87e7e7b5249929049b606ecc98
@@ -1262,7 +1346,7 @@ TextureImporter:
       name: TilesetFase1_46
       rect:
         serializedVersion: 2
-        x: 96
+        x: 480
         y: 288
         width: 32
         height: 32
@@ -1271,7 +1355,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: dfa178a5cb0b7b3478882af5e07841bf
@@ -1284,7 +1372,7 @@ TextureImporter:
       name: TilesetFase1_47
       rect:
         serializedVersion: 2
-        x: 128
+        x: 512
         y: 288
         width: 32
         height: 32
@@ -1293,7 +1381,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 3}
+        - {x: 9, y: 6}
+        - {x: 7, y: 6}
+        - {x: 0, y: 3}
+        - {x: -7, y: 2}
+        - {x: -9, y: 2}
+        - {x: -16, y: 0}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 900a83da08a278f46a52c512115e16df
@@ -1306,7 +1403,7 @@ TextureImporter:
       name: TilesetFase1_48
       rect:
         serializedVersion: 2
-        x: 160
+        x: 544
         y: 288
         width: 32
         height: 32
@@ -1315,7 +1412,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 76ca95f80eaf3bc48ac52701ed02289a
@@ -1328,8 +1429,8 @@ TextureImporter:
       name: TilesetFase1_49
       rect:
         serializedVersion: 2
-        x: 192
-        y: 288
+        x: 0
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1338,14 +1439,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 12, y: 4}
-        - {x: 12, y: 15}
-        - {x: 10, y: 16}
-        - {x: -10, y: 16}
-        - {x: -12, y: 3}
-        - {x: -12, y: -1}
-        - {x: -4, y: -5}
-        - {x: 6, y: -5}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 7b2d9a76232a3ab4387bd43c5f58defa
@@ -1358,8 +1455,8 @@ TextureImporter:
       name: TilesetFase1_50
       rect:
         serializedVersion: 2
-        x: 224
-        y: 288
+        x: 32
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1367,7 +1464,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: ee85c0947630c584fbca78842bf9ec80
@@ -1380,8 +1481,8 @@ TextureImporter:
       name: TilesetFase1_51
       rect:
         serializedVersion: 2
-        x: 256
-        y: 288
+        x: 64
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1389,7 +1490,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 7264a6d63ce253543bd7ddab76a61505
@@ -1402,8 +1507,8 @@ TextureImporter:
       name: TilesetFase1_52
       rect:
         serializedVersion: 2
-        x: 288
-        y: 288
+        x: 128
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1411,7 +1516,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: bcaaeab707708154da3cb0911c6c22c0
@@ -1424,8 +1533,8 @@ TextureImporter:
       name: TilesetFase1_53
       rect:
         serializedVersion: 2
-        x: 320
-        y: 288
+        x: 256
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1434,10 +1543,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 75e0c8c34160c604299419061c9aa743
@@ -1450,8 +1559,8 @@ TextureImporter:
       name: TilesetFase1_54
       rect:
         serializedVersion: 2
-        x: 352
-        y: 288
+        x: 384
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1460,10 +1569,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 662f6b4a6e5aca74e9e129b00ac3efa7
@@ -1476,8 +1585,8 @@ TextureImporter:
       name: TilesetFase1_55
       rect:
         serializedVersion: 2
-        x: 384
-        y: 288
+        x: 416
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1486,10 +1595,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 57d128db69608f441851586b7aeb8bdc
@@ -1502,8 +1611,8 @@ TextureImporter:
       name: TilesetFase1_56
       rect:
         serializedVersion: 2
-        x: 416
-        y: 288
+        x: 448
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1512,10 +1621,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: e6055a03edae3354bbdb52705c908240
@@ -1528,8 +1637,8 @@ TextureImporter:
       name: TilesetFase1_57
       rect:
         serializedVersion: 2
-        x: 448
-        y: 288
+        x: 480
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1537,7 +1646,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: de9415c2b0e332f4fa218778c6cc4bbc
@@ -1550,8 +1663,8 @@ TextureImporter:
       name: TilesetFase1_58
       rect:
         serializedVersion: 2
-        x: 480
-        y: 288
+        x: 544
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1560,10 +1673,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: bd15d746b34c22a40b9673b35116824d
@@ -1576,8 +1689,8 @@ TextureImporter:
       name: TilesetFase1_59
       rect:
         serializedVersion: 2
-        x: 512
-        y: 288
+        x: 32
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1585,7 +1698,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 0a86be16d29235c46891f7a2b935eba6
@@ -1598,8 +1715,8 @@ TextureImporter:
       name: TilesetFase1_60
       rect:
         serializedVersion: 2
-        x: 544
-        y: 288
+        x: 64
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1607,7 +1724,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: ce7f5c8f6dda30649a2307e8ea3be6aa
@@ -1620,8 +1741,8 @@ TextureImporter:
       name: TilesetFase1_61
       rect:
         serializedVersion: 2
-        x: 576
-        y: 288
+        x: 128
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1629,7 +1750,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 88f2ed49080dc3e4a840f7d40f3bd77a
@@ -1642,8 +1767,8 @@ TextureImporter:
       name: TilesetFase1_62
       rect:
         serializedVersion: 2
-        x: 608
-        y: 288
+        x: 256
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1651,7 +1776,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 04f17eb0e09c8fc4c99c7c7a9a13dd5b
@@ -1664,8 +1793,8 @@ TextureImporter:
       name: TilesetFase1_63
       rect:
         serializedVersion: 2
-        x: 640
-        y: 288
+        x: 448
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1674,14 +1803,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 12, y: 4}
-        - {x: 12, y: 15}
-        - {x: 10, y: 16}
-        - {x: -10, y: 16}
-        - {x: -12, y: 3}
-        - {x: -12, y: -1}
-        - {x: -4, y: -5}
-        - {x: 6, y: -5}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: dd4449431a98a5943adf85dc2e1b9bde
@@ -1694,8 +1819,8 @@ TextureImporter:
       name: TilesetFase1_64
       rect:
         serializedVersion: 2
-        x: 704
-        y: 288
+        x: 544
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1703,7 +1828,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: d66d1911bc727334f930dd5b17562800
@@ -1717,7 +1846,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -1726,10 +1855,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 2060edd9abd06c44b80b77e51af02e1e
@@ -1742,8 +1871,8 @@ TextureImporter:
       name: TilesetFase1_66
       rect:
         serializedVersion: 2
-        x: 32
-        y: 256
+        x: 64
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -1751,7 +1880,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: b496f0a3efc82254c83351acf331a56d
@@ -1764,8 +1897,8 @@ TextureImporter:
       name: TilesetFase1_67
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
+        x: 256
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -1774,10 +1907,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 2e33eecea9c1e9643ada10d6bd1da0fe
@@ -1790,8 +1923,8 @@ TextureImporter:
       name: TilesetFase1_68
       rect:
         serializedVersion: 2
-        x: 96
-        y: 256
+        x: 416
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -1799,7 +1932,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 3afa8179f93d78b4f8eec90d674fc851
@@ -1812,8 +1949,8 @@ TextureImporter:
       name: TilesetFase1_69
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
+        x: 480
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -1821,7 +1958,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: aab52018ef15b0a41a40b9781f18dccf
@@ -1834,8 +1975,8 @@ TextureImporter:
       name: TilesetFase1_70
       rect:
         serializedVersion: 2
-        x: 160
-        y: 256
+        x: 0
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -1843,7 +1984,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: add1f68369349ae4cb80823cf34b94c6
@@ -1856,8 +2001,8 @@ TextureImporter:
       name: TilesetFase1_71
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
+        x: 32
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -1865,7 +2010,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: c0d2408cad8ed27488237aeef99a53a5
@@ -1878,8 +2027,8 @@ TextureImporter:
       name: TilesetFase1_72
       rect:
         serializedVersion: 2
-        x: 224
-        y: 256
+        x: 64
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -1887,7 +2036,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: be31e78087a1e8b43a4d3807a60d281a
@@ -1900,8 +2053,8 @@ TextureImporter:
       name: TilesetFase1_73
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 416
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -1909,7 +2062,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: eb7c4a3802f41ea4ba183c72f9d402b3
@@ -1922,8 +2079,8 @@ TextureImporter:
       name: TilesetFase1_74
       rect:
         serializedVersion: 2
-        x: 288
-        y: 256
+        x: 448
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -1931,7 +2088,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: -10}
+        - {x: -16, y: -10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: b68488f9719f09547bcf6076a212404d
@@ -1944,8 +2105,8 @@ TextureImporter:
       name: TilesetFase1_75
       rect:
         serializedVersion: 2
-        x: 352
-        y: 256
+        x: 480
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -1953,7 +2114,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: b4a3e6358b07df34681a37cfa13c234e
@@ -1966,8 +2131,8 @@ TextureImporter:
       name: TilesetFase1_76
       rect:
         serializedVersion: 2
-        x: 384
-        y: 256
+        x: 0
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -1975,7 +2140,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 5eac9885f2e536149927d2c585ed7951
@@ -1988,8 +2157,8 @@ TextureImporter:
       name: TilesetFase1_77
       rect:
         serializedVersion: 2
-        x: 416
-        y: 256
+        x: 32
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -1998,10 +2167,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 2c97116f9a1a25d4b98927e45c24d142
@@ -2014,8 +2183,8 @@ TextureImporter:
       name: TilesetFase1_78
       rect:
         serializedVersion: 2
-        x: 448
-        y: 256
+        x: 64
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2023,7 +2192,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
       tessellationDetail: 0
       bones: []
       spriteID: 1ed51a8b5aec80d4591b26b54a9d6849
@@ -2036,8 +2209,8 @@ TextureImporter:
       name: TilesetFase1_79
       rect:
         serializedVersion: 2
-        x: 480
-        y: 256
+        x: 416
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2046,10 +2219,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: e6c8442c1c31ea44f8cf3e3b97a16c0d
@@ -2062,8 +2235,8 @@ TextureImporter:
       name: TilesetFase1_80
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
+        x: 448
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2072,10 +2245,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: cff2c13b8922fba4abaaf77a16a9f9a6
@@ -2088,8 +2261,8 @@ TextureImporter:
       name: TilesetFase1_81
       rect:
         serializedVersion: 2
-        x: 544
-        y: 256
+        x: 480
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2098,10 +2271,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
         - {x: -16, y: -16}
         - {x: 16, y: -16}
-        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 181addffbeeb42c40a68aea0b150a208
@@ -2114,8 +2287,8 @@ TextureImporter:
       name: TilesetFase1_82
       rect:
         serializedVersion: 2
-        x: 576
-        y: 256
+        x: 0
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -2124,1994 +2297,18 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
+      - - {x: 16, y: 11}
+        - {x: 16, y: 15}
+        - {x: 15, y: 16}
+        - {x: -15, y: 16}
+        - {x: -16, y: 15}
+        - {x: -16, y: 11}
+        - {x: -15, y: 10}
+        - {x: 15, y: 10}
       tessellationDetail: 0
       bones: []
       spriteID: be584fd839831cb4d84e85a97f79664e
       internalID: -697160646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_83
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 713a4558907f0d147bcb360f3539fc90
-      internalID: -1220996614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_84
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f87b95104a847a4bb560fe7f574e2c6
-      internalID: 592402957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_85
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14c96978353c7d745b0ae69d37c392e8
-      internalID: -1283797532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_86
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29a9192ee29f36b4c85eaf31f9f0f271
-      internalID: -1697004537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_87
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 529bbaa3efefc4642924618266f1ed06
-      internalID: 975248107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_88
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecabf07f1245f1647a441c12d2e2e2b6
-      internalID: -901164303
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_89
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0598717a0a0b0b41be686d7dd2fff2b
-      internalID: 1136982691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_90
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d91bc63c00863c4193ed498086ac8dc
-      internalID: -525852964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_91
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a3b4901abfacb14384281b682676cf1
-      internalID: 1138014660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_92
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 41806001728ac0347831c648c82784c4
-      internalID: 1033361740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_93
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61c8f7e484004ef44b04084ebc665c63
-      internalID: -1041187031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_94
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 458834c160a7ee24889da1630e589150
-      internalID: -2003342006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_95
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3617d5de64b8beb46adabd05466935c4
-      internalID: 403945227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_96
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2076ae0764ed80f49b6ac84045414edc
-      internalID: 132144325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_97
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b96a11f7acab9994f94bc23e47486a1e
-      internalID: -1437902014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_98
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59ab6e43e035ba14e8af822ef75f143d
-      internalID: 1832807942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_99
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0aa85227bad6b5241a386911cc684aa3
-      internalID: -886975846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_100
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 755af10933c1123449dc0e5528f0f31f
-      internalID: 284387582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_101
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64a30b4f70f6aad4e8f7c8413a52d949
-      internalID: 959610524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_102
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0fcca50bba55f3409d305a817975fde
-      internalID: 968715648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_103
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d93892d47c783a941a3509b6de901007
-      internalID: 822308662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_104
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e1fdbf8b099a0e4d9530dd77896d915
-      internalID: -1897775055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_105
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c41fdf1befbb525459755a001bd52418
-      internalID: -935103662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_106
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb8848dfa3251b740bb74f5950c2f642
-      internalID: 1064490744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_107
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 362a10be2c8d27e47aa4479923d9aa30
-      internalID: 2092756060
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_108
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d057b3c2a5a3da54ca8bd2b2ea15f0a3
-      internalID: 1172238225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_109
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 540f09416608d2b4bbee6eb3ec084226
-      internalID: -1694445362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_110
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3013dbc89d245f6458518e918e3bded4
-      internalID: 164897007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_111
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1dd362b7960386479c72b53675f46cd
-      internalID: 315557736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_112
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9a03ec0a58ced5449658449f1ff59af
-      internalID: -1502708025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_113
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05da448d558fcd845960217dc2c950dc
-      internalID: -1714592856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_114
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c235c1d3ace23e47a85d913d4145fab
-      internalID: -341443138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_115
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 272cbed6fb8600c44945840dfdf1fd29
-      internalID: -1531429378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_116
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 390d27e80a159c849a93429d51bd08a9
-      internalID: 325439567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_117
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd6e710bc5c4c604e889efc3f93ac45d
-      internalID: -1091941447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_118
-      rect:
-        serializedVersion: 2
-        x: 736
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d0fb859c6eb66d40b665c6b7cf4942d
-      internalID: -366982546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_119
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0709543f97b3fc0449e5485e87ccce4b
-      internalID: 1171119701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_120
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f642c221feab4c4418028e42d0bca022
-      internalID: -975910988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_121
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85d7c142d4bde8b4c9e981de71ddd590
-      internalID: 1666794334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_122
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e75c68b39ecbaeb40b3009afd378c672
-      internalID: -773703830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_123
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47b6cba3b4aa75849978bc0b13cb80bc
-      internalID: -2095181949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_124
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7ba827066e0b644894b8fb870aea86e
-      internalID: 36837163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_125
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4941707405275264c8b81a51411a5d69
-      internalID: -1775236420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_126
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f15be8e8d7b128340adce95899569d50
-      internalID: -375499481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_127
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da190ef4ebb1012448c5e5c6907cd7b5
-      internalID: -1572132406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_128
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0562790d443d4404b8996d3c68619d42
-      internalID: -2011745915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_129
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b20c0098b1cdea48862342fa1f0f363
-      internalID: -2118077707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_130
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9de5161c6e9a3f4ea74b7c058b489e2
-      internalID: -681750218
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_131
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 407efe2113b9ff6479339d1e986eacd5
-      internalID: -1526971945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_132
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e9b0e6c3cdfcfa49acd667fcaec6788
-      internalID: 918578032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_133
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce59de0e44e07434287f0ebef11c7d06
-      internalID: -1717533427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_134
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7e76ab2fe072e5469ffe5dcadb1a91d
-      internalID: 53626183
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_135
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1d1bd78d034a1b46ab8034d9f640122
-      internalID: 2125477155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_136
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1e918eda3b862c479950c870a68ba85
-      internalID: 1410894613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_137
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25e9c8acf28ba7c4d8a0050cdc26933a
-      internalID: -1892125423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_138
-      rect:
-        serializedVersion: 2
-        x: 736
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6416ae506fd6c7a4dae31d8bef090192
-      internalID: -1338054577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_139
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2683d1e9144b9c48b6fe17e8ee424c5
-      internalID: 800566899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_140
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4125332c34a5e9043b9d20f3139fd438
-      internalID: -1795888711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_141
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cba67665621d9514a8152bf7ba3a8aae
-      internalID: 85078947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_142
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 720564a45c66f924e981b49ddfa10528
-      internalID: 954498085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_143
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 767c8be1c48bb7a49a0b9bfa229b47b9
-      internalID: 1866705176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_144
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e02b55ec46ee044429f2e04536acc419
-      internalID: -840378949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_145
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 278727dbbfe108842808ae6937afa5c2
-      internalID: -600693888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_146
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4c4286e9e1030c49a4eb4c3bc4c4fcf
-      internalID: -1901269756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_147
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6fda673ca78bca42926f349aab4fff5
-      internalID: -51633590
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_148
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2ad00f68043da742846258ea5281bd8
-      internalID: 875679022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_149
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 473b3c69aa3ca484aaa6a7384568347b
-      internalID: 372338680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_150
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b2e159fe76ca8748abd149bbb5b1eb8
-      internalID: 499885560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_151
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2cb9e034e0087c489c3945a270bfa17
-      internalID: 1997861871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_152
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a6f5b1139467a84db26c8b5f4cf8842
-      internalID: -1442423536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_153
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 954aba83ea9c8d04d88f8e72136eb544
-      internalID: 563360011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_154
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c22be3d69ce66fc49a2226216af23f47
-      internalID: 856867550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_155
-      rect:
-        serializedVersion: 2
-        x: 736
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 235f10818e5a9644e96b946bc50732ba
-      internalID: -1198806200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_156
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6198fd3f0d0dbfd45b7781d72c8aca10
-      internalID: 1933664165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_157
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f886009a0b1dae64e86c429b0304c62f
-      internalID: 460497077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_158
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65cc338fc2f602545b7a54873b5eb425
-      internalID: 958952512
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_159
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45e36de2b97f12e42a2835f4e2442ff5
-      internalID: 1583235347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_160
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be04678b705ee664fb349ec3a0fdd0c0
-      internalID: 1248939777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_161
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86aeb653ed2645c46b715c896cdfefdd
-      internalID: 703981006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_162
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc1749ca51908b24da0bee5137b63428
-      internalID: -746521792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_163
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 558c925cc95a45243a14cf1a54ef2775
-      internalID: 1191922439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_164
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5fe87d2e6bbde2d408433abf803d214f
-      internalID: 1888311127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_165
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0e377cb57507b543a7d428e0bce21d6
-      internalID: -887596557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_166
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d0f8ef8648d5794f909d79c21c4a60a
-      internalID: -1733490798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_167
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07f1db601a2e3cd4b92e220004593628
-      internalID: 1765499982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_168
-      rect:
-        serializedVersion: 2
-        x: 736
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0db7edd8ca478ff4ba2cd607272b79a5
-      internalID: -33149815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_169
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d43d17fa9d2d11c499b8cf72801a5562
-      internalID: 1743891677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_170
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b634a909bc3114459d8e050b8aafa63
-      internalID: -1246587432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_171
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19905eebfef2f8d4d954af086085b2b9
-      internalID: -1894855251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesetFase1_172
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6675a47b79e25a74abfe40fd4900ac03
-      internalID: -428338745
       vertices: []
       indices: 
       edges: []
@@ -4135,86 +2332,13 @@ TextureImporter:
       TilesetFase1_0: -2076573484
       TilesetFase1_1: 910561971
       TilesetFase1_10: -1595013646
-      TilesetFase1_100: 284387582
-      TilesetFase1_101: 959610524
-      TilesetFase1_102: 968715648
-      TilesetFase1_103: 822308662
-      TilesetFase1_104: -1897775055
-      TilesetFase1_105: -935103662
-      TilesetFase1_106: 1064490744
-      TilesetFase1_107: 2092756060
-      TilesetFase1_108: 1172238225
-      TilesetFase1_109: -1694445362
       TilesetFase1_11: -253878395
-      TilesetFase1_110: 164897007
-      TilesetFase1_111: 315557736
-      TilesetFase1_112: -1502708025
-      TilesetFase1_113: -1714592856
-      TilesetFase1_114: -341443138
-      TilesetFase1_115: -1531429378
-      TilesetFase1_116: 325439567
-      TilesetFase1_117: -1091941447
-      TilesetFase1_118: -366982546
-      TilesetFase1_119: 1171119701
       TilesetFase1_12: -538484240
-      TilesetFase1_120: -975910988
-      TilesetFase1_121: 1666794334
-      TilesetFase1_122: -773703830
-      TilesetFase1_123: -2095181949
-      TilesetFase1_124: 36837163
-      TilesetFase1_125: -1775236420
-      TilesetFase1_126: -375499481
-      TilesetFase1_127: -1572132406
-      TilesetFase1_128: -2011745915
-      TilesetFase1_129: -2118077707
       TilesetFase1_13: 1602020709
-      TilesetFase1_130: -681750218
-      TilesetFase1_131: -1526971945
-      TilesetFase1_132: 918578032
-      TilesetFase1_133: -1717533427
-      TilesetFase1_134: 53626183
-      TilesetFase1_135: 2125477155
-      TilesetFase1_136: 1410894613
-      TilesetFase1_137: -1892125423
-      TilesetFase1_138: -1338054577
-      TilesetFase1_139: 800566899
       TilesetFase1_14: 235095740
-      TilesetFase1_140: -1795888711
-      TilesetFase1_141: 85078947
-      TilesetFase1_142: 954498085
-      TilesetFase1_143: 1866705176
-      TilesetFase1_144: -840378949
-      TilesetFase1_145: -600693888
-      TilesetFase1_146: -1901269756
-      TilesetFase1_147: -51633590
-      TilesetFase1_148: 875679022
-      TilesetFase1_149: 372338680
       TilesetFase1_15: -2030348523
-      TilesetFase1_150: 499885560
-      TilesetFase1_151: 1997861871
-      TilesetFase1_152: -1442423536
-      TilesetFase1_153: 563360011
-      TilesetFase1_154: 856867550
-      TilesetFase1_155: -1198806200
-      TilesetFase1_156: 1933664165
-      TilesetFase1_157: 460497077
-      TilesetFase1_158: 958952512
-      TilesetFase1_159: 1583235347
       TilesetFase1_16: 587003028
-      TilesetFase1_160: 1248939777
-      TilesetFase1_161: 703981006
-      TilesetFase1_162: -746521792
-      TilesetFase1_163: 1191922439
-      TilesetFase1_164: 1888311127
-      TilesetFase1_165: -887596557
-      TilesetFase1_166: -1733490798
-      TilesetFase1_167: 1765499982
-      TilesetFase1_168: -33149815
-      TilesetFase1_169: 1743891677
       TilesetFase1_17: 357277795
-      TilesetFase1_170: -1246587432
-      TilesetFase1_171: -1894855251
-      TilesetFase1_172: -428338745
       TilesetFase1_18: -1880817822
       TilesetFase1_19: 1814594649
       TilesetFase1_2: 297774410
@@ -4287,24 +2411,7 @@ TextureImporter:
       TilesetFase1_80: -717106553
       TilesetFase1_81: -219429971
       TilesetFase1_82: -697160646
-      TilesetFase1_83: -1220996614
-      TilesetFase1_84: 592402957
-      TilesetFase1_85: -1283797532
-      TilesetFase1_86: -1697004537
-      TilesetFase1_87: 975248107
-      TilesetFase1_88: -901164303
-      TilesetFase1_89: 1136982691
       TilesetFase1_9: 1342375490
-      TilesetFase1_90: -525852964
-      TilesetFase1_91: 1138014660
-      TilesetFase1_92: 1033361740
-      TilesetFase1_93: -1041187031
-      TilesetFase1_94: -2003342006
-      TilesetFase1_95: 403945227
-      TilesetFase1_96: 132144325
-      TilesetFase1_97: -1437902014
-      TilesetFase1_98: 1832807942
-      TilesetFase1_99: -886975846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
