@@ -5163,6 +5163,7 @@ MonoBehaviour:
   - terrainGrid: {fileID: 42799399}
     indexDisable: 5
   currentLevelIndex: 0
+  dialogue: {fileID: 11400000, guid: a49503aae6170724abbb5eea50b4b4cb, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

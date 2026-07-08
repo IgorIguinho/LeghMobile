@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using Unity.AppUI.UI;
 using UnityEngine;
 
 public class ManagerFase6 : MonoBehaviour
@@ -9,6 +10,9 @@ public class ManagerFase6 : MonoBehaviour
     public List<LevelFase6> levelFase6List;
     public List<TerrainFase6> terrainFase6List;
     public int currentLevelIndex = 0;
+
+    public DialogueData dialogue;
+    PlayerInteract player;
 
     public void Awake()
     {
@@ -64,7 +68,10 @@ public class ManagerFase6 : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("All levels completed!");
+                    if (dialogue == null) return;
+                    player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>();
+                    player.CanOpenDialogue(false, dialogue);
+                    player.OpenDialogue();
                     return;
                 }
             }
