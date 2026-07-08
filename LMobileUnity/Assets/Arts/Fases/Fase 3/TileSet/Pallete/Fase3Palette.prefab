@@ -1792,7 +1792,7 @@ GameObject:
   - component: {fileID: 1607297808146959726}
   - component: {fileID: 7815743685503371492}
   m_Layer: 0
-  m_Name: Fase2Palette
+  m_Name: Fase3Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

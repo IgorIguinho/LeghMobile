@@ -39,6 +39,7 @@ public class PlayerMovements : MonoBehaviour
 
     [Header("Jump")]
     public float jumpForce;
+    public float airJumpForce;
     public int numberJump;
     public bool isGrounded;
     public Vector2 lengthGroundedCheck;
@@ -220,7 +221,7 @@ public class PlayerMovements : MonoBehaviour
         else if (numberJump < 1)
         {
             rb.linearVelocity = Vector2.zero;
-            rb.AddForce(new Vector2(0f, jumpForce * g), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0f, airJumpForce * g), ForceMode2D.Impulse);
             numberJump++;
         }
     
@@ -281,18 +282,12 @@ public class PlayerMovements : MonoBehaviour
                             enemyRb.AddForce(new Vector2(direction * enemyKnockbackForce , enemyKnockbackForce/6f), ForceMode2D.Force);
                         }
 
-                        // 3. Screen Shake
-                        FollowCam followCam = Camera.main != null ? Camera.main.GetComponent<FollowCam>() : null;
-                        if (followCam != null)
+                        //3. Caso seja um obstaculo da fase6
+                        ObstaculoFase6 obstaculo = hit.GetComponent<ObstaculoFase6>();
+                        if (obstaculo != null)
                         {
-                           // followCam.TriggerShake(shakeDuration, shakeMagnitude);
+                            obstaculo.TakeHit();
                         }
-
-                        // 4. Hit-Stop (Time Freeze)
-                        //StartCoroutine(HitStopRoutine(hitStopDuration));
-
-                        // 5. Cancel Dash & Player Backwards Knockback
-                    
 
                         rb.linearVelocity = Vector2.zero;
                         rb.AddForce(new Vector2(-direction * playerKnockbackForce * 2, playerKnockbackForce/4f ), ForceMode2D.Force);

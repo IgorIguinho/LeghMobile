@@ -373,6 +373,7 @@ MonoBehaviour:
   canJump: 1
   isGravityInverted: 0
   jumpForce: 15
+  airJumpForce: 18
   numberJump: 0
   isGrounded: 0
   lengthGroundedCheck: {x: 0.65, y: 0.3}
