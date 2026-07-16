@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9280fc9e5574934ea7732550b9c85ba, type: 3}
   m_Name: Fase4
   m_EditorClassIdentifier: 
-  colectedCoin: 0
-  totalCoin: 100
+  colectedCoin: 
+  totalCoin: 73
   colectedMedal: 0
   totalMedal: 3
   colectedParti: 0

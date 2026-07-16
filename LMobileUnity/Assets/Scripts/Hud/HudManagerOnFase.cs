@@ -54,5 +54,13 @@ public class HudManagerOnFase : MonoBehaviour
     public void OpenWinScreen()
     {
         winScreen.SetActive(true);
+        EndFase();
+    }
+
+    void EndFase()
+    {
+        PlayerPrefs.DeleteAll();
+        FaseManager.Instance.UptadeFaseScritable();
+        
     }
 }

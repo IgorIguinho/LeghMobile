@@ -49,4 +49,6 @@ MonoBehaviour:
   - speakerName: Agente
     dialogueText: "Isso n\xE3o pode acontecer. Iniciando salto."
     speakerPortrait: {fileID: 0}
-  LastDialogue: 1
+  lastDialogue: 1
+  learnSkill: 0
+  skillToLearn: 0

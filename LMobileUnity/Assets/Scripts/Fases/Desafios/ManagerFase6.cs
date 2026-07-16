@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.AppUI.UI;
 using UnityEngine;
 
 public class ManagerFase6 : MonoBehaviour

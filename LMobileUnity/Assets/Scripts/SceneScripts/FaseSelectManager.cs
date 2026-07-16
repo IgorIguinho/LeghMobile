@@ -21,7 +21,8 @@ public class FaseSelectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateFaseUi(faseAtual);   
+        UpdateFaseUi(faseAtual);
+        PlayerPrefs.DeleteAll();
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class FaseSelectManager : MonoBehaviour
     public void UpdateFaseUi(int i)
     {
         imageFaseHolder.sprite = faseList[i].imageHolder;
-        coinTextUI.text = "Moeda " + faseList[i].colectedCoin.ToString() + "/" + faseList[i].totalCoin;
+        coinTextUI.text = "Moeda " + faseList[i].colectedCoin.Count.ToString() + "/" + faseList[i].totalCoin;
         medalTextUI.text ="Medalhas " + faseList[i].colectedMedal.ToString() + "/" + faseList[i].totalMedal;
         partiTextUI.text = "Partitura " + faseList[i].colectedParti.ToString() + "/" + faseList[i].totalCoin;
         nameTextUI.text = faseList[i].nameFase;

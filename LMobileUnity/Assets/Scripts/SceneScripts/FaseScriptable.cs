@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class FaseScriptable : ScriptableObject
 {
     [Header("Coletaveis")]
-    public int colectedCoin;
+    public List<int> colectedCoin;
     public int totalCoin;
     [Space(10)]
     public int colectedMedal;

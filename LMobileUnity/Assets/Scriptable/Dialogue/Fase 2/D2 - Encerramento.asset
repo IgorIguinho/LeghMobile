@@ -47,3 +47,6 @@ MonoBehaviour:
     dialogueText: "Ele est\xE1 indo direto para o ano de 1835! Temos que intercept\xE1-lo
       antes que cause um colapso temporal. Se prepare para o salto!"
     speakerPortrait: {fileID: 0}
+  lastDialogue: 1
+  learnSkill: 0
+  skillToLearn: 0

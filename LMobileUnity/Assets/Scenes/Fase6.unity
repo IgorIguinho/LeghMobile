@@ -5017,7 +5017,9 @@ MonoBehaviour:
   colectedCoin: 0
   colectedMedal: 0
   enemyDead: 0
-  actualFase: {fileID: 11400000, guid: 893af0590fb8ea445a12772fc5d429c5, type: 2}
+  colectedIDCoin: 
+  coinsList: []
+  actualFase: {fileID: 11400000, guid: 0653aa01b3d2b444d8c60171c1fcea33, type: 2}
 --- !u!4 &493154153
 Transform:
   m_ObjectHideFlags: 0

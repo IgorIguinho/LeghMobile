@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - HudManager
   - LevelManager
+  - SavePoint
   layers:
   - Default
   - TransparentFX

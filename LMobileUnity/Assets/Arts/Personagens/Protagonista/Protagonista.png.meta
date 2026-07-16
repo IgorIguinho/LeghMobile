@@ -597,6 +597,182 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Protagonista_19
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b019c42bb5a726439f3195f59188c17
+      internalID: 2054141128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonista_20
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e758d264a02d14a91d69ea7ac4635e
+      internalID: 1108280064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonista_21
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1f6b2347b25f04ea8b2a4376dc386b
+      internalID: -311228601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonista_22
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38df9af9daadae4d9df6e7e0584a169
+      internalID: -89170041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonista_23
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf29e67d87f7555449739240e2bdb855
+      internalID: -1123269922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonista_24
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a042efd9d4f2d429e2573db64d362b
+      internalID: 1253522980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonista_25
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0133aff26253c40b2248fd79ed5b13
+      internalID: 1538537521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonista_26
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 16
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7ff31fcb8a28b46aabca367023f0ed
+      internalID: 429828200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -624,7 +800,15 @@ TextureImporter:
       Protagonista_16: -1998929635397752850
       Protagonista_17: 3339783715528425928
       Protagonista_18: -7561452089592105888
+      Protagonista_19: 2054141128
       Protagonista_2: -7902600285420288784
+      Protagonista_20: 1108280064
+      Protagonista_21: -311228601
+      Protagonista_22: -89170041
+      Protagonista_23: -1123269922
+      Protagonista_24: 1253522980
+      Protagonista_25: 1538537521
+      Protagonista_26: 429828200
       Protagonista_3: 3126580335585425368
       Protagonista_4: 732984562860091388
       Protagonista_5: -5069276283725161965

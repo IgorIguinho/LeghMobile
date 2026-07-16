@@ -41,4 +41,6 @@ MonoBehaviour:
     dialogueText: "O General Calvil conseguiu abrir caminho e voltar at\xE9 o ano
       de 1645! Segure-se firme, o salto vai ser longo!"
     speakerPortrait: {fileID: 0}
-  LastDialogue: 1
+  lastDialogue: 1
+  learnSkill: 0
+  skillToLearn: 0

@@ -52,4 +52,6 @@ MonoBehaviour:
   - speakerName: Agente
     dialogueText: Preparar salto.
     speakerPortrait: {fileID: 0}
-  LastDialogue: 1
+  lastDialogue: 1
+  learnSkill: 0
+  skillToLearn: 0

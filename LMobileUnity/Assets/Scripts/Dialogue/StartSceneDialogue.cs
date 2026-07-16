@@ -9,6 +9,7 @@ public class StartSceneDialogue : MonoBehaviour
     void Start()
     {
         if (dialogue == null) return;
+        if (PlayerPrefs.GetInt("SecondTimeFase") == 1) return;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>();
         player.CanOpenDialogue(false, dialogue);
         player.OpenDialogue();

@@ -32,6 +32,7 @@ public class ConfigOnFase : MonoBehaviour
     public void ReturnMenu(string scene)
     {
         Time.timeScale = 1;
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(scene);
     }
 }

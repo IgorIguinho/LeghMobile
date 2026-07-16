@@ -230,6 +230,10 @@ public class PlayerMovements : MonoBehaviour
     IEnumerator Dash()
     { 
         isDash = true;
+        if (animator != null)
+        {
+            animator.SetBool("isDash", true);
+        }
         canDash = false;
         float gravityScale = rb.gravityScale;
         rb.gravityScale = 0;
@@ -309,6 +313,10 @@ public class PlayerMovements : MonoBehaviour
         if (!hitEnemy)
         {
             isDash = false;
+            if (animator != null)
+            {
+                animator.SetBool("isDash", false);
+            }
             if (spearVisual != null) spearVisual.SetActive(false);
             trailObject.SetActive(false);
             rb.gravityScale = gravityScale;
@@ -316,6 +324,10 @@ public class PlayerMovements : MonoBehaviour
         else
         {
             isDash = false;
+            if (animator != null)
+            {
+                animator.SetBool("isDash", false);
+            }
             if (spearVisual != null) spearVisual.SetActive(false);
             trailObject.SetActive(false);
             rb.gravityScale = gravityScale;
