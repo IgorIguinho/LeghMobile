@@ -44,4 +44,6 @@ MonoBehaviour:
       manual?! O fluxo est\xE1 inst\xE1vel, os riscos de desintegra\xE7\xE3o s\xE3o
       de-"
     speakerPortrait: {fileID: 0}
-  LastDialogue: 1
+  lastDialogue: 1
+  learnSkill: 0
+  skillToLearn: 0

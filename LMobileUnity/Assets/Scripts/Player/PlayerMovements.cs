@@ -28,6 +28,11 @@ public class PlayerMovements : MonoBehaviour
     public float speedSwitch;
     public LayerMask swtichSpeedMask;
 
+    [Header("Belt system")]
+    public bool isBelt;
+    public LayerMask beltMask;
+    private Collider2D beltCollider;
+
     [Header("PlusSpeed Boost")]
     public bool isPlusSpeedBoost = false;
 
@@ -158,15 +163,29 @@ public class PlayerMovements : MonoBehaviour
         }
         // --- fim PlusSpeed ---
 
+        // --- Belt Speed ---
+        float beltSpeed = 0f;
+        if (isBelt && beltCollider != null)
+        {
+            SurfaceEffector2D beltSpeedZone = beltCollider.GetComponent<SurfaceEffector2D>();
+            if (beltSpeedZone != null)
+            {
+                beltSpeed = beltSpeedZone.speed;
+            }
+        }
+
         float currentDirection = (input != null) ? input.Direction : 0f;
         float switchSpeed = switchSpeedSlow ? (speed / speedSwitch) : (speed * speedSwitch);
 
         if (isGrounded  && !isSwtichSpeed) // movimento normal no chão
-        { rb.linearVelocity = new Vector2(speed * currentDirection , rb.linearVelocity.y); }
+        { rb.linearVelocity = new Vector2((speed * currentDirection) + beltSpeed , rb.linearVelocity.y); }
 
         else if (isSwtichSpeed) //movimento modificado pelo terreno de switch speed
-        { rb.linearVelocity = new Vector2(switchSpeed * currentDirection, rb.linearVelocity.y);  }
+        { rb.linearVelocity = new Vector2((switchSpeed * currentDirection) + beltSpeed, rb.linearVelocity.y);  }
 
+        else if (isBelt)
+            rb.linearVelocity = new Vector2(((speed/ 2) * currentDirection) + beltSpeed, rb.linearVelocity.y);
+        
         else { rb.linearVelocity = new Vector2(speedOnAir * currentDirection , rb.linearVelocity.y); } //Movimento norma no ar
         animator.SetFloat("speed", Mathf.Abs(currentDirection));
         
@@ -195,7 +214,7 @@ public class PlayerMovements : MonoBehaviour
         if (!canJump) return;   // DontJump: bloqueia o pulo
         if (isDash)  return; 
         float g = isGravityInverted ? -1f : 1f;
-        if (isGrounded) 
+        if (isGrounded || isBelt) 
         {
             numberJump = 0;
             rb.linearVelocity = Vector2.zero;
@@ -351,8 +370,10 @@ public class PlayerMovements : MonoBehaviour
     void CheckGround()
     {
         isGrounded = Physics2D.OverlapBox(groundChecker.position, lengthGroundedCheck, 0, groundMask);
-        isSwtichSpeed = Physics2D.OverlapBox(groundChecker.position, lengthGroundedCheck, 0, swtichSpeedMask); 
-        
+        isSwtichSpeed = Physics2D.OverlapBox(groundChecker.position, lengthGroundedCheck, 0, swtichSpeedMask);
+        beltCollider = Physics2D.OverlapBox(groundChecker.position, lengthGroundedCheck, 0, beltMask);
+        isBelt = beltCollider != null;
+
         isWall = Physics2D.OverlapBox(wallChecker.position, lengthWallCheck, 0, wallMask);
         isRope = Physics2D.OverlapBox(wallChecker.position, lengthWallCheck, 0, layerRope);
     }
