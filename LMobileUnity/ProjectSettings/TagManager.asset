@@ -10,6 +10,7 @@ TagManager:
   - HudManager
   - LevelManager
   - SavePoint
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Box
   - SwitchSpeed
   - GroundBelt
-  - 
+  - SingleBox
   - 
   - 
   - 

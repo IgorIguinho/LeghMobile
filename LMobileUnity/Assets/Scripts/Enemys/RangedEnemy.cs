@@ -28,6 +28,9 @@ public class RangedEnemy : MonoBehaviour
     public LayerMask layerPlayer;
     private Transform player;
 
+    [Header("Targeting Override")]
+    public Transform targetOverride;
+
     // --- Detecção sem alocação (zero GC) ---
     private ContactFilter2D playerFilter;
     private readonly Collider2D[] detectResults = new Collider2D[1];
@@ -43,6 +46,13 @@ public class RangedEnemy : MonoBehaviour
     private static readonly int HashCharge = Animator.StringToHash("Charge");
     private static readonly int HashShoot = Animator.StringToHash("Shoot");
     private static readonly int HashFlip = Animator.StringToHash("Flip");
+
+    private void OnEnable()
+    {
+        busy = false;
+        state = EnemyState.Idle;
+        player = null;
+    }
 
     void Start()
     {
@@ -72,8 +82,31 @@ public class RangedEnemy : MonoBehaviour
     // Sem GC: OverlapCircle non-alloc reutilizando filtro e buffer pré-alocados
     void DetectPlayer()
     {
-        int count = Physics2D.OverlapBox(transform.position, detectRadius,0f, playerFilter, detectResults);
-        player = count > 0 ? detectResults[0].transform : null;
+        if (targetOverride != null)
+        {
+            if (!targetOverride.gameObject.activeInHierarchy)
+            {
+                player = null;
+            }
+            else
+            {
+                float dx = Mathf.Abs(targetOverride.position.x - transform.position.x);
+                float dy = Mathf.Abs(targetOverride.position.y - transform.position.y);
+                if (dx <= detectRadius.x * 0.5f && dy <= detectRadius.y * 0.5f)
+                {
+                    player = targetOverride;
+                }
+                else
+                {
+                    player = null;
+                }
+            }
+        }
+        else
+        {
+            int count = Physics2D.OverlapBox(transform.position, detectRadius, 0f, playerFilter, detectResults);
+            player = count > 0 ? detectResults[0].transform : null;
+        }
         animator.SetBool(HashPlayerDetected, player != null);
     }
 
@@ -112,9 +145,27 @@ public class RangedEnemy : MonoBehaviour
     void Shoot()
     {
         Vector2 spawn = firePoint != null ? firePoint.position : transform.position;
-        GameObject projectile = Instantiate(projectileObj, spawn, Quaternion.identity);
-        projectile.GetComponent<ProjectileEnemy>().direction = -direction;
-        projectile.GetComponent<SpriteRenderer>().flipX = direction > 0; // Vira o sprite se estiver mirando para a direita 
+        GameObject projectile;
+        if (Fase7PoolManager.Instance != null && projectileObj != null)
+        {
+            projectile = Fase7PoolManager.Instance.Get(projectileObj, spawn, Quaternion.identity);
+        }
+        else
+        {
+            projectile = Instantiate(projectileObj, spawn, Quaternion.identity);
+        }
+
+        ProjectileEnemy projEnemy = projectile.GetComponent<ProjectileEnemy>();
+        if (projEnemy != null)
+        {
+            projEnemy.direction = -direction;
+        }
+
+        SpriteRenderer sr = projectile.GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.flipX = direction > 0; // Vira o sprite se estiver mirando para a direita 
+        }
     }
 
     // Pode ser chamado por um Animation Event no frame de tiro do clip Shoot.

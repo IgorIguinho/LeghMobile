@@ -89,7 +89,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1042154613914281935
 GameObject:
@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 5818420755231774350}
   - component: {fileID: 8480669905836061689}
   - component: {fileID: -2724444633781723022}
+  - component: {fileID: 7077791636966952114}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -306,7 +307,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 1.5}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -339,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 0
+  dmg: 2
   swordAnimator: {fileID: 2126716387760064481}
   areaAttack: {fileID: 8088863728226933487}
   lengthAreaAttack: {x: 2.05, y: 1}
@@ -348,6 +350,9 @@ MonoBehaviour:
   boxLayer:
     serializedVersion: 2
     m_Bits: 2048
+  singleBoxLayer:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!114 &6263247737563377597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b670a03ac9cedec4b976164a61931fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 0}
   speed: 10
   speedOnAir: 7
   direction: 1
@@ -385,7 +391,7 @@ MonoBehaviour:
   groundChecker: {fileID: 7547467288985861117}
   groundMask:
     serializedVersion: 2
-    m_Bits: 2056
+    m_Bits: 26632
   wallJumpForce: 15
   wallHorizontalJumpForce: 20
   wallFallForce: 2
@@ -396,6 +402,7 @@ MonoBehaviour:
   wallMask:
     serializedVersion: 2
     m_Bits: 8
+  dashAnimation: {fileID: 7400000, guid: 0e26f8836c264154696b16e253690eda, type: 2}
   dashForce: 30
   timeDash: 0.25
   dashCooldown: 0.8
@@ -404,7 +411,7 @@ MonoBehaviour:
   buttonDash: {fileID: 0}
   canDashColor: {r: 1, g: 0.9284955, b: 0, a: 1}
   notCanDashColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
-  spearVisual: {fileID: 676277579864892558}
+  spearDashAnimation: {fileID: 7400000, guid: 93efbc01db544e94a8d9cf94a1e38977, type: 2}
   spearArea: {x: 0.9, y: 1}
   spearOffset: {x: 0.3, y: -0.2}
   spearDamage: 1
@@ -521,12 +528,12 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.03999999, y: -0.22724909}
+  m_Offset: {x: 0.03999999, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 1.5124512}
-    newSize: {x: 2, y: 1.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -569,6 +576,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea223e7dfab99b34eb77f727d982a881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SavePoint
+--- !u!114 &7077791636966952114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155751612047981478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256e195cb58beb045ab5861513bc2389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
 --- !u!1 &1328070945938561972
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +764,7 @@ Transform:
   m_GameObject: {fileID: 1424083585100758397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.039, y: -0.176, z: 0}
+  m_LocalPosition: {x: 0.039, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -927,7 +946,7 @@ Transform:
   m_GameObject: {fileID: 1714662462346611334}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.051, y: -0.638, z: 0}
+  m_LocalPosition: {x: 0.051, y: -0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -958,7 +977,7 @@ Transform:
   m_GameObject: {fileID: 7273899716837458550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.086, y: 0.11, z: 0}
+  m_LocalPosition: {x: -0.086, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1295,7 +1314,7 @@ Transform:
   m_GameObject: {fileID: 8486997287569214018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.715, y: -0.207, z: 0}
+  m_LocalPosition: {x: 0.715, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

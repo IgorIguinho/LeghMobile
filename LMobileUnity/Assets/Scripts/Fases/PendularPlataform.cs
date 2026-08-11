@@ -33,6 +33,15 @@ public class PendularPlataform : MonoBehaviour
     public Vector2 topBoxOffset = new Vector2(0f, 0.6f); // relativo ao topo do collider
     public Vector2 topBoxSize   = new Vector2(2f, 0.4f);
 
+    [Header("Ropes")]
+    public Transform rope;
+    public Transform ropePoint;
+    [Tooltip("Comprimento do sprite da corda em unidades de mundo, com localScale = 1.")]
+    public float ropeOriginalLength = 1f;
+
+    private Rigidbody2D _ropeRb;
+
+
     [Header("Gizmos")]
     [Tooltip("Quantidade de segmentos usados para desenhar a linha curva do arco.")]
     public int arcGizmoSegments = 24;
@@ -64,6 +73,9 @@ public class PendularPlataform : MonoBehaviour
             plataform.interpolation = RigidbodyInterpolation2D.Interpolate;
             _plataformCollider = plataform.GetComponent<Collider2D>();
         }
+
+        if (rope != null)
+            _ropeRb = rope.GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -152,6 +164,8 @@ public class PendularPlataform : MonoBehaviour
         // Chegou no destino?
         if (duration <= 0f || _t >= duration)
             StartCoroutine(ArriveAndSwap());
+
+        RopeTransforms();
     }
 
     private IEnumerator ArriveAndSwap()
@@ -214,6 +228,40 @@ public class PendularPlataform : MonoBehaviour
         float ang = Mathf.LerpAngle(_angInicial, _angFinal, p) * Mathf.Deg2Rad;
         float rad = Mathf.Lerp(_radInicial, _radFinal, p);
         return pivot + new Vector2(Mathf.Cos(ang), Mathf.Sin(ang)) * rad;
+    }
+
+
+    private void RopeTransforms()
+    {
+        if (rope == null || posPivo == null || ropePoint == null) return;
+
+        Vector2 pivotPos = posPivo.position;
+        Vector2 anchorPos = ropePoint.position;
+
+        Vector2 dir = anchorPos - pivotPos;
+        float distance = dir.magnitude;
+        if (distance < 0.0001f) return;
+
+        // Angulo do vetor pivo -> plataforma.
+        // -90 porque o sprite da corda, por padrao, "aponta para cima" (eixo Y local = comprimento).
+        // Se o seu sprite apontar para a direita, tire o "-90f".
+        float angle = Mathf.Atan2(dir.y , dir.x ) * Mathf.Rad2Deg ;
+
+        Vector3 scale = rope.localScale;
+        scale.y = distance / ropeOriginalLength;
+
+        if (_ropeRb != null)
+        {
+            _ropeRb.MovePosition(pivotPos);
+            _ropeRb.MoveRotation(angle + 90f);
+        }
+        else
+        {
+            rope.position = pivotPos;
+            rope.rotation = Quaternion.Euler(0f, 0f, angle );
+        }
+
+        rope.localScale = scale;
     }
 
     private void OnDrawGizmos()

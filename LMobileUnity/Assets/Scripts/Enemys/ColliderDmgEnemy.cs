@@ -17,21 +17,53 @@ public class ColliderDmgEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.IsTouching(dmgCollider) && collision.gameObject.tag == "Player")
+        if (collision.IsTouching(dmgCollider))
         {
-            collision.GetComponent<PlayerStats>().TakeDmg(dmg);
-            Destroy(this.gameObject);
-            //ImpulseDmg(collision.gameObject);
-            
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                PlayerStats stats = collision.GetComponent<PlayerStats>();
+                if (stats != null)
+                {
+                    stats.TakeDmg(dmg);
+                }
+                Despawn();
+            }
+            else if (collision.gameObject.CompareTag("NPC"))
+            {
+                Fase7NPC npc = collision.GetComponent<Fase7NPC>();
+                if (npc != null)
+                {
+                    npc.TakeDamage(dmg);
+                }
+                Despawn();
+            }
+        }
+    }
+
+    private void Despawn()
+    {
+        // Try releasing through EnemyStats or PoolManager
+        EnemyStats enemyStats = GetComponent<EnemyStats>();
+        if (enemyStats != null)
+        {
+            enemyStats.Death();
+        }
+        else if (Fase7PoolManager.Instance != null)
+        {
+            Fase7PoolManager.Instance.Release(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
     void ImpulseDmg(GameObject obj)
     {
-        
-       
-        rb.linearVelocity = Vector2.zero;
-        rb.AddForce(new Vector2(forceImpulseDmg * direction, forceImpulseDmg ), ForceMode2D.Impulse);
-
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.AddForce(new Vector2(forceImpulseDmg * direction, forceImpulseDmg), ForceMode2D.Impulse);
+        }
     }
 }

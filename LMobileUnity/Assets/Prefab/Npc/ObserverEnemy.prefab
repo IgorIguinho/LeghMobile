@@ -141,14 +141,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0a33081e075f44d9c7c72fa28de712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   seePlayer: 0
   direction: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
   speed: 4
   lenghtCheckPlayer: {x: 13, y: 0.5}
   tranformCheckerPlayer: {fileID: 2171176327933108665}
   layerPlayer:
     serializedVersion: 2
     m_Bits: 64
+  chargeDistance: 2.5
+  telegraphDuration: 0.5
+  dashForce: 12
+  targetOverride: {fileID: 0}
 --- !u!114 &4064724703702351277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd94b0ed5d70fe84fa20ee0ad0654672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 1
 --- !u!50 &4715259808663628229
 Rigidbody2D:
   serializedVersion: 5

@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
 
     bool canAttack;
     public float attackSpeed;
+    public int dmg;
 
 
     public Animator swordAnimator;
@@ -15,12 +16,16 @@ public class PlayerAttack : MonoBehaviour
     public Vector2 lengthAreaAttack;
     public LayerMask enemyLayer;
     [SerializeField] LayerMask boxLayer;
+    [SerializeField] LayerMask singleBoxLayer;
 
     Rigidbody2D rb;
     InputReader input;
     Animator animator;
 
     // Buffer reutilizado para a detecção de caixas sem alocação (mobile).
+    readonly Collider2D[] singleBoxHitBuffer = new Collider2D[1];
+    ContactFilter2D singleBoxFilter;
+
     readonly Collider2D[] boxHitsBuffer = new Collider2D[8];
     ContactFilter2D boxFilter;
 
@@ -43,6 +48,11 @@ public class PlayerAttack : MonoBehaviour
         boxFilter.useTriggers = true;
         boxFilter.SetLayerMask(boxLayer);
         boxFilter.useLayerMask = true;
+
+        singleBoxFilter = new ContactFilter2D();
+        singleBoxFilter.useTriggers = true;
+        singleBoxFilter.SetLayerMask(singleBoxLayer);
+        singleBoxFilter.useLayerMask = true;
     }
 
     void OnAttackInput()
@@ -68,8 +78,29 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.GetComponent<EnemyStats>() != null) { enemy.GetComponent<EnemyStats>().Death(); }
+            // Tenta pegar qualquer componente que implemente IDamageable
+            IDamageable damageable = enemy.GetComponent<IDamageable>();
+
+            if (damageable != null)
+            {
+                damageable.TakeDamage(dmg);
+            }
         }
+
+        
+        if (singleBoxLayer != 0)
+        {        
+            int singleBoxCount = Physics2D.OverlapBox(areaAttack.position, lengthAreaAttack, 0f, singleBoxFilter, singleBoxHitBuffer);
+            for (int i = 0; i < singleBoxCount; i++)
+            {
+                GameObject breakableSingle = singleBoxHitBuffer[i].gameObject;
+                if (breakableSingle != null)
+                {
+                    breakableSingle.SetActive(false);
+                }
+            }
+        }
+
 
         // Detecção de caixas quebráveis (sem alocação) na mesma área de ataque.
         if (boxLayer.value != 0)

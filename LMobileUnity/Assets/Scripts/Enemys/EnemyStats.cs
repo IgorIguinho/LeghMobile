@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+public class EnemyStats : MonoBehaviour ,  IDamageable
 {
     [Header("Health")]
     [SerializeField] private int maxHealth = 1;
     private int currentHealth;
 
+    public System.Action<EnemyStats> OnEnemyDeath;
+
     private void Awake()
+    {
+        currentHealth = maxHealth;
+    }
+
+    private void OnEnable()
     {
         currentHealth = maxHealth;
     }
@@ -24,6 +31,17 @@ public class EnemyStats : MonoBehaviour
 
     public void Death()
     {
-        Destroy(this.gameObject);
+        if (OnEnemyDeath != null)
+        {
+            OnEnemyDeath.Invoke(this);
+        }
+        else if (Fase7PoolManager.Instance != null)
+        {
+            Fase7PoolManager.Instance.Release(gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

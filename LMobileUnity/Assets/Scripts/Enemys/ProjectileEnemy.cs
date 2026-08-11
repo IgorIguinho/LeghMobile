@@ -8,12 +8,33 @@ public class ProjectileEnemy : MonoBehaviour
     public int projectileDmg;
     public int direction;
 
-    Rigidbody2D rb;
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody2D rb;
+    private Coroutine deactivateCoroutine;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        Destroy(this.gameObject, 10f);
+    }
+
+    private void OnEnable()
+    {
+        if (deactivateCoroutine != null) StopCoroutine(deactivateCoroutine);
+        deactivateCoroutine = StartCoroutine(DeactivateAfterDelay(10f));
+    }
+
+    private void OnDisable()
+    {
+        if (deactivateCoroutine != null)
+        {
+            StopCoroutine(deactivateCoroutine);
+            deactivateCoroutine = null;
+        }
+    }
+
+    private IEnumerator DeactivateAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        DeactivateProjectile();
     }
 
     // Update is called once per frame
@@ -24,20 +45,47 @@ public class ProjectileEnemy : MonoBehaviour
 
     void Moviment()
     {
-        rb.linearVelocity = new Vector2(projectileSpeed * direction, 0);
+        if (rb != null)
+        {
+            rb.linearVelocity = new Vector2(projectileSpeed * direction, 0);
+        }
+    }
+
+    private void DeactivateProjectile()
+    {
+        if (Fase7PoolManager.Instance != null)
+        {
+            Fase7PoolManager.Instance.Release(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player") 
+        if (collision.gameObject.CompareTag("Player")) 
         {
-            collision.GetComponent<PlayerStats>().TakeDmg(projectileDmg);
-            Destroy(this.gameObject);
+            PlayerStats stats = collision.GetComponent<PlayerStats>();
+            if (stats != null)
+            {
+                stats.TakeDmg(projectileDmg);
+            }
+            DeactivateProjectile();
         }
-
-        if (collision.gameObject.tag == "Ground")
+        else if (collision.gameObject.CompareTag("NPC"))
         {
-            Destroy(this.gameObject);
+            Fase7NPC npc = collision.GetComponent<Fase7NPC>();
+            if (npc != null)
+            {
+                npc.TakeDamage(projectileDmg);
+            }
+            DeactivateProjectile();
+        }
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
+            DeactivateProjectile();
         }
     }
 }

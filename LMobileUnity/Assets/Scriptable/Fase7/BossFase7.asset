@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2803ddb361c22054abc0ac81b93ee7f0, type: 3}
+  m_Name: BossFase7
+  m_EditorClassIdentifier: Assembly-CSharp::Fase7BossConfig
+  maxHealth: 25
+  speed: 4
+  dialogue: {fileID: 11400000, guid: 131b44966406c884884cf39b2f1f7162, type: 2}
+  actionCooldown: 1.5
+  meleeReach: 2.2
+  meleeDamage: 15
+  projectileSpeed: 1
+  projectileDamage: 1
+  phase1MeleeWeight: 40
+  phase1ProjectileWeight: 40
+  phase1ChargeWeight: 20
+  phase2MeleeWeight: 35
+  phase2ProjectileWeight: 35
+  phase2ChargeWeight: 25
+  phase2SequenceWeight: 5
+  walkDurationDifferentPlatform: 2
+  platform4ChargeSection: 0
+  jumpForceY: 10
+  jumpForceX: 5
+  platformThresholdY: 0.5
+  contactDamage: 2
+  chaseJumpForce: 12
+  jumpChaseDistance: 4

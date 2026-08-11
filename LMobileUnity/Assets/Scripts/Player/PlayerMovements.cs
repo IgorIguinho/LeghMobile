@@ -8,11 +8,13 @@ public class PlayerMovements : MonoBehaviour
 {
 
 
-    InputReader input;
+    public InputReader input;
 
     Rigidbody2D rb;
-    Animator animator;
     RewindObj rewindObj;
+    PlayerAnimation playerAnimation;
+
+    public event System.Action OnJump;
 
     [Header("Movimento on ground")]
     public float speed;
@@ -62,18 +64,19 @@ public class PlayerMovements : MonoBehaviour
     public LayerMask wallMask;
 
     [Header("Dash")]
+    public AnimationClip dashAnimation;
     public float dashForce;
     public float timeDash;
     public float dashCooldown;
     public GameObject trailObject;
     public bool canDash = true;
-    private bool isDash;
+    public bool isDash { get; private set; }
     public GameObject buttonDash;
     public Color canDashColor;
     public Color notCanDashColor;
 
     [Header("Spear Dash Upgrade")]
-    public GameObject spearVisual;
+    public AnimationClip spearDashAnimation;
     public Vector2 spearArea;
     public Vector2 spearOffset;
     public int spearDamage = 1;
@@ -113,6 +116,7 @@ public class PlayerMovements : MonoBehaviour
     {
         input = GetComponent<InputReader>();
         input.TradeActionMap(input.controls.Land, input.controls.Dialogue);
+        playerAnimation = GetComponent<PlayerAnimation>();
     }
 
     void OnJumpInput() => Jump();
@@ -128,7 +132,6 @@ public class PlayerMovements : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        animator = gameObject.GetComponent<Animator>();
         rewindObj = gameObject.GetComponent<RewindObj>();
         
     }
@@ -157,7 +160,6 @@ public class PlayerMovements : MonoBehaviour
             }
             else
             {
-                animator.SetFloat("speed", Mathf.Abs((input != null) ? input.Direction : 0f));
                 return; // ignora a reescrita normal de X enquanto boostando
             }
         }
@@ -187,7 +189,6 @@ public class PlayerMovements : MonoBehaviour
             rb.linearVelocity = new Vector2(((speed/ 2) * currentDirection) + beltSpeed, rb.linearVelocity.y);
         
         else { rb.linearVelocity = new Vector2(speedOnAir * currentDirection , rb.linearVelocity.y); } //Movimento norma no ar
-        animator.SetFloat("speed", Mathf.Abs(currentDirection));
         
         if (rb.linearVelocity.x * direction < 0f)
         {
@@ -213,6 +214,7 @@ public class PlayerMovements : MonoBehaviour
     {
         if (!canJump) return;   // DontJump: bloqueia o pulo
         if (isDash)  return; 
+        OnJump?.Invoke();
         float g = isGravityInverted ? -1f : 1f;
         if (isGrounded || isBelt) 
         {
@@ -249,10 +251,6 @@ public class PlayerMovements : MonoBehaviour
     IEnumerator Dash()
     { 
         isDash = true;
-        if (animator != null)
-        {
-            animator.SetBool("isDash", true);
-        }
         canDash = false;
         float gravityScale = rb.gravityScale;
         rb.gravityScale = 0;
@@ -266,14 +264,13 @@ public class PlayerMovements : MonoBehaviour
         }
         else { rb.linearVelocity = new Vector2(dashForce * direction , 0); }
 
-        animator.SetFloat("speed", Mathf.Abs((input != null) ? input.Direction : 0f)); 
         trailObject.SetActive(true); //Efeito de dash, um trail configurado no editor
         buttonDash.gameObject.GetComponent<Image>().color = notCanDashColor; //Modifica a cor do botão de dash
 
         bool hasSpear = PlayerSkillsManager.Instance != null && PlayerSkillsManager.Instance.IsSkillUnlocked(SkillType.Spear);
-        if (hasSpear && spearVisual != null)
+        if (hasSpear && spearDashAnimation != null)
         {
-            spearVisual.SetActive(true);
+          playerAnimation.TradeAnimation(dashAnimation, spearDashAnimation);
         }
 
         float elapsed = 0f;
@@ -332,22 +329,14 @@ public class PlayerMovements : MonoBehaviour
         if (!hitEnemy)
         {
             isDash = false;
-            if (animator != null)
-            {
-                animator.SetBool("isDash", false);
-            }
-            if (spearVisual != null) spearVisual.SetActive(false);
+          
             trailObject.SetActive(false);
             rb.gravityScale = gravityScale;
         }
         else
         {
             isDash = false;
-            if (animator != null)
-            {
-                animator.SetBool("isDash", false);
-            }
-            if (spearVisual != null) spearVisual.SetActive(false);
+           
             trailObject.SetActive(false);
             rb.gravityScale = gravityScale;
         }
@@ -355,7 +344,6 @@ public class PlayerMovements : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
 
         canDash = true;
-        animator.SetFloat("speed", Mathf.Abs((input != null) ? input.Direction : 0f));
         buttonDash.gameObject.GetComponent<Image>().color = canDashColor;
     }
 

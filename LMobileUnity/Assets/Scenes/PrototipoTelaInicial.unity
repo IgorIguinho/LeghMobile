@@ -1120,6 +1120,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1073d8b08e5f5046b3f91212e1783b0, type: 2}
   - {fileID: 11400000, guid: f6e3e0df36019b84d9862c65ec20352c, type: 2}
   - {fileID: 11400000, guid: 9d0ac2aed4831694798a3ba53ca34485, type: 2}
+  - {fileID: 11400000, guid: 0653aa01b3d2b444d8c60171c1fcea33, type: 2}
+  - {fileID: 11400000, guid: ce30381f046354549acdbda0fe3a4318, type: 2}
+  - {fileID: 11400000, guid: 42f2de1df3bd56f4b9d3e3a69d4761ea, type: 2}
   faseAtual: 0
   imageFaseHolder: {fileID: 838938751}
   coinTextUI: {fileID: 1917396230}
