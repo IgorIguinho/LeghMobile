@@ -20,6 +20,7 @@ public class HudManagerOnFase : MonoBehaviour
     public Image dialogueBG;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI dialogueName;
+    public GameObject skipDialogueButton;
     [Space(10)]
     public GameObject winScreen;
 
@@ -44,12 +45,15 @@ public class HudManagerOnFase : MonoBehaviour
         winScreen.SetActive(false);
     }
 
-    public void OpenDialogueHud(float open)
+    public void OpenDialogueHud(float open, bool firstTimeReadDialogue)
     {
         dialogueBG.CrossFadeAlpha(open,0.2f,true) ;
         buttonControlGroup.SetActive(open == 0 ? true : false);
-      dialogueText.text = "";
+        
+        dialogueText.text = "";
         dialogueName.text = "";
+        skipDialogueButton.SetActive(firstTimeReadDialogue);
+        skipDialogueButton.GetComponent<Image>().CrossFadeAlpha(open, 0.2f, true);
     }
     public void OpenWinScreen()
     {
