@@ -10,56 +10,89 @@
 
 # Game Mechanics
 ## Core Gameplay Loop
-In Stage 9 (Fase 9), the player enters a dedicated boss arena. The boss operates on a 3-state Finite State Machine (FSM):
-1. **Attack Sequence State (Sequência de Ataque)**: The boss randomly repositions between waypoints around the arena, firing a sequence of projectiles targeted at the player.
-2. **Vulnerable State (Vulnerável)**: The boss stops at a waypoint and becomes vulnerable for a short duration (`vulnerabilityDuration`). A visual cue (light/sprite flash) indicates this opening. The player must strike the boss using sword or fire attacks.
-3. **Hit Reaction State (Reação a Dano)**: Upon taking damage via the `IDamageable` interface, the boss triggers a fast run across the arena, updates its phase settings based on current health from the progression table (`phaseSettings`), and resumes the attack sequence with increased intensity (more shots per sequence).
+In Stage 9 (Fase 9), the player enters a dedicated boss arena. The boss operates on a 4-state Finite State Machine (FSM):
+1. **Attack Sequence State (Sequência de Ataque)**:
+   - The boss flies/floats smoothly directly between arena waypoints (`waypoints`).
+   - Boss aims and fires a sequence of projectiles targeted at the player (`timeBetweenShots`, `shotsPerSequence` determined by `BossPhaseData`).
+   - Boss is **totally immune to damage** during this state (ignores `TakeDamage`).
+2. **Vulnerable State (Vulnerável)**:
+   - The boss stops at its current waypoint and enters an opening window for a fixed duration (`vulnerabilityDuration`).
+   - Visual cues trigger: SpriteRenderer color shift / flash (`vulnerableColor`, e.g., yellow) and optional light activation (`bossLight`).
+   - In this state, `BossController` accepts damage via `IDamageable.TakeDamage(int damage)`.
+   - If the player does not attack within `vulnerabilityDuration`, the boss returns to `AttackSequence`.
+3. **Hit Reaction State (Reação a Dano)**:
+   - Triggered immediately upon receiving damage in `Vulnerable` state.
+   - The boss evaluates current health against the phase thresholds (`phaseSettings`) to increase intensity (shots per sequence, speed).
+   - The boss executes a high-speed flight/retreat towards the waypoint furthest away from the player (`runSpeed` / `fleeSpeed`).
+   - During this retreat, the boss **does not inflict contact damage** to the player and remains immune.
+   - Upon arriving at the destination waypoint, the boss resets its visual tint and transitions back to `AttackSequence`.
+4. **Dead State (Derrotado)**:
+   - Triggered when health reaches 0.
+   - Stops all movement and shooting routines.
+   - Invokes completion sequence: opens concluding dialogue if configured (`PlayerInteract.CanOpenDialogue(true, deathDialogue)`) and activates the level completion trigger object (`finishLevelObject.SetActive(true)`).
 
 ## Controls and Input Methods
 - Mobile touch / On-screen buttons or Keyboard inputs via `InputReader`.
-- Player attacks with sword/fire. Player sword attacks hit objects on the `enemyLayer` (`IDamageable`) and can deflect/destroy enemy projectiles on `EnemyProjectile` layer (Parry mechanic).
+- Player attacks with sword/melee.
+- **Projectile Parry / Destruction Mechanic**: In `PlayerAttack.cs`, attacks detect enemy projectiles on the configured `projectileLayer` (using zero-allocation `ContactFilter2D` and `Physics2D.OverlapBox`) and cleanly destroy/deactivate them.
 
 # UI
-- Boss Health display / UI integration (optional slider connection similar to `Fase7Boss` health slider).
-- Visual feedback on boss vulnerability (light flash / color tint).
+- **Boss Health Slider**: Optional `Slider` reference in `BossController` (matching `Fase7Boss` pattern), initialized with `maxHealth` and updated on damage.
+- **Visual Feedback**: Real-time color tinting on `SpriteRenderer` and optional `bossLight` component for vulnerability cues.
 
 # Key Asset & Context
-- **`Assets/Scripts/Enemys/BossController.cs`**: New primary monolithic script handling FSM, health (`IDamageable`), movement between waypoints, shooting, lighting triggers, and mobile optimization.
-- **`Assets/Scripts/Enemys/IDamageable.cs`**: Existing interface (`void TakeDamage(int damage)`). `BossController` implements `IDamageable`.
-- **`Assets/Scripts/Enemys/ProjectileEnemyComplex.cs`**: Existing projectile script used for boss shots.
-- **`Assets/Scripts/Enemys/AtiradorEnemy.cs`**: Reference code for shooting logic and targeting.
-- **`Assets/Scripts/Player/PlayerAttack.cs`**: Updated to support parrying/destroying boss projectiles filtered by layer mask (`projectileLayer`).
+- **`Assets/Scripts/Enemys/BossController.cs`**:
+  - Main script handling FSM (`BossState`: `AttackSequence`, `Vulnerable`, `HitReaction`, `Dead`), health, fly movement, shooting, phase transitions, and zero-allocation mobile optimization.
+  - Implements `IDamageable`.
+  - Serialized struct `BossPhaseData`: `int healthThreshold`, `int shotsPerSequence`, `float moveSpeed`, `float timeBetweenShots`.
+  - Inspector configuration:
+    - `int maxHealth = 10`
+    - `Transform[] waypoints`
+    - `BossPhaseData[] phaseSettings`
+    - `float defaultFlySpeed = 4f`
+    - `float fleeSpeed = 8f`
+    - `float vulnerabilityDuration = 2.5f`
+    - `Color normalColor = Color.white`, `Color vulnerableColor = Color.yellow`
+    - `Behaviour bossLight` (null-safe check)
+    - `GameObject projectilePrefab`
+    - `Transform firePoint`
+    - `LayerMask playerLayer`
+    - `float playerDetectRadius = 20f`
+    - `DialogueData deathDialogue`
+    - `GameObject finishLevelObject`
+    - `Slider bossHealthSlider`
+- **`Assets/Scripts/Player/PlayerAttack.cs`**:
+  - Adds `[SerializeField] private LayerMask projectileLayer;`
+  - Pre-allocated `Collider2D[] projectileHitBuffer = new Collider2D[8];` and `ContactFilter2D projectileFilter;` initialized in `Awake()`.
+  - Destroys or releases to `Fase7PoolManager` any hit projectile during the attack execution window.
+- **`Assets/Scripts/Enemys/IDamageable.cs`**: Existing interface (`void TakeDamage(int damage)`).
+- **`Assets/Scripts/Enemys/ProjectileEnemyComplex.cs`**: Reference projectile script.
 
 # Implementation Steps
 
-1. **Create `BossController.cs` script**
-   - **Description**: Implement the `BossController` class in `Assets/Scripts/Enemys/BossController.cs`.
-     - Implement `IDamageable` interface (`TakeDamage(int damage)`).
-     - Define `BossPhaseData` struct with `healthThreshold` and `shotsPerSequence`.
-     - Expose inspector parameters: `waypoints` (`Transform[]`), `phaseSettings` (`BossPhaseData[]`), `timeBetweenShots`, `vulnerabilityDuration`, `runSpeed`, `bossLight` (`Component` or `Behaviour` with `if (bossLight != null)` safety checks for URP/Built-in compatibility), `projectilePrefab`, `spawnPoint`, `playerLayer`, `playerDetectRadius`.
-     - Implement 3-state FSM (`AttackSequence`, `Vulnerable`, `HitReaction`, `Dead`).
-     - Implement zero-allocation mobile optimizations: pre-cached `ContactFilter2D`, pre-allocated buffer for `Physics2D.OverlapCircleNonAlloc`, cached `WaitForSeconds` timers, cached component references (`Transform`, `SpriteRenderer`, `Rigidbody2D`, `Animator`).
+1. **Implement `BossController.cs`**
+   - **Description**: Create `Assets/Scripts/Enemys/BossController.cs` implementing the 4-state FSM (`AttackSequence`, `Vulnerable`, `HitReaction`, `Dead`), smooth flight movement between waypoints, targeted projectile shooting, phase updates, immunity logic, dialogue/finish triggers on death, and zero-allocation mobile physics checks.
    - **Assigned role**: developer
    - **Dependencies**: None
    - **Parallelizable**: No
 
-2. **Update `PlayerAttack.cs` for Projectile Parry / Layer Filtering**
-   - **Description**: Add a `projectileLayer` `LayerMask` field and non-alloc overlap check (`Physics2D.OverlapBox` with `ContactFilter2D`) inside `PlayerAttack.cs` to detect and destroy/deactivate enemy projectiles on attack.
+2. **Update `PlayerAttack.cs` for Projectile Parry / Destruction**
+   - **Description**: Add `projectileLayer`, pre-allocated buffer/`ContactFilter2D`, and projectile destruction logic in `PlayerAttack.cs` without altering existing enemy or box attack logic.
    - **Assigned role**: developer
-   - **Dependencies**: Step 1
-   - **Parallelizable**: No
+   - **Dependencies**: None
+   - **Parallelizable**: Yes
 
-3. **Validate Compilation and API Usage**
-   - **Description**: Verify `BossController` and `PlayerAttack` compile cleanly without syntax, assembly, or null reference issues.
+3. **Validate Compilation and Architecture**
+   - **Description**: Verify clean compilation of both scripts in the Unity project without compiler errors, missing namespace issues, or runtime exceptions.
    - **Assigned role**: developer
    - **Dependencies**: Step 1, Step 2
    - **Parallelizable**: No
 
 # Verification & Testing
-- **Unit / Manual Checks**:
-  1. Verify `BossController` compiles without errors and implements `IDamageable`.
-  2. Verify null-check logic on `bossLight` when no `Light2D` component is assigned.
-  3. Test FSM state transitions: Attack Sequence -> Vulnerable -> Hit Reaction -> Next Phase / Death.
-  4. Test player sword attack interaction with `BossController` during Vulnerable state.
-  5. Test projectile destruction/parry when player attacks projectiles on `EnemyProjectile` layer.
-  6. Verify zero garbage allocation in `Update()` during state transitions and target acquisition.
+- **Unit & Logic Checks**:
+  1. Verify zero compilation errors across `BossController.cs` and `PlayerAttack.cs`.
+  2. Verify that `BossController` implements `IDamageable` and rejects damage when not in `Vulnerable` state.
+  3. Verify that `BossController` calculates the furthest waypoint from the player during `HitReaction` and travels there at `fleeSpeed`.
+  4. Verify that `PlayerAttack.cs` detects objects on `projectileLayer` without GC allocation (`Physics2D.OverlapBox` buffer) and safely destroys/deactivates them.
+  5. Verify `bossLight` and `deathDialogue` null safety when unassigned in the inspector.
+  6. Verify proper phase progression (transitioning `shotsPerSequence` and speed when health drops below thresholds).

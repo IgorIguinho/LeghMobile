@@ -17,17 +17,21 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
     [SerializeField] LayerMask boxLayer;
     [SerializeField] LayerMask singleBoxLayer;
+    [SerializeField] LayerMask projectileLayer;
 
     Rigidbody2D rb;
     InputReader input;
     Animator animator;
 
-    // Buffer reutilizado para a detecção de caixas sem alocação (mobile).
+    // Buffer reutilizado para a deteccao de caixas e projeteis sem alocacao (mobile).
     readonly Collider2D[] singleBoxHitBuffer = new Collider2D[1];
     ContactFilter2D singleBoxFilter;
 
     readonly Collider2D[] boxHitsBuffer = new Collider2D[8];
     ContactFilter2D boxFilter;
+
+    readonly Collider2D[] projectileHitsBuffer = new Collider2D[8];
+    ContactFilter2D projectileFilter;
 
     private void OnEnable()
     {
@@ -53,6 +57,11 @@ public class PlayerAttack : MonoBehaviour
         singleBoxFilter.useTriggers = true;
         singleBoxFilter.SetLayerMask(singleBoxLayer);
         singleBoxFilter.useLayerMask = true;
+
+        projectileFilter = new ContactFilter2D();
+        projectileFilter.useTriggers = true;
+        projectileFilter.SetLayerMask(projectileLayer);
+        projectileFilter.useLayerMask = true;
     }
 
     void OnAttackInput()
@@ -112,6 +121,27 @@ public class PlayerAttack : MonoBehaviour
                 if (breakable != null)
                 {
                     breakable.TryBreakInArea(areaAttack.position, lengthAreaAttack);
+                }
+            }
+        }
+
+        // Destruição / Parry de projéteis inimigos (sem alocação).
+        if (projectileLayer.value != 0)
+        {
+            int projCount = Physics2D.OverlapBox(areaAttack.position, lengthAreaAttack, 0f, projectileFilter, projectileHitsBuffer);
+            for (int i = 0; i < projCount; i++)
+            {
+                GameObject proj = projectileHitsBuffer[i].gameObject;
+                if (proj != null)
+                {
+                    if (Fase7PoolManager.Instance != null)
+                    {
+                        Fase7PoolManager.Instance.Release(proj);
+                    }
+                    else
+                    {
+                        Destroy(proj);
+                    }
                 }
             }
         }

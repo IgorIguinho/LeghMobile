@@ -353,6 +353,9 @@ MonoBehaviour:
   singleBoxLayer:
     serializedVersion: 2
     m_Bits: 16384
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!114 &6263247737563377597
 MonoBehaviour:
   m_ObjectHideFlags: 0
