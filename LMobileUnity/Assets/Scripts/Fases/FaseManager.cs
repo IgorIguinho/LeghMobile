@@ -18,6 +18,13 @@ public class FaseManager : MonoBehaviour
 
     public FaseScriptable actualFase;
 
+    [Space(10f)]
+    public GameObject bossFight;
+    public Transform transformArenaBoss;
+    public GameObject canvaBoss;
+
+    GameObject player;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -42,6 +49,7 @@ public class FaseManager : MonoBehaviour
             }
         }
         CarregarCoinsJson();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -52,6 +60,16 @@ public class FaseManager : MonoBehaviour
     public void UptadeFaseScritable()
     {
         actualFase.colectedCoin.AddRange(colectedIDCoin);
+    }
+
+    public void StartBossFight()
+    {
+        if (bossFight != null)
+        {
+            bossFight.SetActive(true);
+            player.transform.position = transformArenaBoss.position;
+            canvaBoss.SetActive(true);
+        }
     }
 
     void CarregarCoinsJson()

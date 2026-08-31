@@ -50,3 +50,7 @@ MonoBehaviour:
   - speakerName: Agente
     dialogueText: Vamos acabar logo com isso.
     speakerPortrait: {fileID: 0}
+  lastDialogue: 0
+  learnSkill: 0
+  skillToLearn: 0
+  isBossDialogue: 1

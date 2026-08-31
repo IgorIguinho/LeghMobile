@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Unity.Android.Gradle;
 
 [Serializable]
 public struct Dialogue
@@ -22,4 +23,11 @@ public class DialogueData : ScriptableObject
     [Space(5f)]
     public bool learnSkill;
     public SkillType skillToLearn;
+
+    [Space(5f)]
+    [Header("Variaveis de boss")]
+    public bool isBossDialogue;
+
+    [Space(5f)]
+    public bool triggerLevelStart;
 }

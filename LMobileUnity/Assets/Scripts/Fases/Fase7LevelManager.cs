@@ -10,10 +10,13 @@ public class Fase7LevelManager : MonoBehaviour
     public static Fase7LevelManager Instance { get; private set; }
 
     [Header("Grids/Terrains")]
+    public GameObject grid0Group;
     public GameObject grid1;
     public GameObject grid2;
     public GameObject grid3;
     public GameObject grid4;
+
+    public GameObject spawnGroup;
 
     [Header("NPC & Player")]
     public Fase7NPC npc;
@@ -46,6 +49,8 @@ public class Fase7LevelManager : MonoBehaviour
     private List<GameObject> activeEnemies = new List<GameObject>();
     private bool isSpawningWave = false;
 
+    private FollowCam followCam;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -64,9 +69,35 @@ public class Fase7LevelManager : MonoBehaviour
             GameObject p = GameObject.FindGameObjectWithTag("Player");
             if (p != null) playerTransform = p.transform;
         }
+        followCam = Camera.main.GetComponent<FollowCam>();
 
-        // Initialize grid activations and start Level 1
-        StartLevel(1);
+        // Initialize grid activations
+        levelUI.text = "";
+        missingEnemies.text = "";
+        if (grid0Group != null) grid0Group.SetActive(true);
+        if (grid1 != null) grid1.SetActive(false);
+        if (grid2 != null) grid2.SetActive(false);
+        if (grid3 != null) grid3.SetActive(false);
+        if (grid4 != null) grid4.SetActive(false);
+        if (spawnGroup != null) spawnGroup.SetActive(false);
+    }
+
+    public void OnDialogueStartFinished()
+    {
+        
+       StartCoroutine(OnDialogueStartFinishedCoroutine());
+    }
+
+    IEnumerator OnDialogueStartFinishedCoroutine()
+    {
+        StartCoroutine(TransitionRoutine(1));
+
+        yield return new WaitForSeconds(fadeDuration);
+
+        if (grid0Group != null) grid0Group.SetActive(false);
+        if (spawnGroup != null) spawnGroup.SetActive(true);
+        // Fade in dark overlay
+        
     }
 
     public void StartLevel(int level)
@@ -75,7 +106,8 @@ public class Fase7LevelManager : MonoBehaviour
         currentWaveIndex = 0;
         activeEnemies.Clear();
         enemiesDefeated=0;
-     
+
+        followCam.MaxX = 0.5f;
         // Manage grids
         if (grid1 != null) grid1.SetActive(level == 1);
         if (grid2 != null) grid2.SetActive(level == 2);
@@ -114,6 +146,8 @@ public class Fase7LevelManager : MonoBehaviour
         if (level == 4)
         {
             StartBossFight();
+            levelUI.text = null;
+            missingEnemies.text = null;
         }
         else
         {

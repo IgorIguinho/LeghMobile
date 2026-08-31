@@ -106,6 +106,15 @@ public class DialogueSystem : MonoBehaviour
             HudManagerOnFase.Instance.groupDialogue.SetActive(false);
             HudManagerOnFase.Instance.OpenWinScreen();
         }
+        if(dialogueData.isBossDialogue)
+        {
+            FaseManager.Instance.StartBossFight();
+        }
+
+        if (dialogueData.triggerLevelStart && Fase7LevelManager.Instance != null)
+        {
+            Fase7LevelManager.Instance.OnDialogueStartFinished();
+        }
     }
 
     public void FinishDialogueButton()
@@ -119,6 +128,11 @@ public class DialogueSystem : MonoBehaviour
         {
             HudManagerOnFase.Instance.groupDialogue.SetActive(false);
             HudManagerOnFase.Instance.OpenWinScreen();
+        }
+
+        if (dialogueData.triggerLevelStart && Fase7LevelManager.Instance != null)
+        {
+            Fase7LevelManager.Instance.OnDialogueStartFinished();
         }
     }
 

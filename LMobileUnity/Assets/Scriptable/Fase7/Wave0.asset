@@ -17,4 +17,4 @@ MonoBehaviour:
     - {fileID: 1688431888242337793, guid: d5d1a55673820604eb51adc616bd5b4e, type: 3}
     spawnInterval: 0.5
     totalEnemiesToSpawn: 5
-  totalEnemiesToSpawnInAllWaves: 25
+  totalEnemiesToSpawnInAllWaves: 5

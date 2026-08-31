@@ -24,7 +24,8 @@ public class AtiradorEnemy : MonoBehaviour
     public GameObject projectileObj;
     public Transform firePoint;
     public float chargeTime = 0.6f;
-    public float shootRecover = 0.3f;
+    public float 
+        shootRecover = 0.3f;
     public float attackCooldown = 1.5f;
 
     private Rigidbody2D rb;

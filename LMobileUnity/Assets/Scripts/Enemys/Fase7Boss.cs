@@ -1,5 +1,5 @@
+
 using System.Collections;
-using Unity.AppUI.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,15 +26,20 @@ public class Fase7Boss : MonoBehaviour , IDamageable
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Transform playerTransform;
+    private Collider2D collider;
     private int facingDirection = -1;
     private float cooldownTimer = 0f;
     private float chaseJumpTimer = 0f;
     private bool hasTriggeredFury = false;
 
+    public float limitArenaX;
+    public float limitArenaY;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        collider = GetComponent<Collider2D>();
     }
 
     private void Start()
@@ -76,6 +81,7 @@ public class Fase7Boss : MonoBehaviour , IDamageable
             if (player != null) playerTransform = player.transform;
             return;
         }
+        ReturnArena();
 
         if (state == BossState.Idle)
         {
@@ -223,22 +229,26 @@ public class Fase7Boss : MonoBehaviour , IDamageable
 
             // Define a velocidade diretamente, ignorando a massa de 1000
             rb.linearVelocity = new Vector2(config.jumpForceX * facingDirection, jumpForceY);
+            collider.isTrigger = true; // Para não colidir com a plataforma durante o pulo
         }
 
         // Aguarda um pouco para sair da plataforma atual
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         // Espera o boss chegar perto da altura alvo ou começar a cair/estabilizar
-        float timeout = 2.0f;
+        float timeout = 1.0f;
         float elapsed = 0f;
         while (elapsed < timeout)
         {
             int currentPlat = GetPlatformIndex(transform);
-            if (currentPlat == targetPlatformIndex) break;
+            if (currentPlat == targetPlatformIndex) { collider.isTrigger = false; break; }
 
             // Se o boss estiver caindo e já passou da altura da plataforma (caso de descer)
             if (rb.linearVelocity.y < 0.1f && Mathf.Abs(transform.position.y - platformReferences[targetPlatformIndex].position.y) < config.platformThresholdY)
-                break;
+            { 
+                
+                break; 
+            }
 
             elapsed += Time.deltaTime;
             yield return null;
@@ -252,6 +262,12 @@ public class Fase7Boss : MonoBehaviour , IDamageable
     {
         state = BossState.AttackingMelee;
         if (rb != null) rb.linearVelocity = Vector2.zero;
+
+        int dirToPlayer = (int)Mathf.Sign(playerTransform.position.x - transform.position.x);
+        if (dirToPlayer != facingDirection && dirToPlayer != 0)
+        {
+            Flip(dirToPlayer);
+        }
 
         if (meleeVisualIndicator != null)
         {
@@ -355,7 +371,8 @@ public class Fase7Boss : MonoBehaviour , IDamageable
         {
             projEnemy.projectileSpeed = (int)config.projectileSpeed;
             projEnemy.projectileDmg = config.projectileDamage;
-            projEnemy.directionPlayer= playerTransform.position;
+            Vector2 directionVector = ((Vector2)playerTransform.position - spawnPos).normalized;
+            projEnemy.directionPlayer = directionVector;
         }
 
         SpriteRenderer projSr = proj.GetComponent<SpriteRenderer>();
@@ -526,5 +543,15 @@ public class Fase7Boss : MonoBehaviour , IDamageable
         return closestIndex;
     }
 
+    public void ReturnArena()
+    {
+        Vector3 pos = transform.position;
+        if (System.MathF.Abs(pos.x) > limitArenaX || System.MathF.Abs(pos.y) > limitArenaY)
+        {
+            transform.position = Vector3.zero;
+            rb.angularVelocity = 0f;
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
 
 }

@@ -47,12 +47,18 @@ public class PlayerInteract : MonoBehaviour
     {
         input.TradeActionMap(input.controls.Dialogue, input.controls.Land);
         managerUI.GetComponent<DialogueSystem>().dialogueData = dialogue;
-        managerUI.GetComponent<HudManagerOnFase>().OpenDialogueHud(1, ReadDialogueData.Instance.readDialogues.Contains(dialogue));
+
         managerUI.GetComponent<DialogueSystem>().NextDialogue();
-        
-        if (!ReadDialogueData.Instance.readDialogues.Contains(dialogue))
-        { 
-            ReadDialogueData.Instance.readDialogues.Add(dialogue);
+        if (ReadDialogueData.Instance != null)
+        {
+            managerUI.GetComponent<HudManagerOnFase>().OpenDialogueHud(1, ReadDialogueData.Instance.readDialogues.Contains(dialogue));
+            if (!ReadDialogueData.Instance.readDialogues.Contains(dialogue))
+            {
+                ReadDialogueData.Instance.readDialogues.Add(dialogue);
+            }
         }
+     
+        
+        
     }
 }

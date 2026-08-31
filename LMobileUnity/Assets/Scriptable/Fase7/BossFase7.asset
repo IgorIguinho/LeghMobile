@@ -29,8 +29,8 @@ MonoBehaviour:
   phase2SequenceWeight: 5
   walkDurationDifferentPlatform: 2
   platform4ChargeSection: 0
-  jumpForceY: 10
-  jumpForceX: 5
+  jumpForceY: 12
+  jumpForceX: 2
   platformThresholdY: 0.5
   contactDamage: 2
   chaseJumpForce: 12

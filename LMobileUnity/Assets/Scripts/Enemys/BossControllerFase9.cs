@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class BossController : MonoBehaviour, IDamageable
+public class BossControllerFase9 : MonoBehaviour, IDamageable
 {
     public enum BossState
     {
@@ -32,6 +32,7 @@ public class BossController : MonoBehaviour, IDamageable
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float defaultFlySpeed = 4f;
     [SerializeField] private float fleeSpeed = 8f;
+    [SerializeField] private Vector3 movementOffset = new Vector3(0, 0.25f, 0);
 
     [Header("Vulnerability & Visuals")]
     [SerializeField] private float vulnerabilityDuration = 2.5f;
@@ -200,7 +201,7 @@ public class BossController : MonoBehaviour, IDamageable
             Transform nextWaypoint = GetNextAttackWaypoint();
             if (nextWaypoint != null)
             {
-                yield return FlyToPosition(nextWaypoint.position, currentMoveSpeed);
+                yield return FlyToPosition(nextWaypoint.position + movementOffset, currentMoveSpeed);
             }
 
             // Aim and Face Player
@@ -399,7 +400,7 @@ public class BossController : MonoBehaviour, IDamageable
         Transform escapeWaypoint = GetFurthestWaypointFromPlayer();
         if (escapeWaypoint != null)
         {
-            yield return FlyToPosition(escapeWaypoint.position, fleeSpeed);
+            yield return FlyToPosition(escapeWaypoint.position + movementOffset, fleeSpeed);
         }
 
         yield return new WaitForSeconds(0.2f);
