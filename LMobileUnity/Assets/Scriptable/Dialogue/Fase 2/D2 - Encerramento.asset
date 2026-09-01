@@ -48,5 +48,7 @@ MonoBehaviour:
       antes que cause um colapso temporal. Se prepare para o salto!"
     speakerPortrait: {fileID: 0}
   lastDialogue: 1
-  learnSkill: 0
-  skillToLearn: 0
+  learnSkill: 1
+  skillToLearn: 2
+  isBossDialogue: 0
+  triggerLevelStart: 0

@@ -18,11 +18,20 @@ public class FaseSelectManager : MonoBehaviour
     public TextMeshProUGUI partiTextUI;
     public TextMeshProUGUI nameTextUI;
 
+    [Header("Variaveis Button")]
+    public Button SkillButton;
+
     // Start is called before the first frame update
     void Start()
     {
         UpdateFaseUi(faseAtual);
         PlayerPrefs.DeleteAll();
+
+        if (!PlayerSkillsManager.Instance)
+        {
+            SkillButton.interactable = false;
+        }
+        else {SkillButton.interactable = true; }
     }
 
     // Update is called once per frame

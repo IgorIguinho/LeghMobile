@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
-    bool canAttack;
+    [Header("Sword Attack Settings")]
+    public bool canAttack = true;
     public float attackSpeed;
     public int dmg;
-
 
     public Animator swordAnimator;
 
@@ -19,9 +18,19 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] LayerMask singleBoxLayer;
     [SerializeField] LayerMask projectileLayer;
 
+    [Header("Fireball Settings")]
+    public GameObject fireballPrefab;
+    public Transform firePoint;
+    public int fireballDmg;
+    public int fireballSpeed;
+    public float fireballAttackSpeed;
+    private bool canFireball = true;
+    private PlayerSkillsManager.WeaponType currentWeapon = PlayerSkillsManager.WeaponType.Sword;
+
     Rigidbody2D rb;
     InputReader input;
     Animator animator;
+    PlayerMovements playerMovements;
 
     // Buffer reutilizado para a deteccao de caixas e projeteis sem alocacao (mobile).
     readonly Collider2D[] singleBoxHitBuffer = new Collider2D[1];
@@ -36,16 +45,30 @@ public class PlayerAttack : MonoBehaviour
     private void OnEnable()
     {
         if (input != null) input.AttackTriggered += OnAttackInput;
+        if (PlayerSkillsManager.Instance != null)
+        {
+            PlayerSkillsManager.Instance.OnWeaponChanged += HandleWeaponChanged;
+        }
     }
 
     private void OnDisable()
     {
         if (input != null) input.AttackTriggered -= OnAttackInput;
+        if (PlayerSkillsManager.Instance != null)
+        {
+            PlayerSkillsManager.Instance.OnWeaponChanged -= HandleWeaponChanged;
+        }
+    }
+
+    private void HandleWeaponChanged(PlayerSkillsManager.WeaponType newWeapon)
+    {
+        currentWeapon = newWeapon;
     }
 
     private void Awake()
     {
         input = GetComponent<InputReader>();
+        playerMovements = GetComponent<PlayerMovements>();
 
         // Filtro sem alocação para detectar apenas colliders na layer das caixas.
         boxFilter = new ContactFilter2D();
@@ -66,7 +89,14 @@ public class PlayerAttack : MonoBehaviour
 
     void OnAttackInput()
     {
-        if (canAttack) { StartCoroutine(Attack()); }
+        if (currentWeapon == PlayerSkillsManager.WeaponType.Sword)
+        {
+            if (canAttack) { StartCoroutine(Attack()); }
+        }
+        else if (currentWeapon == PlayerSkillsManager.WeaponType.FireBall)
+        {
+            if (canFireball) { StartCoroutine(FireballAttack()); }
+        }
     }
 
     // Start is called before the first frame update
@@ -74,7 +104,20 @@ public class PlayerAttack : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
+        if (playerMovements == null)
+        {
+            playerMovements = gameObject.GetComponent<PlayerMovements>();
+        }
+
+        if (PlayerSkillsManager.Instance != null)
+        {
+            currentWeapon = PlayerSkillsManager.Instance.GetCurrentWeapon();
+            PlayerSkillsManager.Instance.OnWeaponChanged -= HandleWeaponChanged;
+            PlayerSkillsManager.Instance.OnWeaponChanged += HandleWeaponChanged;
+        }
+
         canAttack = true;
+        canFireball = true;
     }
 
     IEnumerator Attack()
@@ -150,6 +193,41 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(attackSpeed);
 
         canAttack = true;
+    }
+
+    public IEnumerator FireballAttack()
+    {
+        canFireball = false;
+
+        if (firePoint != null && fireballPrefab != null)
+        {
+            GameObject projObj = null;
+            if (Fase7PoolManager.Instance != null)
+            {
+                projObj = Fase7PoolManager.Instance.Get(fireballPrefab, firePoint.position, Quaternion.identity);
+            }
+            else
+            {
+                projObj = Instantiate(fireballPrefab, firePoint.position, Quaternion.identity);
+            }
+
+            if (projObj != null)
+            {
+                projObj.transform.position = firePoint.position;
+                ProjectilePlayer proj = projObj.GetComponent<ProjectilePlayer>();
+                if (proj != null)
+                {
+                    proj.projectileSpeed = fireballSpeed;
+                    proj.projectileDmg = fireballDmg;
+                    int dir = (playerMovements != null) ? playerMovements.direction : 1;
+                    proj.direction = dir;
+                }
+            }
+        }
+
+        yield return new WaitForSeconds(fireballAttackSpeed);
+
+        canFireball = true;
     }
 
     private void OnDrawGizmos()

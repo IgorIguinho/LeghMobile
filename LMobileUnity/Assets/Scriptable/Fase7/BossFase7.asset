@@ -18,7 +18,7 @@ MonoBehaviour:
   actionCooldown: 1.5
   meleeReach: 2.2
   meleeDamage: 15
-  projectileSpeed: 1
+  projectileSpeed: 5
   projectileDamage: 1
   phase1MeleeWeight: 40
   phase1ProjectileWeight: 40

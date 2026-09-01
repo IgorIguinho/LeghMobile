@@ -49,9 +49,12 @@ public class HudManagerOnFase : MonoBehaviour
     {
         dialogueBG.CrossFadeAlpha(open,0.2f,true) ;
         buttonControlGroup.SetActive(open == 0 ? true : false);
+      if (open == 0)
+        {
+            dialogueText.text = "";
+            dialogueName.text = "";
+        }
         
-        dialogueText.text = "";
-        dialogueName.text = "";
         skipDialogueButton.SetActive(firstTimeReadDialogue);
         skipDialogueButton.GetComponent<Image>().CrossFadeAlpha(open, 0.2f, true);
     }
