@@ -1,132 +1,119 @@
 using UnityEngine;
 
+/// <summary>
+/// Orquestra N zonas de ParallaxScrollingBG dispostas em sequência ao longo do eixo X.
+///
+/// Máquina de estados simples e implícita:
+///   Zona A  -->  Transição(A, B)  -->  Zona B  -->  Transição(B, C)  --> ...
+///
+/// Não empurra nem trava posição de nada (chega de lockX/UnlockAndSync/NudgeX e de
+/// heurística de "ponto médio"). Dentro da janela de cada ZoneBoundary, faz um
+/// crossfade de alpha entre a zona atual e a próxima. Zonas fora do alcance do
+/// player são desativadas (SetZoneActive(false)) para economizar CPU no mobile.
+/// </summary>
 public class ParallaxManager : MonoBehaviour
 {
-    public ParallaxScrollingBG bg1;
-    public ParallaxScrollingBG bg2;
-    public Transform transitionBG;
+    [Tooltip("Zonas na ordem em que aparecem no mundo, da esquerda para a direita.")]
+    public ParallaxScrollingBG[] zones;
+
+    [Tooltip("Um item para cada par de zonas consecutivas: boundaries.Length deve ser zones.Length - 1.")]
+    public ZoneBoundary[] boundaries;
+
     public Transform player;
-
-    [Header("Imagens de Referência para Limites")]
-    [Tooltip("Imagem da FRENTE do BACKGROUND 1")]
-    public Transform bg1FrontImage;
-    [Tooltip("Imagem de TRÁS do BACKGROUND 2")]
-    public Transform bg2BackImage;
-
-    [Header("Anti-Deadlock")]
-    [Tooltip("Folga extra (em unidades) aplicada ao empurrar o BG para liberar a borda da linha de transição.")]
-    public float clearMargin = 0.05f;
-
-    // Cache de Performance para Mobile
-    private SpriteRenderer sr1;
-    private SpriteRenderer sr2;
-    private float width1;
-    private float width2;
-
-    void Start()
-    {
-        // Estado inicial: BG2 começa parado até o player cruzar a linha
-        if (bg2 != null) bg2.lockX = true;
-
-        // Caching de componentes e valores fixos para otimização mobile
-        if (bg1FrontImage != null)
-        {
-            sr1 = bg1FrontImage.GetComponent<SpriteRenderer>();
-            if (sr1 != null) width1 = sr1.bounds.size.x;
-        }
-        if (bg2BackImage != null)
-        {
-            sr2 = bg2BackImage.GetComponent<SpriteRenderer>();
-            if (sr2 != null) width2 = sr2.bounds.size.x;
-        }
-    }
 
     void Update()
     {
-        if (player == null || transitionBG == null) return;
+        if (player == null || zones.Length == 0) return;
 
-        float lineX = transitionBG.position.x;
+        float playerX = player.position.x;
 
-        // --- LÓGICA DO BACKGROUND 1 ---
-        if (player.position.x < lineX)
+        int zoneA = 0;
+        int zoneB = -1;
+        float t = 0f;
+
+        // Percorre os limites em ordem. Poucas zonas => custo desprezível, mesmo em mobile.
+        for (int i = 0; i < boundaries.Length; i++)
         {
-            if (bg1 == null || bg1FrontImage == null) return;
+            var b = boundaries[i];
+            float half = b.width * 0.5f;
+            float min = b.centerX - half;
+            float max = b.centerX + half;
 
-            float bg1Edge = GetCachedEdgeX(bg1FrontImage, sr1, true); // Borda Direita
-
-            if (bg1Edge >= lineX)
+            if (playerX < min)
             {
-                // Anti-deadlock: se o player já voltou para trás do MEIO do BG1
-                float bg1MiddleX = bg1FrontImage.position.x - (width1/2);
+                zoneA = i;
+                zoneB = -1;
+                break;
+            }
 
-                if (player.position.x < bg1MiddleX)
-                {
-                    float overlap = (bg1Edge - lineX) + clearMargin;
-                    bg1.NudgeX(-overlap);     // empurra para a ESQUERDA
-                    bg1.UnlockAndSync();      // retoma o parallax
-                }
-                else
-                {
-                    bg1.lockX = true; 
-                }
-            }
-            else
+            if (playerX <= max)
             {
-                if (bg1.lockX) bg1.UnlockAndSync(); 
+                zoneA = i;
+                zoneB = i + 1;
+                t = Mathf.InverseLerp(min, max, playerX);
+                break;
             }
-        }
-        else
-        {
-            if (bg1 != null) bg1.lockX = true;
+
+            // Já passou completamente este limite: segue avaliando o próximo par.
+            zoneA = i + 1;
+            zoneB = -1;
         }
 
-        // --- LÓGICA DO BACKGROUND 2 ---
-        if (player.position.x >= lineX)
-        {
-            if (bg2 == null || bg2BackImage == null) return;
-
-            float bg2Edge = GetCachedEdgeX(bg2BackImage, sr2, false); // Borda Esquerda
-
-            if (bg2Edge <= lineX)
-            {
-                // Anti-deadlock para o BG2: se o player passou para a frente do MEIO do BG2
-                float bg2MiddleX = bg2BackImage.position.x ;
-
-                if (player.position.x > bg2MiddleX)
-                {
-                    Debug.Log(bg2MiddleX  + " " + bg2Edge + " Solta o bicho" );
-                    float overlap = (lineX - bg2Edge) + clearMargin;
-                    bg2.NudgeX(overlap);      // empurra para a DIREITA
-                    bg2.UnlockAndSync();      // retoma o parallax
-                }
-                else
-                {
-                    bg2.lockX = true; 
-                }
-            }
-            else
-            {
-                if (bg2.lockX) bg2.UnlockAndSync(); 
-            }
-        }
-        else
-        {
-            if (bg2 != null) bg2.lockX = true;
-        }
+        ApplyState(zoneA, zoneB, t);
     }
 
-    private float GetCachedEdgeX(Transform t, SpriteRenderer sr, bool rightSide)
+    private void ApplyState(int zoneA, int zoneB, float t)
     {
-        if (sr == null) return t.position.x;
-        return rightSide ? sr.bounds.max.x : sr.bounds.min.x;
+        bool transitioning = zoneB >= 0;
+
+        for (int i = 0; i < zones.Length; i++)
+        {
+            bool isCurrent = i == zoneA;
+            bool isNext = i == zoneB;
+
+            // Mantém "quentes" (ativas) a zona atual, a próxima (se em transição)
+            // e as vizinhas imediatas, para reativação instantânea sem soluço.
+            bool keepWarm = isCurrent || isNext
+                || Mathf.Abs(i - zoneA) <= 1
+                || (zoneB >= 0 && Mathf.Abs(i - zoneB) <= 1);
+
+            if (keepWarm != zones[i].enabled)
+                zones[i].SetZoneActive(keepWarm);
+
+            if (!keepWarm) continue;
+
+            if (isCurrent) zones[i].SetAlpha(transitioning ? 1f - t : 1f);
+            else if (isNext) zones[i].SetAlpha(t);
+            else zones[i].SetAlpha(0f); // vizinha "quente" mas fora da faixa visível
+        }
     }
+
+#if UNITY_EDITOR
+    void OnDrawGizmosSelected()
+    {
+        if (boundaries == null) return;
+
+        foreach (var b in boundaries)
+        {
+            Vector3 top = new Vector3(b.centerX, transform.position.y + 10f, 0);
+            Vector3 bottom = new Vector3(b.centerX, transform.position.y - 10f, 0);
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(top, bottom);
+
+            Gizmos.color = new Color(1f, 1f, 0f, 0.15f);
+            Gizmos.DrawCube(new Vector3(b.centerX, transform.position.y, 0), new Vector3(b.width, 20f, 0.1f));
+        }
+    }
+#endif
 }
 
 [System.Serializable]
-public class ParallaxGameObject
+public class ZoneBoundary
 {
-    public GameObject parallaxObj;
-    public ParallaxScrollingBG parallaxScript;
-    public Collider2D areaCollison;
-    public bool isActive;
+    [Tooltip("Posição X (mundo) do centro da transição entre duas zonas consecutivas.")]
+    public float centerX;
+
+    [Tooltip("Largura da faixa de crossfade. Maior = transição mais longa e suave.")]
+    public float width = 4f;
 }

@@ -139219,6 +139219,7 @@ GameObject:
   - component: {fileID: 493154152}
   - component: {fileID: 493154154}
   - component: {fileID: 493154155}
+  - component: {fileID: 493154156}
   m_Layer: 0
   m_Name: LEVELMANAGER
   m_TagString: LevelManager
@@ -139411,13 +139412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437bffe0a77d0ad418d59762835f8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxManager
-  bg1: {fileID: 0}
-  bg2: {fileID: 0}
-  transitionBG: {fileID: 284789243}
+  zones: []
+  boundaries: []
   player: {fileID: 0}
-  bg1FrontImage: {fileID: 0}
-  bg2BackImage: {fileID: 0}
-  clearMargin: 0.05
 --- !u!114 &493154155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139431,6 +139428,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartSceneDialogue
   dialogue: {fileID: 11400000, guid: cff969c91fccc994b901a99526c65ac7, type: 2}
+--- !u!114 &493154156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493154151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1698aa82f00d04eacbc435f9c32862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolManager
+  poolsToPreload:
+  - prefab: {fileID: 300133886756084829, guid: 4335b017c3617d4468aa2aed5ea8b7e3, type: 3}
+    initialSize: 15
+  - prefab: {fileID: 6124810460962587458, guid: d5cb03a30f844f043a15e2adb22172fc, type: 3}
+    initialSize: 10
+  - prefab: {fileID: 2406129224946519660, guid: 95fb493b20c969c44aa7bf1ab8c9e7ea, type: 3}
+    initialSize: 10
+  - prefab: {fileID: 2406129224946519660, guid: ba2c3aff6798d0a4c8c512065ed1a9ce, type: 3}
+    initialSize: 10
 --- !u!1001 &495021555
 PrefabInstance:
   m_ObjectHideFlags: 0

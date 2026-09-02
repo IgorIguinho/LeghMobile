@@ -54,9 +54,9 @@ public class ProjectileEnemyComplex : MonoBehaviour
 
     private void DeactivateProjectile()
     {
-        if (Fase7PoolManager.Instance != null)
+        if (PoolManager.Instance != null)
         {
-            Fase7PoolManager.Instance.Release(gameObject);
+            PoolManager.Instance.Release(gameObject);
         }
         else
         {

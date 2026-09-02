@@ -146,9 +146,9 @@ public class RangedEnemy : MonoBehaviour
     {
         Vector2 spawn = firePoint != null ? firePoint.position : transform.position;
         GameObject projectile;
-        if (Fase7PoolManager.Instance != null && projectileObj != null)
+        if (PoolManager.Instance != null && projectileObj != null)
         {
-            projectile = Fase7PoolManager.Instance.Get(projectileObj, spawn, Quaternion.identity);
+            projectile = PoolManager.Instance.Get(projectileObj, spawn, Quaternion.identity);
         }
         else
         {

@@ -35,9 +35,9 @@ public class EnemyStats : MonoBehaviour ,  IDamageable
         {
             OnEnemyDeath.Invoke(this);
         }
-        else if (Fase7PoolManager.Instance != null)
+        else if (PoolManager.Instance != null)
         {
-            Fase7PoolManager.Instance.Release(gameObject);
+            PoolManager.Instance.Release(gameObject);
         }
         else
         {

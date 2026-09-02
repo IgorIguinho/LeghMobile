@@ -315,9 +315,9 @@ public class BossControllerFase9 : MonoBehaviour, IDamageable
         Vector2 spawnPos = firePoint != null ? (Vector2)firePoint.position : (Vector2)transform.position;
         GameObject proj;
 
-        if (Fase7PoolManager.Instance != null)
+        if (PoolManager.Instance != null)
         {
-            proj = Fase7PoolManager.Instance.Get(projectilePrefab, spawnPos, Quaternion.identity);
+            proj = PoolManager.Instance.Get(projectilePrefab, spawnPos, Quaternion.identity);
         }
         else
         {

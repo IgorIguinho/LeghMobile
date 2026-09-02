@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fase7PoolManager : MonoBehaviour
+public class PoolManager : MonoBehaviour
 {
-    public static Fase7PoolManager Instance { get; private set; }
+    public static PoolManager Instance { get; private set; }
 
     [System.Serializable]
     public class PoolConfig

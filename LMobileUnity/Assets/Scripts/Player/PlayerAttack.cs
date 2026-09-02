@@ -177,9 +177,9 @@ public class PlayerAttack : MonoBehaviour
                 GameObject proj = projectileHitsBuffer[i].gameObject;
                 if (proj != null)
                 {
-                    if (Fase7PoolManager.Instance != null)
+                    if (PoolManager.Instance != null)
                     {
-                        Fase7PoolManager.Instance.Release(proj);
+                        PoolManager.Instance.Release(proj);
                     }
                     else
                     {
@@ -202,9 +202,9 @@ public class PlayerAttack : MonoBehaviour
         if (firePoint != null && fireballPrefab != null)
         {
             GameObject projObj = null;
-            if (Fase7PoolManager.Instance != null)
+            if (PoolManager.Instance != null)
             {
-                projObj = Fase7PoolManager.Instance.Get(fireballPrefab, firePoint.position, Quaternion.identity);
+                projObj = PoolManager.Instance.Get(fireballPrefab, firePoint.position, Quaternion.identity);
             }
             else
             {

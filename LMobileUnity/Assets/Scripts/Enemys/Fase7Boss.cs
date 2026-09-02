@@ -357,9 +357,9 @@ public class Fase7Boss : MonoBehaviour , IDamageable
         }
 
         GameObject proj;
-        if (Fase7PoolManager.Instance != null)
+        if (PoolManager.Instance != null)
         {
-            proj = Fase7PoolManager.Instance.Get(projectileObj, spawnPos, Quaternion.identity);
+            proj = PoolManager.Instance.Get(projectileObj, spawnPos, Quaternion.identity);
         }
         else
         {

@@ -175130,6 +175130,7 @@ GameObject:
   - component: {fileID: 493154152}
   - component: {fileID: 493154154}
   - component: {fileID: 493154155}
+  - component: {fileID: 493154156}
   m_Layer: 0
   m_Name: LEVELMANAGER
   m_TagString: Untagged
@@ -175286,13 +175287,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437bffe0a77d0ad418d59762835f8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxManager
-  bg1: {fileID: 1984050391}
-  bg2: {fileID: 1487799786}
-  transitionBG: {fileID: 284789243}
+  zones:
+  - {fileID: 1984050391}
+  - {fileID: 1487799786}
+  boundaries:
+  - centerX: 111.5
+    width: 10
   player: {fileID: 1822457356}
-  bg1FrontImage: {fileID: 2130764794}
-  bg2BackImage: {fileID: 149640261}
-  clearMargin: 0.05
 --- !u!114 &493154155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175306,6 +175307,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartSceneDialogue
   dialogue: {fileID: 11400000, guid: 40500ebd77e6b0c41b216c86efa39e28, type: 2}
+--- !u!114 &493154156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493154151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1698aa82f00d04eacbc435f9c32862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolManager
+  poolsToPreload:
+  - prefab: {fileID: 300133886756084829, guid: 4335b017c3617d4468aa2aed5ea8b7e3, type: 3}
+    initialSize: 15
+  - prefab: {fileID: 6124810460962587458, guid: d5cb03a30f844f043a15e2adb22172fc, type: 3}
+    initialSize: 10
+  - prefab: {fileID: 2406129224946519660, guid: 95fb493b20c969c44aa7bf1ab8c9e7ea, type: 3}
+    initialSize: 10
+  - prefab: {fileID: 2406129224946519660, guid: ba2c3aff6798d0a4c8c512065ed1a9ce, type: 3}
+    initialSize: 10
 --- !u!1 &497953958
 GameObject:
   m_ObjectHideFlags: 0
@@ -181285,7 +181307,7 @@ GameObject:
   - component: {fileID: 974132292}
   - component: {fileID: 974132297}
   - component: {fileID: 974132296}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187683,7 +187705,7 @@ Transform:
   m_GameObject: {fileID: 1228075663}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.83, z: 0}
+  m_LocalPosition: {x: 2.2, y: 1.83, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -190759,7 +190781,6 @@ MonoBehaviour:
     speedParallaxEffect: 0.5
     startpos: {x: 0, y: 0}
     length: {x: 0, y: 0}
-  lockX: 0
 --- !u!4 &1487799787
 Transform:
   m_ObjectHideFlags: 0
@@ -200843,10 +200864,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 3443555287472152352, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: m_Intensity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828447725915488651, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: m_Intensity
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6263247737563377597, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
       propertyPath: buttonDash
       value: 
       objectReference: {fileID: 665056828}
+    - target: {fileID: 8422727280016813581, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: m_Intensity
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -203595,7 +203628,6 @@ MonoBehaviour:
     speedParallaxEffect: 0.7
     startpos: {x: 0, y: 0}
     length: {x: 0, y: 0}
-  lockX: 0
 --- !u!1001 &1989188774
 PrefabInstance:
   m_ObjectHideFlags: 0

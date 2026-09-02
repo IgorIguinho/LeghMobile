@@ -119,17 +119,14 @@ public class Fase7NPC : MonoBehaviour
             animator.SetTrigger(HashAttack);
         }
 
-        // Apply a color flash of light or magic effect
-        Color originalColor = spriteRenderer.color;
-        spriteRenderer.color = Color.cyan;
+        
 
         // Deal damage
         targetEnemy.TakeDamage(supportDamage);
 
         yield return new WaitForSeconds(supportVisibleDuration);
 
-        // Disappear
-        spriteRenderer.color = originalColor;
+      
         spriteRenderer.enabled = false;
     }
 

@@ -214,9 +214,9 @@ public class Fase7LevelManager : MonoBehaviour
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
             GameObject enemy = null;
-            if (Fase7PoolManager.Instance != null)
+            if (PoolManager.Instance != null)
             {
-                enemy = Fase7PoolManager.Instance.Get(prefab, spawnPoint.position, Quaternion.identity);
+                enemy = PoolManager.Instance.Get(prefab, spawnPoint.position, Quaternion.identity);
             }
             else
             {
@@ -253,9 +253,9 @@ public class Fase7LevelManager : MonoBehaviour
         activeEnemies.Remove(stats.gameObject);
         enemiesDefeated++;
         UpdateHud();
-        if (Fase7PoolManager.Instance != null)
+        if (PoolManager.Instance != null)
         {
-            Fase7PoolManager.Instance.Release(stats.gameObject);
+            PoolManager.Instance.Release(stats.gameObject);
         }
         else
         {

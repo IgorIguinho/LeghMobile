@@ -21805,10 +21805,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3443555287472152352, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828447725915488651, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6263247737563377597, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
       propertyPath: buttonDash
       value: 
       objectReference: {fileID: 756459361}
+    - target: {fileID: 8422727280016813581, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22483,6 +22495,7 @@ GameObject:
   - component: {fileID: 493154152}
   - component: {fileID: 493154154}
   - component: {fileID: 493154155}
+  - component: {fileID: 493154156}
   m_Layer: 0
   m_Name: LEVELMANAGER
   m_TagString: LevelManager
@@ -22590,13 +22603,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437bffe0a77d0ad418d59762835f8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxManager
-  bg1: {fileID: 553007688}
-  bg2: {fileID: 0}
-  transitionBG: {fileID: 284789243}
+  zones: []
+  boundaries: []
   player: {fileID: 0}
-  bg1FrontImage: {fileID: 2064253360}
-  bg2BackImage: {fileID: 0}
-  clearMargin: 0.05
 --- !u!114 &493154155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22610,6 +22619,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartSceneDialogue
   dialogue: {fileID: 11400000, guid: 4642f8537dee09346a27eb0368b9b7c8, type: 2}
+--- !u!114 &493154156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493154151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1698aa82f00d04eacbc435f9c32862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolManager
+  poolsToPreload:
+  - prefab: {fileID: 300133886756084829, guid: 4335b017c3617d4468aa2aed5ea8b7e3, type: 3}
+    initialSize: 15
+  - prefab: {fileID: 6124810460962587458, guid: d5cb03a30f844f043a15e2adb22172fc, type: 3}
+    initialSize: 10
+  - prefab: {fileID: 2406129224946519660, guid: 95fb493b20c969c44aa7bf1ab8c9e7ea, type: 3}
+    initialSize: 10
+  - prefab: {fileID: 2406129224946519660, guid: ba2c3aff6798d0a4c8c512065ed1a9ce, type: 3}
+    initialSize: 10
 --- !u!1001 &509155713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22856,6 +22886,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -22881,7 +22912,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.23773581, g: 0.23773581, b: 0.23773581, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -22955,6 +22986,50 @@ MonoBehaviour:
   MinY: -3
   MaxY: 1.5
   timelarp: 1
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &526151857
 GameObject:
   m_ObjectHideFlags: 0
@@ -23299,7 +23374,6 @@ MonoBehaviour:
     speedParallaxEffect: 0.9
     startpos: {x: 0, y: 0}
     length: {x: 0, y: 0}
-  lockX: 0
 --- !u!1001 &553810588
 PrefabInstance:
   m_ObjectHideFlags: 0

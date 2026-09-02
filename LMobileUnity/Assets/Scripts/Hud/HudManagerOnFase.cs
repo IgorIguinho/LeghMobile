@@ -68,6 +68,6 @@ public class HudManagerOnFase : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         FaseManager.Instance.UptadeFaseScritable();
-        
+        Time.timeScale = 0f;
     }
 }
