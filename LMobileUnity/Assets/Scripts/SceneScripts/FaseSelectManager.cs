@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FaseSelectManager : MonoBehaviour
 {
+    public static FaseSelectManager Instance { get; private set; }
     public List<FaseScriptable> faseList;
 
-    public int faseAtual = 0;
+    public int selectedFaseAtual = 0;
+    
 
     [Header("Variaveis UI")]
     public Image imageFaseHolder;
@@ -20,18 +23,37 @@ public class FaseSelectManager : MonoBehaviour
 
     [Header("Variaveis Button")]
     public Button SkillButton;
+    public GameObject groupButton;
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
 
-    // Start is called before the first frame update
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+        // Start is called before the first frame update
     void Start()
     {
-        UpdateFaseUi(faseAtual);
+       
+        UpdateFaseUi(selectedFaseAtual);
         PlayerPrefs.DeleteAll();
 
-        if (!PlayerSkillsManager.Instance)
+        if (FaseProgressSaveManager.Instance.IsFaseFinished(faseList[1].sceneFase))
         {
-            SkillButton.interactable = false;
+            SkillButton.interactable = true;
         }
-        else {SkillButton.interactable = true; }
+        else {SkillButton.interactable = false; }
+        if (FaseProgressSaveManager.Instance.IsFaseFinished(faseList[0].sceneFase))
+        {
+            groupButton.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -51,24 +73,26 @@ public class FaseSelectManager : MonoBehaviour
 
     public void StartFase()
     {
-        SceneManager.LoadScene(faseList[faseAtual].nameFase);
+        SceneManager.LoadScene(faseList[selectedFaseAtual].nameFase);
     }
 
     public void NextFase()
     {
-        if (faseAtual < faseList.Count - 1)
+        if (!FaseProgressSaveManager.Instance.IsFaseFinished(faseList[selectedFaseAtual].sceneFase)) { return; }
+        FaseProgressSaveManager.Instance.ApplyToScriptable(faseList[selectedFaseAtual]);
+        if (selectedFaseAtual < faseList.Count - 1)
         {
-            faseAtual++;
-            UpdateFaseUi(faseAtual);
+            selectedFaseAtual++;
+            UpdateFaseUi(selectedFaseAtual);
         }
     }
 
     public void PreviousFase()
     {
-        if (faseAtual > 0)
+        if (selectedFaseAtual > 0)
         {
-            faseAtual--;
-            UpdateFaseUi(faseAtual);
+            selectedFaseAtual--;
+            UpdateFaseUi(selectedFaseAtual);
         }
     }
 }

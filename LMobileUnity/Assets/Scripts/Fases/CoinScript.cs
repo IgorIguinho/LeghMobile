@@ -10,7 +10,7 @@ public class CoinScript : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             FaseManager.Instance.colectedCoin++;
-            
+            FaseProgressSaveManager.Instance.RegisterCoinCollected(FaseManager.Instance.actualFase.sceneFase, id);
             FaseManager.Instance.colectedIDCoin.Add(id);
             Destroy(this.gameObject);
         }

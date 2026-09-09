@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Linq; // <- necessário para o .ToList() usado abaixo
 
 public class PlayerSkillsManager : MonoBehaviour
 {
@@ -32,14 +33,18 @@ public class PlayerSkillsManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        // NOTA: mantive o carregamento via PlayerPrefs como fallback (útil se
+        // o SaveManager ainda não existir na cena, ex: durante testes rápidos
+        // no editor). Quando o SaveManager estiver presente, ele vai chamar
+        // LoadSaveData() logo em seguida e SOBRESCREVER esses valores com o
+        // conteúdo do arquivo de save — que passa a ser a fonte da verdade.
         LoadAllSkills();
     }
 
     private void LoadAllSkills()
     {
         _unlockedSkills.Clear();
-        
-        // Load default unlocked skills
+
         if (defaultUnlockedSkills != null)
         {
             foreach (SkillType defaultSkill in defaultUnlockedSkills)
@@ -48,20 +53,15 @@ public class PlayerSkillsManager : MonoBehaviour
             }
         }
 
-        // Override with saved preferences if they exist
         foreach (SkillType skill in Enum.GetValues(typeof(SkillType)))
         {
             string key = PlayerPrefsPrefix + skill.ToString();
             if (PlayerPrefs.HasKey(key))
             {
                 if (PlayerPrefs.GetInt(key, 0) == 1)
-                {
                     _unlockedSkills.Add(skill);
-                }
                 else
-                {
                     _unlockedSkills.Remove(skill);
-                }
             }
         }
 
@@ -78,14 +78,7 @@ public class PlayerSkillsManager : MonoBehaviour
             {
                 WeaponType savedWeapon = (WeaponType)savedValue;
                 SkillType correspondingSkill = GetSkillTypeForWeapon(savedWeapon);
-                if (IsSkillUnlocked(correspondingSkill))
-                {
-                    _currentWeapon = savedWeapon;
-                }
-                else
-                {
-                    _currentWeapon = WeaponType.Sword;
-                }
+                _currentWeapon = IsSkillUnlocked(correspondingSkill) ? savedWeapon : WeaponType.Sword;
             }
             else
             {
@@ -114,9 +107,7 @@ public class PlayerSkillsManager : MonoBehaviour
     {
         SkillType requiredSkill = GetSkillTypeForWeapon(weapon);
         if (!IsSkillUnlocked(requiredSkill))
-        {
             return false;
-        }
 
         _currentWeapon = weapon;
         string key = PlayerPrefsPrefix + "SelectedWeapon";
@@ -127,17 +118,11 @@ public class PlayerSkillsManager : MonoBehaviour
         return true;
     }
 
-    public WeaponType GetCurrentWeapon()
-    {
-        return _currentWeapon;
-    }
+    public WeaponType GetCurrentWeapon() => _currentWeapon;
 
     public void UnlockSkill(SkillType skill)
     {
-        if (!_unlockedSkills.Contains(skill))
-        {
-            _unlockedSkills.Add(skill);
-        }
+        _unlockedSkills.Add(skill);
         string key = PlayerPrefsPrefix + skill.ToString();
         PlayerPrefs.SetInt(key, 1);
         PlayerPrefs.Save();
@@ -145,38 +130,62 @@ public class PlayerSkillsManager : MonoBehaviour
 
     public void LockSkill(SkillType skill)
     {
-        if (_unlockedSkills.Contains(skill))
-        {
-            _unlockedSkills.Remove(skill);
-        }
+        _unlockedSkills.Remove(skill);
         string key = PlayerPrefsPrefix + skill.ToString();
         PlayerPrefs.SetInt(key, 0);
         PlayerPrefs.Save();
 
-        // Se a skill bloqueada for a arma atual, reverte para Sword se desbloqueada
         if (GetSkillTypeForWeapon(_currentWeapon) == skill)
         {
             TrySelectWeapon(WeaponType.Sword);
         }
     }
 
-    public bool IsSkillUnlocked(SkillType skill)
-    {
-        return _unlockedSkills.Contains(skill);
-    }
+    public bool IsSkillUnlocked(SkillType skill) => _unlockedSkills.Contains(skill);
 
     public void ResetAllSkills()
     {
         _unlockedSkills.Clear();
         foreach (SkillType skill in Enum.GetValues(typeof(SkillType)))
         {
-            string key = PlayerPrefsPrefix + skill.ToString();
-            PlayerPrefs.DeleteKey(key);
+            PlayerPrefs.DeleteKey(PlayerPrefsPrefix + skill.ToString());
         }
-        string weaponKey = PlayerPrefsPrefix + "SelectedWeapon";
-        PlayerPrefs.DeleteKey(weaponKey);
+        PlayerPrefs.DeleteKey(PlayerPrefsPrefix + "SelectedWeapon");
         PlayerPrefs.Save();
-        LoadAllSkills(); // Reload default configuration after reset
+        LoadAllSkills();
+    }
+
+    // ---------------------------------------------------------------
+    // INTEGRAÇÃO COM O SAVE SYSTEM (novo)
+    // ---------------------------------------------------------------
+
+    /// <summary>Exporta o estado atual para o SaveManager gravar em disco.</summary>
+    public SkillsSaveData GetSaveData()
+    {
+        return new SkillsSaveData
+        {
+            unlockedSkills = _unlockedSkills.ToList(),
+            currentWeapon = _currentWeapon
+        };
+    }
+
+    /// <summary>Aplica o estado lido do arquivo de save (chamado pelo SaveManager).</summary>
+    public void LoadSaveData(SkillsSaveData data)
+    {
+        if (data == null) return;
+
+        _unlockedSkills.Clear();
+        if (data.unlockedSkills != null)
+        {
+            foreach (var skill in data.unlockedSkills)
+                _unlockedSkills.Add(skill);
+        }
+
+        bool weaponValido = Enum.IsDefined(typeof(WeaponType), (int)data.currentWeapon)
+                             && IsSkillUnlocked(GetSkillTypeForWeapon(data.currentWeapon));
+
+        _currentWeapon = weaponValido ? data.currentWeapon : WeaponType.Sword;
+
+        OnWeaponChanged?.Invoke(_currentWeapon);
     }
 }
-

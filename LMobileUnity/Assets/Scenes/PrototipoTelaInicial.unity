@@ -119,6 +119,91 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &187519721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 187519726}
+  - component: {fileID: 187519725}
+  - component: {fileID: 187519724}
+  - component: {fileID: 187519723}
+  - component: {fileID: 187519722}
+  m_Layer: 0
+  m_Name: PersistentManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &187519722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187519721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c6557449636dc43a398b35cbf08f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FaseProgressSaveManager
+--- !u!114 &187519723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187519721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fce5a466fe601a448b3c2d465da6951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+--- !u!114 &187519724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187519721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d53e2cc92285542b4c78b929c9fee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReadDialogueData
+  readDialogues: []
+--- !u!114 &187519725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187519721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f0e866dd3dfaa4eb59dac273abc9ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSkillsManager
+  defaultUnlockedSkills: 0000000001000000
+--- !u!4 &187519726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187519721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &195498251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -267,6 +352,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99201350d0e86bc4aa074458d615cd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSelectionUI
+--- !u!1 &321754997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321754999}
+  - component: {fileID: 321754998}
+  m_Layer: 0
+  m_Name: DialogueDB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &321754998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321754997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aeacf155e54c484ebaf646367b33333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueDB
+  allDialogues:
+  - {fileID: 11400000, guid: 40500ebd77e6b0c41b216c86efa39e28, type: 2}
+  - {fileID: 11400000, guid: a967b8f8aedf8b74da106cf2018424b1, type: 2}
+  - {fileID: 11400000, guid: b0e81935d49ca494bbb2449910870349, type: 2}
+  - {fileID: 11400000, guid: 98a0d52ea8cb2ea4da3883257b12a509, type: 2}
+  - {fileID: 11400000, guid: 8004198e415992c45a2bfd55c5ce7475, type: 2}
+  - {fileID: 11400000, guid: c1aa38ab2f95eff4b9fd923c0d921423, type: 2}
+  - {fileID: 11400000, guid: 17e6f054da025e0449487230171cbc5a, type: 2}
+  - {fileID: 11400000, guid: c9eeedbfff2d2404cb77ae9c50c461bf, type: 2}
+  - {fileID: 11400000, guid: 009103d71546e174ca6ef73682503b88, type: 2}
+  - {fileID: 11400000, guid: 89407bb7deefec64b9c0e2146a577ab0, type: 2}
+  - {fileID: 11400000, guid: cff969c91fccc994b901a99526c65ac7, type: 2}
+  - {fileID: 11400000, guid: 1b00c1b8cb07cb646b38afa27d2b0741, type: 2}
+  - {fileID: 11400000, guid: 86d4503a1b64cf04db41c1e39c356765, type: 2}
+  - {fileID: 11400000, guid: e1510f1f392747740b020885471c0a1a, type: 2}
+  - {fileID: 11400000, guid: a49503aae6170724abbb5eea50b4b4cb, type: 2}
+  - {fileID: 11400000, guid: ae96ab27537a57e4095f9ba5a90cfa95, type: 2}
+  - {fileID: 11400000, guid: 131b44966406c884884cf39b2f1f7162, type: 2}
+  - {fileID: 11400000, guid: c5b57f3b911386041af07bbf9d432650, type: 2}
+  - {fileID: 11400000, guid: 1673f9e4b81024c4984ecf8cc11b92b6, type: 2}
+  - {fileID: 11400000, guid: e05216f3491a13e4494b6c778caa6227, type: 2}
+  - {fileID: 11400000, guid: 6eb4805f868434d49ab91fc03e337434, type: 2}
+  - {fileID: 11400000, guid: 4642f8537dee09346a27eb0368b9b7c8, type: 2}
+  - {fileID: 11400000, guid: 911734d436a4a154381fb4d27d5dcbfc, type: 2}
+  - {fileID: 11400000, guid: 00dfb0275fcd3144f84a77fa031e6fde, type: 2}
+  - {fileID: 11400000, guid: 5d21fb933428e364d840528f1507b2b2, type: 2}
+  - {fileID: 11400000, guid: da6e8256aa74bfe46b6ba98a665f8ec0, type: 2}
+  - {fileID: 11400000, guid: 6f030329562a7914a8bba4ba91e8c6f6, type: 2}
+  - {fileID: 11400000, guid: 4f3c8a45a765ed5469f381fd1e57f781, type: 2}
+  - {fileID: 11400000, guid: b50219600d000414681b03a3fc89b5b3, type: 2}
+  - {fileID: 11400000, guid: 74c9fc25ac7043c4aacce438c33badb1, type: 2}
+  searchFolderPath: Assets/Scriptable/Dialogue
+--- !u!4 &321754999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321754997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 384.24362, y: 203.72351, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &488056978
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &524202487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1271,13 +1432,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0653aa01b3d2b444d8c60171c1fcea33, type: 2}
   - {fileID: 11400000, guid: ce30381f046354549acdbda0fe3a4318, type: 2}
   - {fileID: 11400000, guid: 42f2de1df3bd56f4b9d3e3a69d4761ea, type: 2}
-  faseAtual: 0
+  selectedFaseAtual: 0
   imageFaseHolder: {fileID: 838938751}
   coinTextUI: {fileID: 1917396230}
   medalTextUI: {fileID: 1836547965}
   partiTextUI: {fileID: 1670299862}
   nameTextUI: {fileID: 1740180303}
   SkillButton: {fileID: 1660864656}
+  groupButton: {fileID: 524202486}
 --- !u!1 &918321040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,3 +3025,5 @@ SceneRoots:
   - {fileID: 918321044}
   - {fileID: 970251962}
   - {fileID: 195498251}
+  - {fileID: 187519726}
+  - {fileID: 321754999}

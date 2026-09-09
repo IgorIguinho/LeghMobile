@@ -7,17 +7,18 @@ using UnityEngine.UI;
 public class FaseScriptable : ScriptableObject
 {
     [Header("Coletaveis")]
-    public List<int> colectedCoin;
+    public List<int> colectedCoin; //Save
     public int totalCoin;
     [Space(10)]
-    public int colectedMedal;
+    public int colectedMedal; //Save
     public int totalMedal;
     [Space(10)]
-    public int colectedParti;
+    public int colectedParti; //Save
     public int totalParti;
 
     [Header("Seleção de fase")]
     public Sprite imageHolder;
     public string nameFase;
     public string sceneFase;
+    public bool finishFase; //Save
 }

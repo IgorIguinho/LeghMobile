@@ -68,6 +68,9 @@ public class HudManagerOnFase : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         FaseManager.Instance.UptadeFaseScritable();
+        FaseManager.Instance.actualFase.finishFase = true;
+        FaseProgressSaveManager.Instance.MarkFaseFinished(FaseManager.Instance.actualFase.sceneFase);
+        SaveManager.Instance.SaveGame();
         Time.timeScale = 0f;
     }
 }

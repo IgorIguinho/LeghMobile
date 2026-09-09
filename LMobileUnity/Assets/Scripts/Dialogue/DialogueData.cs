@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using Unity.Android.Gradle;
 
 [Serializable]
 public struct Dialogue
@@ -16,6 +15,17 @@ public struct Dialogue
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "NewDialogue")]
 public class DialogueData : ScriptableObject
 {
+
+    [SerializeField] private string dialogueId; // GUID gerado uma vez, nunca mais mudado
+    public string DialogueId => dialogueId;
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (string.IsNullOrEmpty(dialogueId))
+            dialogueId = System.Guid.NewGuid().ToString();
+    }
+#endif
     [Header("Variaveis de text")]
    public List<Dialogue> dialogues;
     [Header("Variaveis unicas")]

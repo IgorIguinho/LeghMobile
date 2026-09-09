@@ -55,6 +55,7 @@ public class PlayerInteract : MonoBehaviour
             if (!ReadDialogueData.Instance.readDialogues.Contains(dialogue))
             {
                 ReadDialogueData.Instance.readDialogues.Add(dialogue);
+                ReadDialogueData.Instance.MarkAsRead(dialogue);
             }
         }
      
