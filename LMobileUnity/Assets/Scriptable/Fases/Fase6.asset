@@ -18,6 +18,7 @@ MonoBehaviour:
   totalMedal: 3
   colectedParti: 0
   totalParti: 1
-  imageHolder: {fileID: 0}
+  imageHolder: {fileID: 7097288029462468758, guid: b536d77b5407a7846b5c977e02e909d1, type: 3}
   nameFase: Fase6
   sceneFase: Fase6
+  finishFase: 0

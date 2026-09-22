@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
   m_Name: "D1 - Come\xE7o"
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogueId: 43475e07-1a73-4c8c-9d52-ff127a50548d
   dialogues:
   - speakerName: "Rel\xF3gio Temporal"
     dialogueText: Viagem bem-sucedida, Agente! A Bahia de 1822 te deseja boas-vindas
@@ -39,3 +40,8 @@ MonoBehaviour:
     dialogueText: "Encontre a Quit\xE9ria, ajude-a no combate e proteja a linha do
       tempo!"
     speakerPortrait: {fileID: 0}
+  lastDialogue: 0
+  learnSkill: 0
+  skillToLearn: 0
+  isBossDialogue: 0
+  triggerLevelStart: 0

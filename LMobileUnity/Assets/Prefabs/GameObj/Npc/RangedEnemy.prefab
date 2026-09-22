@@ -231,6 +231,7 @@ MonoBehaviour:
   layerPlayer:
     serializedVersion: 2
     m_Bits: 64
+  targetOverride: {fileID: 0}
 --- !u!114 &2421675942551207319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd94b0ed5d70fe84fa20ee0ad0654672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 1
+  dropItem: {fileID: 1414839313220820235, guid: 46a35d26c454df942ac452424aff8d56, type: 3}
+  dropChance: 25
 --- !u!114 &1243401430220884749
 MonoBehaviour:
   m_ObjectHideFlags: 0

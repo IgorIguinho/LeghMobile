@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  dropItem: {fileID: 1414839313220820235, guid: 46a35d26c454df942ac452424aff8d56, type: 3}
+  dropChance: 50
 --- !u!50 &2769825698538008514
 Rigidbody2D:
   serializedVersion: 5

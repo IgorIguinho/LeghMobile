@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361208f872750c74cbc021f057b1502a, type: 3}
   m_Name: "D1 - Econtro Quit\xE9ria"
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  dialogueId: da514220-88c7-43ef-96d2-368f5c84fa41
   dialogues:
   - speakerName: "Maria Quit\xE9ria"
     dialogueText: "Volte para o abrigo, o Rec\xF4ncavo Baiano virou um inferno!"
@@ -34,3 +35,8 @@ MonoBehaviour:
       a espada ir\xE1 te proteger. A batalha s\xF3 est\xE1 come\xE7ando pelas terras
       da Bahia!"
     speakerPortrait: {fileID: 0}
+  lastDialogue: 0
+  learnSkill: 0
+  skillToLearn: 0
+  isBossDialogue: 0
+  triggerLevelStart: 0

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e6971f20352b343b391751de7c2189, type: 3}
+  m_Name: BuildSoundSettings
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::BuildSoundSettings
+  successSound: {fileID: 8300000, guid: 417fab860cc23e646a4889007ec21084, type: 3}
+  failSound: {fileID: 8300000, guid: 76ad0ae49f6b8ee48bd19eb0179dcd6c, type: 3}
+  volume: 1

@@ -55,7 +55,14 @@ public class FaseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HudManagerOnFase.Instance.coinCount.text = "Moedas " + colectedCoin.ToString();
+      
+    }
+
+    public void UptadeInfosUI(int actualHp)
+    {
+        HudManagerOnFase.Instance.coinCount.text = colectedCoin.ToString();
+        if (actualHp != -1)
+        { HudManagerOnFase.Instance.hpCount.text = actualHp.ToString(); }
     }
     public void UptadeFaseScritable()
     {
@@ -67,8 +74,9 @@ public class FaseManager : MonoBehaviour
         if (bossFight != null)
         {
             bossFight.SetActive(true);
+            Camera.main.GetComponent<FollowCam>().isBossFight = true;
             player.transform.position = transformArenaBoss.position;
-            canvaBoss.SetActive(true);
+           if(canvaBoss != null ) canvaBoss.SetActive(true);
         }
     }
 

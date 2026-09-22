@@ -15,6 +15,7 @@ public class ObserverEnemy : MonoBehaviour
     public int direction;
     private Rigidbody2D rb;
     private ColliderDmgEnemy dmgEnemyScript;
+    private Animator animator;
     [SerializeField] private LayerMask enemyLayer;
 
     public float speed;
@@ -43,6 +44,7 @@ public class ObserverEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         seePlayer = false;
         dmgEnemyScript = GetComponent<ColliderDmgEnemy>();
+        animator = GetComponent<Animator>();
         if (dmgEnemyScript != null)
         {
             dmgEnemyScript.direction = direction;
@@ -91,6 +93,8 @@ public class ObserverEnemy : MonoBehaviour
         }
         else
         { rb.linearVelocityX = 0; }
+
+        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
     }
 
     void FindTarget()

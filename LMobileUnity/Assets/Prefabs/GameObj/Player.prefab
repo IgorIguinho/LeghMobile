@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce477cf5aeccae34d946d35ab1196ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 1000
+  maxHp: 10
   actualHp: 0
   timeAnimationDmg: 0
   invulnerabilityDuration: 1.5
@@ -397,6 +397,11 @@ MonoBehaviour:
   beltMask:
     serializedVersion: 2
     m_Bits: 8192
+  caixaMask:
+    serializedVersion: 2
+    m_Bits: 131072
+  bodyChecker: {fileID: 0}
+  lengthBodyCheck: {x: 0, y: 0}
   isPlusSpeedBoost: 0
   canJump: 1
   isGravityInverted: 0
@@ -404,7 +409,7 @@ MonoBehaviour:
   airJumpForce: 18
   numberJump: 0
   isGrounded: 0
-  lengthGroundedCheck: {x: 0.65, y: 0.3}
+  lengthGroundedCheck: {x: 0.65, y: 0.35}
   groundChecker: {fileID: 7547467288985861117}
   groundMask:
     serializedVersion: 2

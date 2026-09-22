@@ -16,15 +16,15 @@ MonoBehaviour:
   - enemyPrefabs:
     - {fileID: 6889545751116663049, guid: b9ffc178b140e044ba4bd3d804d50798, type: 3}
     spawnInterval: 2
-    totalEnemiesToSpawn: 10
+    totalEnemiesToSpawn: 5
   - enemyPrefabs:
     - {fileID: 1027569408096181630, guid: aab4c47bc179dde4db63f911ed7004e4, type: 3}
     - {fileID: 6889545751116663049, guid: b9ffc178b140e044ba4bd3d804d50798, type: 3}
     spawnInterval: 2
-    totalEnemiesToSpawn: 10
+    totalEnemiesToSpawn: 5
   - enemyPrefabs:
     - {fileID: 1027569408096181630, guid: aab4c47bc179dde4db63f911ed7004e4, type: 3}
     - {fileID: 6889545751116663049, guid: b9ffc178b140e044ba4bd3d804d50798, type: 3}
     spawnInterval: 0.5
     totalEnemiesToSpawn: 10
-  totalEnemiesToSpawnInAllWaves: 30
+  totalEnemiesToSpawnInAllWaves: 20

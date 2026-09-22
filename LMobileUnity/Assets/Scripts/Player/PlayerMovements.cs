@@ -35,6 +35,12 @@ public class PlayerMovements : MonoBehaviour
     public LayerMask beltMask;
     private Collider2D beltCollider;
 
+    [Header("Caixa Push System")]
+    public LayerMask caixaMask;
+    public Transform bodyChecker;
+    public Vector2 lengthBodyCheck;
+    private Collider2D caixaCollider;
+
     [Header("PlusSpeed Boost")]
     public bool isPlusSpeedBoost = false;
 
@@ -176,19 +182,27 @@ public class PlayerMovements : MonoBehaviour
             }
         }
 
+        // --- Caixa Speed ---
+        float caixaSpeed = 0f;
+        if (caixaCollider != null)
+        {
+            Rigidbody2D caixaRb = caixaCollider.attachedRigidbody;
+            if (caixaRb != null) caixaSpeed = caixaRb.linearVelocity.x;
+        }
+
         float currentDirection = (input != null) ? input.Direction : 0f;
         float switchSpeed = switchSpeedSlow ? (speed / speedSwitch) : (speed * speedSwitch);
 
         if (isGrounded  && !isSwtichSpeed) // movimento normal no chão
-        { rb.linearVelocity = new Vector2((speed * currentDirection) + beltSpeed , rb.linearVelocity.y); }
+        { rb.linearVelocity = new Vector2((speed * currentDirection) + beltSpeed + caixaSpeed, rb.linearVelocity.y); }
 
         else if (isSwtichSpeed) //movimento modificado pelo terreno de switch speed
-        { rb.linearVelocity = new Vector2((switchSpeed * currentDirection) + beltSpeed, rb.linearVelocity.y);  }
+        { rb.linearVelocity = new Vector2((switchSpeed * currentDirection) + beltSpeed + caixaSpeed, rb.linearVelocity.y);  }
 
         else if (isBelt)
-            rb.linearVelocity = new Vector2(((speed/ 2) * currentDirection) + beltSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(((speed/ 2) * currentDirection) + beltSpeed + caixaSpeed, rb.linearVelocity.y);
         
-        else { rb.linearVelocity = new Vector2(speedOnAir * currentDirection , rb.linearVelocity.y); } //Movimento norma no ar
+        else { rb.linearVelocity = new Vector2((speedOnAir * currentDirection) + caixaSpeed, rb.linearVelocity.y); } //Movimento norma no ar
         
         if (rb.linearVelocity.x * direction < 0f)
         {
@@ -362,6 +376,15 @@ public class PlayerMovements : MonoBehaviour
         beltCollider = Physics2D.OverlapBox(groundChecker.position, lengthGroundedCheck, 0, beltMask);
         isBelt = beltCollider != null;
 
+        if (bodyChecker != null)
+        {
+            caixaCollider = Physics2D.OverlapBox(bodyChecker.position, lengthBodyCheck, 0, caixaMask);
+        }
+        else if (groundChecker != null)
+        {
+            caixaCollider = Physics2D.OverlapBox(groundChecker.position, lengthGroundedCheck, 0, caixaMask);
+        }
+
         isWall = Physics2D.OverlapBox(wallChecker.position, lengthWallCheck, 0, wallMask);
         isRope = Physics2D.OverlapBox(wallChecker.position, lengthWallCheck, 0, layerRope);
     }
@@ -404,6 +427,12 @@ public class PlayerMovements : MonoBehaviour
         Gizmos.DrawWireCube(groundChecker.position, lengthGroundedCheck);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(wallChecker.position, lengthWallCheck);
+
+        if (bodyChecker != null)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireCube(bodyChecker.position, lengthBodyCheck);
+        }
 
         // Draw Spear Area
         bool hasSpear = PlayerSkillsManager.Instance != null && PlayerSkillsManager.Instance.IsSkillUnlocked(SkillType.Spear);

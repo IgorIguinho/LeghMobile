@@ -63,14 +63,14 @@ public class SaveManager : MonoBehaviour
     {
         if (pauseStatus)
         {
-            SaveGame();
+           // SaveGame();
         }
     }
 
     // Cobre o caso desktop (Alt+F4 / fechar janela) e Android com botão "voltar".
     private void OnApplicationQuit()
     {
-        SaveGame();
+       // SaveGame();
     }
 
     // ---------------------------------------------------------------
@@ -216,5 +216,6 @@ public class SaveManager : MonoBehaviour
         if (File.Exists(BackupPath)) File.Delete(BackupPath);
         CurrentSave = CreateNewSave();
         ApplySaveToManagers();
+        SceneManager.LoadScene("PrototipoTelaInicial");
     }
 }

@@ -50,6 +50,8 @@ public class PlayerStats : MonoBehaviour
 
         waitDmgFlash = new WaitForSeconds(timeAnimationDmg);
         waitBlinkInterval = new WaitForSeconds(BLINK_INTERVAL);
+
+        FaseManager.Instance.UptadeInfosUI(actualHp);
     }
 
     // Update is called once per frame
@@ -64,7 +66,7 @@ public class PlayerStats : MonoBehaviour
         if (isInvulnerable) return;
 
         actualHp -= dmg;
-        HudManagerOnFase.Instance.hpCount.text = "HP " + actualHp.ToString();
+      FaseManager.Instance.UptadeInfosUI(actualHp);
 
         if (actualHp <= 0)
         {
@@ -80,6 +82,16 @@ public class PlayerStats : MonoBehaviour
         }
 
         invulnerabilityRoutine = StartCoroutine(InvulnerabilityRoutine());
+    }
+
+    public void Heal(int amount)
+    {
+        actualHp += amount;
+        if (actualHp > maxHp)
+        {
+            actualHp = maxHp;
+        }
+        FaseManager.Instance.UptadeInfosUI(actualHp);
     }
 
     IEnumerator InvulnerabilityRoutine()

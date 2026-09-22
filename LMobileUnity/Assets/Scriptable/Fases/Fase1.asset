@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9280fc9e5574934ea7732550b9c85ba, type: 3}
   m_Name: Fase1
   m_EditorClassIdentifier: 
-  colectedCoin: 0300000056000000510000005200000059000000
+  colectedCoin: 
   totalCoin: 52
   colectedMedal: 0
   totalMedal: 3
@@ -21,4 +21,4 @@ MonoBehaviour:
   imageHolder: {fileID: -2336482772105505702, guid: 6eb049a6817e4aa498bffc8cd3364d1d, type: 3}
   nameFase: Fase1
   sceneFase: Fase1
-  finishFase: 1
+  finishFase: 0

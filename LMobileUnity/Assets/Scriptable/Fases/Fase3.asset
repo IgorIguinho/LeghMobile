@@ -21,3 +21,4 @@ MonoBehaviour:
   imageHolder: {fileID: 7097288029462468758, guid: b536d77b5407a7846b5c977e02e909d1, type: 3}
   nameFase: Fase3
   sceneFase: Fase3
+  finishFase: 0

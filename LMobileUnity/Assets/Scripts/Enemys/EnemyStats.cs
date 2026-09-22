@@ -8,6 +8,9 @@ public class EnemyStats : MonoBehaviour ,  IDamageable
     [SerializeField] private int maxHealth = 1;
     private int currentHealth;
 
+    public GameObject dropItem;
+    public int dropChance = 50; // Chance de drop em porcentagem (0 a 100)
+
     public System.Action<EnemyStats> OnEnemyDeath;
 
     private void Awake()
@@ -42,6 +45,24 @@ public class EnemyStats : MonoBehaviour ,  IDamageable
         else
         {
             Destroy(this.gameObject);
+        }
+
+        // Drop item logic
+        if (dropItem != null)
+        {
+            int randomChance = Random.Range(0, 101);
+            if (randomChance <= dropChance)
+            {
+                GameObject recoveryItem = null;
+                if (PoolManager.Instance != null)
+                {
+                    recoveryItem = PoolManager.Instance.Get(dropItem, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    recoveryItem = Instantiate(dropItem, transform.position, Quaternion.identity);
+                }
+            }
         }
     }
 }
