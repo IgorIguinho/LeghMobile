@@ -10,6 +10,7 @@ public class DoorTeleport : MonoBehaviour
     [Header("Detecção (alcance único)")]
     public Vector2 detectRadius;
     public LayerMask layerPlayer;
+    public GameObject uiButton;
 
     // --- Detecção sem alocação (zero GC) ---
     private ContactFilter2D playerFilter;
@@ -43,11 +44,13 @@ public class DoorTeleport : MonoBehaviour
         if (count > 0 && !inputAtualizado)
         {
             if (input != null) input.EnterDoorTriggered += Teleport;
+            uiButton.SetActive(true);
             inputAtualizado = true;
         }
         else if (count == 0 && inputAtualizado)
         {
             if (input != null) input.EnterDoorTriggered -= Teleport;
+            uiButton.SetActive(false);
             inputAtualizado = false;
         }
     }

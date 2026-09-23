@@ -95,5 +95,6 @@ public class FaseManager : MonoBehaviour
                 coinsList[coinID].SetActive(false);
             }
         }
+        UptadeInfosUI(-1);
     }
 }
