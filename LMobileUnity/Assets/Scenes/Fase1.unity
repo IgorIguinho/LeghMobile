@@ -838,6 +838,7 @@ GameObject:
   - component: {fileID: 126547296}
   - component: {fileID: 126547298}
   - component: {fileID: 126547297}
+  - component: {fileID: 126547299}
   m_Layer: 9
   m_Name: Rope
   m_TagString: Untagged
@@ -2015,6 +2016,47 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &126547299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126547292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4365cdcbe9f65924d9bda4751bfcce9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RopeTilemap
+  columns:
+  - cellX: 79
+    centerX: 79.5
+    minY: -12
+    maxY: -8
+  - cellX: 58
+    centerX: 58.5
+    minY: -10
+    maxY: -7
+  - cellX: 308
+    centerX: 308.5
+    minY: 0
+    maxY: 5
+  - cellX: 38
+    centerX: 38.5
+    minY: 2
+    maxY: 5
+  - cellX: 347
+    centerX: 347.5
+    minY: 7
+    maxY: 11
+  - cellX: 359
+    centerX: 359.5
+    minY: 7
+    maxY: 11
+  - cellX: 384
+    centerX: 384.5
+    minY: 15
+    maxY: 19
 --- !u!4 &131426018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7302987788050806636, guid: 6426da02748ded244b50d63758cc814b, type: 3}

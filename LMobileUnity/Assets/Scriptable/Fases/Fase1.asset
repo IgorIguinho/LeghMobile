@@ -21,4 +21,4 @@ MonoBehaviour:
   imageHolder: {fileID: -2336482772105505702, guid: 6eb049a6817e4aa498bffc8cd3364d1d, type: 3}
   nameFase: Fase1
   sceneFase: Fase1
-  finishFase: 0
+  finishFase: 1

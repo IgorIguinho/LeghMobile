@@ -449,7 +449,10 @@ public class Fase7Boss : MonoBehaviour , IDamageable
         }
 
         StartCoroutine(DamageFlashRoutine());
-
+        if (actualHealth <= 0)
+        {
+            Die();
+        }
         float hpPercent = (float)actualHealth / config.maxHealth;
         if (hpPercent <= 0.5f && !hasTriggeredFury)
         {
@@ -460,10 +463,7 @@ public class Fase7Boss : MonoBehaviour , IDamageable
             return;
         }
 
-        if (actualHealth <= 0)
-        {
-            Die();
-        }
+        
     }
 
     private IEnumerator DamageFlashRoutine()

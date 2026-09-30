@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6156089}
   - component: {fileID: 6156088}
   - component: {fileID: 6156093}
-  m_Layer: 3
+  m_Layer: 16
   m_Name: OneWay 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4995,6 +4995,18 @@ PrefabInstance:
       propertyPath: buttonDash
       value: 
       objectReference: {fileID: 933763755}
+    - target: {fileID: 6263247737563377597, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: lengthWallCheck.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6263247737563377597, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: lengthGroundedCheck.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 6263247737563377597, guid: 358ae4880aeffe142a289fe5398978d0, type: 3}
+      propertyPath: lengthGroundedCheck.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5820,7 +5832,7 @@ GameObject:
   - component: {fileID: 549726674}
   - component: {fileID: 549726673}
   - component: {fileID: 549726672}
-  m_Layer: 3
+  m_Layer: 16
   m_Name: 'OneWay 3 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9685,7 +9697,7 @@ GameObject:
   - component: {fileID: 1087008623}
   - component: {fileID: 1087008622}
   - component: {fileID: 1087008621}
-  m_Layer: 3
+  m_Layer: 16
   m_Name: OneWay 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -80,6 +80,7 @@ public class PlayerMovements : MonoBehaviour
     public GameObject buttonDash;
     public Color canDashColor;
     public Color notCanDashColor;
+    float gravityScaleOriginal;
 
     [Header("Spear Dash Upgrade")]
     public AnimationClip spearDashAnimation;
@@ -93,12 +94,23 @@ public class PlayerMovements : MonoBehaviour
     public float shakeDuration = 0.15f;
     public LayerMask enemyLayer;
 
-    [Header("Prototipo da corda")]
+    public enum RopeSide { Left, Right }
+
+    [Header("Sistema de corda")]
     public bool isRope;
-    public float ropeJumpForce;
-    public float ropeHorizontalJumpForce;
-    public float ropeFall;
+    public float ropeJumpForce = 12f;
+    public float ropeHorizontalJumpForce = 20f;
+    public float ropeSlideSpeed = 2.5f;
+    public float ropeHorizontalOffset = 0.35f;
+    public float ropeBottomOffsetY = 0.5f;
     public LayerMask layerRope;
+    public RopeSide currentRopeSide = RopeSide.Right;
+    [HideInInspector] public float ropeFall;
+    private bool ropeRequiresInputNeutral;
+
+    private float defaultGravityScale = 3f;
+    private RopeTilemap.RopeColumnData currentRopeColumn;
+    private float ropeJumpCooldownTimer = 0f;
 
     private void OnEnable()
     {
@@ -139,19 +151,53 @@ public class PlayerMovements : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         rewindObj = gameObject.GetComponent<RewindObj>();
-        
+        gravityScaleOriginal = rb.gravityScale;
+        if (rb != null)
+        {
+            defaultGravityScale = Mathf.Abs(rb.gravityScale);
+            if (defaultGravityScale <= 0f) defaultGravityScale = 3f;
+        }
+        if (ropeSlideSpeed <= 0f) ropeSlideSpeed = 2.5f;
+        if (ropeHorizontalOffset <= 0f) ropeHorizontalOffset = 0.35f;
+        if (ropeBottomOffsetY <= 0f) ropeBottomOffsetY = 0.5f;
     }
 
     void FixedUpdate()
     {
         if (!rewindObj.isRewind)
         {
-            if (canMove) { Moviment(); }
+            if (ropeJumpCooldownTimer > 0f)
+            {
+                ropeJumpCooldownTimer -= Time.fixedDeltaTime;
+            }
+
             CheckGround();
-            WallFall();
-            InRope();
+
+            if (isRope)
+            {
+                ProcessRopeMovement();
+            }
+            else
+            {
+                if (canMove) { Moviment(); }
+                WallFall();
+            }
+        }
+
+    }
+
+    public void UnlockDashButton()
+    {
+        if (PlayerSkillsManager.Instance != null && PlayerSkillsManager.Instance.IsSkillUnlocked(SkillType.Dash))
+        {
+            buttonDash.gameObject.SetActive(true);
+        }
+        else
+        {
+            buttonDash.gameObject.SetActive(false);
         }
     }
+
 
     void Moviment()
     {
@@ -215,7 +261,10 @@ public class PlayerMovements : MonoBehaviour
         isGravityInverted = !isGravityInverted;
 
         // Troca o SINAL da gravidade preservando a magnitude (3 -> -3 -> 3)
-        rb.gravityScale = Mathf.Abs(rb.gravityScale) * (isGravityInverted ? -1f : 1f);
+        if (!isRope)
+        {
+            rb.gravityScale = Mathf.Abs(rb.gravityScale) * (isGravityInverted ? -1f : 1f);
+        }
 
         // Zera o Y para o flip ficar limpo
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
@@ -230,7 +279,23 @@ public class PlayerMovements : MonoBehaviour
         if (isDash)  return; 
         OnJump?.Invoke();
         float g = isGravityInverted ? -1f : 1f;
-        if (isGrounded || isBelt) 
+
+        if (isRope)
+        {
+            numberJump = 0;
+            // Salto Direcional: direção estritamente baseada no lado da corda em que o jogador está pendurado
+            // Esquerda: vetor [-vx, +vy]
+            // Direita: vetor [+vx, +vy]
+            float vx = (currentRopeSide == RopeSide.Left) ? -ropeHorizontalJumpForce : ropeHorizontalJumpForce;
+            float vy = ropeJumpForce * g;
+
+            ExitRope();
+
+            rb.linearVelocity = Vector2.zero;
+            rb.AddForce(new Vector2(vx, vy), ForceMode2D.Impulse);
+            numberJump++;
+        }
+        else if (isGrounded || isBelt) 
         {
             numberJump = 0;
             rb.linearVelocity = Vector2.zero;
@@ -246,27 +311,23 @@ public class PlayerMovements : MonoBehaviour
             numberJump++;
             StartCoroutine(StopMove());
         }
-        else if (isRope)
-        {
-            numberJump = 0;
-            rb.linearVelocity = Vector2.zero;
-            rb.AddForce(new Vector2(ropeHorizontalJumpForce * direction, ropeJumpForce * g), ForceMode2D.Impulse);
-            numberJump++;
-        }
         else if (numberJump < 1)
         {
             rb.linearVelocity = Vector2.zero;
             rb.AddForce(new Vector2(0f, airJumpForce * g), ForceMode2D.Impulse);
             numberJump++;
         }
-    
-}
+    }
 
     IEnumerator Dash()
     { 
         isDash = true;
         canDash = false;
-        float gravityScale = rb.gravityScale;
+        if (isRope)
+        {
+            ExitRope();
+        }
+
         rb.gravityScale = 0;
         rb.linearVelocity = Vector2.zero;
 
@@ -345,14 +406,14 @@ public class PlayerMovements : MonoBehaviour
             isDash = false;
           
             trailObject.SetActive(false);
-            rb.gravityScale = gravityScale;
+            rb.gravityScale = gravityScaleOriginal;
         }
         else
         {
             isDash = false;
            
             trailObject.SetActive(false);
-            rb.gravityScale = gravityScale;
+            rb.gravityScale = gravityScaleOriginal;
         }
 
         yield return new WaitForSeconds(dashCooldown);
@@ -386,7 +447,42 @@ public class PlayerMovements : MonoBehaviour
         }
 
         isWall = Physics2D.OverlapBox(wallChecker.position, lengthWallCheck, 0, wallMask);
-        isRope = Physics2D.OverlapBox(wallChecker.position, lengthWallCheck, 0, layerRope);
+
+        // Detecção da corda
+        if (!isRope && ropeJumpCooldownTimer <= 0f)
+        {
+            if (!isDash)
+            {
+                //Stop dash
+                isDash = false;
+                trailObject.SetActive(false);
+                rb.gravityScale = gravityScaleOriginal;
+            }
+
+            Collider2D ropeHit = Physics2D.OverlapBox(wallChecker != null ? wallChecker.position : transform.position, lengthWallCheck, 0, layerRope);
+            if (ropeHit != null)
+            {
+                EnterRope(ropeHit);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isDash || ropeJumpCooldownTimer > 0f || isRope) return;
+        if (((1 << collision.gameObject.layer) & layerRope) != 0)
+        {
+            EnterRope(collision);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (isDash || ropeJumpCooldownTimer > 0f || isRope) return;
+        if (((1 << collision.gameObject.layer) & layerRope) != 0)
+        {
+            EnterRope(collision);
+        }
     }
 
     void WallFall()
@@ -398,13 +494,177 @@ public class PlayerMovements : MonoBehaviour
         }
     }
 
-    void InRope()
+    public void SetFaceDirection(int targetDir)
     {
-        float g = isGravityInverted ? -1f : 1f;
-        if (isRope && rb.linearVelocity.y * g < ropeFall)
+        if (targetDir == 0) return;
+        if (direction != targetDir)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -ropeFall * g);
+            Flip();
         }
+    }
+
+    public void EnterRope(Collider2D ropeHit)
+    {
+        if (isRope) return;
+
+        RopeTilemap ropeTm = RopeTilemap.Instance;
+        if (ropeTm == null && ropeHit != null)
+        {
+            ropeTm = ropeHit.GetComponent<RopeTilemap>() ?? ropeHit.GetComponentInParent<RopeTilemap>();
+        }
+
+        Vector2 playerPos = transform.position;
+        Vector2 searchPoint = (ropeHit != null) ? ropeHit.ClosestPoint(playerPos) : playerPos;
+
+        if (ropeTm != null && (ropeTm.TryGetRopeAt(searchPoint, out currentRopeColumn) || ropeTm.TryGetRopeAt(playerPos, out currentRopeColumn)))
+        {
+            // Coluna encontrada com precisão
+        }
+        else
+        {
+            float localCenterX = Mathf.Floor(searchPoint.x) + 0.5f;
+            currentRopeColumn = new RopeTilemap.RopeColumnData
+            {
+                cellX = Mathf.FloorToInt(searchPoint.x),
+                centerX = localCenterX,
+                minY = playerPos.y - 2f,
+                maxY = playerPos.y + 2f
+            };
+        }
+        // ... restante do método ...
+
+        isRope = true;
+        numberJump = 0;
+
+        if (rb.gravityScale != 0f)
+        {
+            defaultGravityScale = Mathf.Abs(rb.gravityScale);
+        }
+        rb.gravityScale = 0f;
+
+        // Determina lado inicial pela posição de entrada:
+        // Se entrou pela esquerda do centro -> Esquerda; se pela direita -> Direita
+        if (playerPos.x < currentRopeColumn.centerX)
+        {
+            currentRopeSide = RopeSide.Left;
+        }
+        else
+        {
+            currentRopeSide = RopeSide.Right;
+        }
+        ropeRequiresInputNeutral = (input != null && Mathf.Abs(input.Direction) > 0.1f);
+
+        ApplyRopeSide(currentRopeSide);
+    }
+
+    public void ApplyRopeSide(RopeSide side)
+    {
+        currentRopeSide = side;
+
+        float targetX = (side == RopeSide.Left)
+            ? (currentRopeColumn.centerX - ropeHorizontalOffset)
+            : (currentRopeColumn.centerX + ropeHorizontalOffset);
+
+        transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
+
+        // Orientação: Olhando para fora (Salto)
+        // Lado Esquerdo -> olha para a esquerda (-1)
+        // Lado Direito -> olha para a direita (1)
+        int targetDir = (side == RopeSide.Left) ? -1 : 1;
+        SetFaceDirection(targetDir);
+    }
+
+    public void ExitRope()
+    {
+        if (!isRope) return;
+        isRope = false;
+
+        float gSign = isGravityInverted ? -1f : 1f;
+        float restoredGravity = (defaultGravityScale > 0f) ? defaultGravityScale : 3f;
+        rb.gravityScale = restoredGravity * gSign;
+
+        ropeJumpCooldownTimer = 0.15f;
+        ropeRequiresInputNeutral = false;
+    }
+
+    void ProcessRopeMovement()
+    {
+        float currentDirection = (input != null) ? input.Direction : 0f;
+
+        // Verifica se o jogador soltou o direcional para liberar a troca
+        if (ropeRequiresInputNeutral)
+        {
+            if (Mathf.Abs(currentDirection) < 0.1f)
+            {
+                ropeRequiresInputNeutral = false;
+            }
+        }
+        else
+        {
+            // Alternância de Lado permitida apenas após soltar e pressionar novamente
+            if (currentDirection < -0.1f && currentRopeSide != RopeSide.Left)
+            {
+                ApplyRopeSide(RopeSide.Left);
+            }
+            else if (currentDirection > 0.1f && currentRopeSide != RopeSide.Right)
+            {
+                ApplyRopeSide(RopeSide.Right);
+            }
+        }
+
+        // Posição no eixo X travada no offset do lado atual
+        float targetX = (currentRopeSide == RopeSide.Left)
+            ? (currentRopeColumn.centerX - ropeHorizontalOffset)
+            : (currentRopeColumn.centerX + ropeHorizontalOffset);
+
+        // Movimentação vertical (Eixo Y)
+        float currentY = rb.position.y;
+        float newY;
+        float newVy;
+
+        if (!isGravityInverted)
+        {
+            float minYLimit = currentRopeColumn.minY + ropeBottomOffsetY;
+            if (currentY <= minYLimit)
+            {
+                // Trava na extremidade inferior
+                newY = minYLimit;
+                newVy = 0f;
+            }
+            else
+            {
+                // Descida passiva contínua
+                newVy = -ropeSlideSpeed;
+                newY = currentY + (newVy * Time.fixedDeltaTime);
+                if (newY < minYLimit)
+                {
+                    newY = minYLimit;
+                    newVy = 0f;
+                }
+            }
+        }
+        else
+        {
+            float maxYLimit = currentRopeColumn.maxY - ropeBottomOffsetY;
+            if (currentY >= maxYLimit)
+            {
+                newY = maxYLimit;
+                newVy = 0f;
+            }
+            else
+            {
+                newVy = ropeSlideSpeed;
+                newY = currentY + (newVy * Time.fixedDeltaTime);
+                if (newY > maxYLimit)
+                {
+                    newY = maxYLimit;
+                    newVy = 0f;
+                }
+            }
+        }
+
+        rb.MovePosition(new Vector2(targetX, newY));
+        rb.linearVelocity = new Vector2(0f, newVy);
     }
 
     void Flip()
@@ -441,6 +701,12 @@ public class PlayerMovements : MonoBehaviour
             Gizmos.color = Color.cyan;
             Vector2 boxCenter = (Vector2)transform.TransformPoint(spearOffset);
             Gizmos.DrawWireCube(boxCenter, spearArea);
+        }
+
+        if (isRope)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(new Vector3(currentRopeColumn.centerX, rb != null ? rb.position.y : transform.position.y, 0f), 0.25f);
         }
     }
 }

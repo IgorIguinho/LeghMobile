@@ -50,6 +50,8 @@ public class FaseManager : MonoBehaviour
         }
         CarregarCoinsJson();
         player = GameObject.FindGameObjectWithTag("Player");
+        colectedCoin = colectedIDCoin.Count;
+        UptadeInfosUI(-1);
     }
 
     // Update is called once per frame

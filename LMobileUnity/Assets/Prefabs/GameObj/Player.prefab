@@ -405,8 +405,8 @@ MonoBehaviour:
   isPlusSpeedBoost: 0
   canJump: 1
   isGravityInverted: 0
-  jumpForce: 15
-  airJumpForce: 18
+  jumpForce: 18
+  airJumpForce: 20
   numberJump: 0
   isGrounded: 0
   lengthGroundedCheck: {x: 0.65, y: 0.35}
@@ -415,7 +415,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 26632
   wallJumpForce: 15
-  wallHorizontalJumpForce: 20
+  wallHorizontalJumpForce: 15
   wallFallForce: 2
   timeWallJump: 0.25
   isWall: 0
@@ -446,12 +446,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   isRope: 0
-  ropeJumpForce: 12
-  ropeHorizontalJumpForce: 20
-  ropeFall: 0
+  ropeJumpForce: 18
+  ropeHorizontalJumpForce: 30
+  ropeSlideSpeed: 2.5
+  ropeHorizontalOffset: 0.35
+  ropeBottomOffsetY: 0.5
   layerRope:
     serializedVersion: 2
     m_Bits: 512
+  currentRopeSide: 1
+  ropeFall: 0
 --- !u!50 &394440458673548023
 Rigidbody2D:
   serializedVersion: 5
@@ -477,7 +481,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &7643522037064135219
 Animator:

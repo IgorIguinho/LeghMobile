@@ -107,7 +107,7 @@ public class Fase7LevelManager : MonoBehaviour
         activeEnemies.Clear();
         enemiesDefeated=0;
 
-        followCam.MaxX = 0.5f;
+        followCam.isBossFight = true;
         // Manage grids
         if (grid1 != null) grid1.SetActive(level == 1);
         if (grid2 != null) grid2.SetActive(level == 2);

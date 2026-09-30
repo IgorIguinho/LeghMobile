@@ -84,6 +84,27 @@ public class PlayerStats : MonoBehaviour
         invulnerabilityRoutine = StartCoroutine(InvulnerabilityRoutine());
     }
 
+    /// <summary>
+    /// Morte instantanea (esmagamento, queda no abismo, armadilhas fatais).
+    /// Ignora invulnerabilidade temporaria e recarrega a cena imediatamente.
+    /// </summary>
+    public void Kill()
+    {
+        if (invulnerabilityRoutine != null)
+        {
+            StopCoroutine(invulnerabilityRoutine);
+            invulnerabilityRoutine = null;
+        }
+
+        actualHp = 0;
+        if (FaseManager.Instance != null)
+        {
+            FaseManager.Instance.UptadeInfosUI(actualHp);
+        }
+
+        SceneManager.LoadScene(actualScene);
+    }
+
     public void Heal(int amount)
     {
         actualHp += amount;

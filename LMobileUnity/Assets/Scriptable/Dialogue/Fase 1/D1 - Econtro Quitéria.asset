@@ -36,7 +36,7 @@ MonoBehaviour:
       da Bahia!"
     speakerPortrait: {fileID: 0}
   lastDialogue: 0
-  learnSkill: 0
-  skillToLearn: 0
+  learnSkill: 1
+  skillToLearn: 1
   isBossDialogue: 0
   triggerLevelStart: 0

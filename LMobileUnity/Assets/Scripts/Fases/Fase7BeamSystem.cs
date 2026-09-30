@@ -133,7 +133,7 @@ public class Fase7BeamSystem : MonoBehaviour
 
         // Player check
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null && playerObj.activeInHierarchy)
+        if (playerObj != null )
         {
             float py = playerObj.transform.position.y;
             if (py >= minY && py <= maxY)

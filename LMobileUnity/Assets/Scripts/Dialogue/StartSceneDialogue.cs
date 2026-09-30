@@ -9,7 +9,12 @@ public class StartSceneDialogue : MonoBehaviour
     void Start()
     {
         if (dialogue == null) return;
-        if (PlayerPrefs.GetInt("SecondTimeFase") == 1) return;
+        if (PlayerPrefs.GetInt("SecondTimeFase") == 1)
+        {
+            //Desativa a imagem do retrato e o botão de pular diálogo no início
+            HudManagerOnFase.Instance.OpenDialogueHud(0f, false);
+            return; 
+        }
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>();
         player.CanOpenDialogue(false, dialogue);
         player.OpenDialogue();

@@ -52,6 +52,7 @@ public class SaveManager : MonoBehaviour
         // PlayerSkillsManager.Instance e ReadDialogueData.Instance já existem
         // quando formos aplicar os dados carregados neles.
         LoadGame();
+        Debug.Log($"[SaveManager] Jogo salvo em: {SavePath}");
     }
 
    
