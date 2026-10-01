@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: ConeFase9
+  m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.Tilemaps.AnimatedTile
+  m_AnimatedSprites:
+  - {fileID: -8783593197706230029, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  - {fileID: 493686968, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  - {fileID: 1709354673, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  - {fileID: 322692548, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  - {fileID: 1661499892, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  - {fileID: -1364327815, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  - {fileID: 1746589793, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  - {fileID: -1953746417, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  - {fileID: 1358219184, guid: d15f16a3f4b1a2c42bc8c100f1889b6f, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 8
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 1
+  m_TileAnimationFlags: 0

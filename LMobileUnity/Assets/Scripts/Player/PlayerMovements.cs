@@ -180,7 +180,7 @@ public class PlayerMovements : MonoBehaviour
             else
             {
                 if (canMove) { Moviment(); }
-                WallFall();
+                if (!isDash) { WallFall(); } // <- Não aplicar WallFall durante o Dash
             }
         }
 

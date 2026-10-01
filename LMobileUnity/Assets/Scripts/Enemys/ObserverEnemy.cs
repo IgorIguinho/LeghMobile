@@ -157,17 +157,14 @@ public class ObserverEnemy : MonoBehaviour
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
         }
 
-        // Visual telegraph: flashing red color
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        Color originalColor = sr != null ? sr.color : Color.white;
-        if (sr != null) sr.color = Color.red;
+        animator.SetTrigger("Telegraphing");
 
         yield return new WaitForSeconds(telegraphDuration);
 
-        if (sr != null) sr.color = originalColor;
-
+     
         // Start Dash
         state = EnemyState.Dashing;
+        animator.SetBool("Dash", true);
 
         // Ensure we are facing the target
         if (currentTarget != null)
@@ -190,6 +187,7 @@ public class ObserverEnemy : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         state = EnemyState.Done;
+        animator.SetBool("Dash", false);
 
         // Die/Return to pool
         EnemyStats enemyStats = GetComponent<EnemyStats>();

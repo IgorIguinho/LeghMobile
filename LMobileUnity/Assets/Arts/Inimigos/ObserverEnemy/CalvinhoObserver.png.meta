@@ -297,6 +297,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: CalvinhoObserver_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3889ce4943eeb43b22066f79229eaa
+      internalID: -1335895429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CalvinhoObserver_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5629fff6ae133a643b946646e083702e
+      internalID: 102251714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CalvinhoObserver_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd3fd876062c10429594c0fcbdf01d7
+      internalID: -1299000705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CalvinhoObserver_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14677a538e60dd14ab6523a786a54448
+      internalID: 268658935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -315,11 +403,15 @@ TextureImporter:
     nameFileIdTable:
       CalvinhoObserver_0: -868803528
       CalvinhoObserver_1: 1572701764
+      CalvinhoObserver_10: 268658935
       CalvinhoObserver_2: -1965969033
       CalvinhoObserver_3: 1881504628
       CalvinhoObserver_4: 1306099676
       CalvinhoObserver_5: -2017173227
       CalvinhoObserver_6: -1307721342
+      CalvinhoObserver_7: -1335895429
+      CalvinhoObserver_8: 102251714
+      CalvinhoObserver_9: -1299000705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

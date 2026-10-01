@@ -24,6 +24,8 @@ public class FaseSelectManager : MonoBehaviour
     [Header("Variaveis Button")]
     public Button SkillButton;
     public GameObject groupButton;
+
+    public bool hackScene = false;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -50,7 +52,7 @@ public class FaseSelectManager : MonoBehaviour
             SkillButton.interactable = true;
         }
         else {SkillButton.interactable = false; }
-        if (FaseProgressSaveManager.Instance.IsFaseFinished(faseList[0].sceneFase))
+        if (FaseProgressSaveManager.Instance.IsFaseFinished(faseList[0].sceneFase) || hackScene)
         {
             groupButton.SetActive(true);
         }
@@ -78,8 +80,8 @@ public class FaseSelectManager : MonoBehaviour
 
     public void NextFase()
     {
-        if (!FaseProgressSaveManager.Instance.IsFaseFinished(faseList[selectedFaseAtual].sceneFase)) { return; }
-        FaseProgressSaveManager.Instance.ApplyToScriptable(faseList[selectedFaseAtual]);
+        if (!FaseProgressSaveManager.Instance.IsFaseFinished(faseList[selectedFaseAtual].sceneFase) && !hackScene) { return; }
+       if (!hackScene) { FaseProgressSaveManager.Instance.ApplyToScriptable(faseList[selectedFaseAtual]); }
         if (selectedFaseAtual < faseList.Count - 1)
         {
             selectedFaseAtual++;

@@ -265,7 +265,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -287,7 +287,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -309,7 +309,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -331,7 +331,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -353,7 +353,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -375,7 +375,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -397,7 +397,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -419,7 +419,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -440,8 +440,8 @@ TextureImporter:
       name: Protagonista_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 512
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -462,8 +462,8 @@ TextureImporter:
       name: Protagonista_9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 576
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -484,8 +484,8 @@ TextureImporter:
       name: Protagonista_10
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
+        x: 640
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -506,8 +506,8 @@ TextureImporter:
       name: Protagonista_11
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
+        x: 0
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -528,8 +528,8 @@ TextureImporter:
       name: Protagonista_12
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
+        x: 64
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -550,8 +550,8 @@ TextureImporter:
       name: Protagonista_13
       rect:
         serializedVersion: 2
-        x: 320
-        y: 192
+        x: 128
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -572,8 +572,8 @@ TextureImporter:
       name: Protagonista_14
       rect:
         serializedVersion: 2
-        x: 384
-        y: 192
+        x: 192
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -594,8 +594,8 @@ TextureImporter:
       name: Protagonista_15
       rect:
         serializedVersion: 2
-        x: 448
-        y: 192
+        x: 256
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -616,8 +616,8 @@ TextureImporter:
       name: Protagonista_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -638,8 +638,8 @@ TextureImporter:
       name: Protagonista_17
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 384
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -660,8 +660,8 @@ TextureImporter:
       name: Protagonista_18
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 448
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -682,8 +682,8 @@ TextureImporter:
       name: Protagonista_19
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 0
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -704,8 +704,8 @@ TextureImporter:
       name: Protagonista_20
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 64
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -726,8 +726,8 @@ TextureImporter:
       name: Protagonista_21
       rect:
         serializedVersion: 2
-        x: 320
-        y: 128
+        x: 128
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -748,8 +748,8 @@ TextureImporter:
       name: Protagonista_22
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
+        x: 192
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -770,8 +770,8 @@ TextureImporter:
       name: Protagonista_23
       rect:
         serializedVersion: 2
-        x: 448
-        y: 128
+        x: 256
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -792,8 +792,8 @@ TextureImporter:
       name: Protagonista_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 320
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -814,8 +814,8 @@ TextureImporter:
       name: Protagonista_25
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 384
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -836,8 +836,8 @@ TextureImporter:
       name: Protagonista_26
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 448
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -858,8 +858,8 @@ TextureImporter:
       name: Protagonista_27
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -880,8 +880,8 @@ TextureImporter:
       name: Protagonista_28
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
+        x: 64
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -902,8 +902,8 @@ TextureImporter:
       name: Protagonista_29
       rect:
         serializedVersion: 2
-        x: 320
-        y: 64
+        x: 128
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -924,8 +924,8 @@ TextureImporter:
       name: Protagonista_30
       rect:
         serializedVersion: 2
-        x: 384
-        y: 64
+        x: 192
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -946,8 +946,8 @@ TextureImporter:
       name: Protagonista_31
       rect:
         serializedVersion: 2
-        x: 448
-        y: 64
+        x: 256
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -968,8 +968,8 @@ TextureImporter:
       name: Protagonista_32
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 320
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -990,8 +990,8 @@ TextureImporter:
       name: Protagonista_33
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 384
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -1012,8 +1012,8 @@ TextureImporter:
       name: Protagonista_34
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
+        x: 448
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -1034,8 +1034,8 @@ TextureImporter:
       name: Protagonista_35
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 0
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -1056,8 +1056,8 @@ TextureImporter:
       name: Protagonista_36
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
+        x: 64
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -1078,8 +1078,8 @@ TextureImporter:
       name: Protagonista_37
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
+        x: 128
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -1100,8 +1100,8 @@ TextureImporter:
       name: Protagonista_38
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
+        x: 192
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -1122,8 +1122,8 @@ TextureImporter:
       name: Protagonista_39
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
+        x: 256
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -1136,6 +1136,28 @@ TextureImporter:
       bones: []
       spriteID: f6e9eb341fed51d00800000000000000
       internalID: 942904824809037423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protagonista_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e822c63bc2f4e264bb086fbc1a081133
+      internalID: 667529972
       vertices: []
       indices: 
       edges: []
@@ -1154,7 +1176,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":5.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Protagonista_0: -6798941787000764838
       Protagonista_1: 7668452354109393802
@@ -1191,6 +1213,7 @@ TextureImporter:
       Protagonista_38: -3269596514413605927
       Protagonista_39: 942904824809037423
       Protagonista_4: 732984562860091388
+      Protagonista_40: 667529972
       Protagonista_5: -5069276283725161965
       Protagonista_6: -5733591399719148180
       Protagonista_7: 2075353074271379436

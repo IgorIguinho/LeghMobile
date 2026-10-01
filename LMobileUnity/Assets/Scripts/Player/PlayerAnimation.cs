@@ -54,6 +54,8 @@ public class PlayerAnimation : MonoBehaviour
 
         // 3. Estados de Habilidade
         animator.SetBool("isDash", movement.isDash);
+
+        animator.SetBool("onWall", movement.isWall);
     }
 
     // Para animações baseadas em eventos
